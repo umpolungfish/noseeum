@@ -1,27 +1,84 @@
-# Noseeum: A Unified Framework for Unicode-Based Exploitation
+<div align="center">
+  <h1>Noseeum</h1>
+  <p><b>A UNIFIED FRAMEWORK FOR UNICODE-BASED EXPLOITATION</b></p>
 
-Noseeum is a modular offensive security framework designed for executing Unicode-based attacks. This tool consolidates a range of advanced obfuscation and exploitation techniques into a single, extensible command-line interface. It is built for precision, power, and operational security.
+  <img src="./images/glassworm.png" alt="Noseeum logo" width="400">
+</div>
 
----
+<div align="center">
 
-## Features
+  ![Python](https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white)
+  &nbsp;
+  ![Unicode](https://img.shields.io/badge/Unicode-%23000000.svg?style=for-the-badge&logo=unicode&logoColor=white)
+  &nbsp;
+  ![Security](https://img.shields.io/badge/Security-Offensive-%23FF0000.svg?style=for-the-badge)
+  &nbsp;
+  ![Cross-Platform](https://img.shields.io/badge/Cross--Platform-Windows%20%7C%20Linux%20%7C%20macOS-%230071C5.svg?style=for-the-badge)
 
-- **Unified CLI**: A single, clean command-line interface powered by Python's `click` library.
+</div>
+
+<p align="center">
+  <a href="#overview">Overview</a> •
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#basic-usage">Usage</a> •
+  <a href="#security-improvements">Security</a> •
+  <a href="#performance-improvements">Performance</a> •
+  <a href="#development">Development</a> •
+  <a href="#package-structure">Structure</a>
+</p>
+
+<hr>
+
+## OVERVIEW
+
+**Noseeum** is a modular offensive security framework designed for executing Unicode-based attacks. This tool consolidates a range of advanced obfuscation and exploitation techniques into a single, extensible command-line interface. It is built for precision, power, and operational security.
+
+**Primary Function:** Execute Unicode smuggling attacks including Trojan Source, homoglyph substitution, and invisible character encoding to hide malicious code in plain sight.
+
+**Technology Stack:**
+- Python 3 for core implementation
+- Unicode control characters for attack vectors
+- Modular architecture with pluggable attack modules
+- Command-line interface powered by Click
+- Cross-platform compatibility
+
+`Noseeum` prioritizes `precision`, `stealth`, and `operational security` in Unicode-based exploits.
+
+## FEATURES
+
+### Unified Command-Line Interface
+Noseeum provides a single, clean command-line interface powered by Python's `click` library.
+
 - **Modular Architecture**: Each attack vector is a self-contained module, allowing for rapid development and integration of new exploits.
 - **Multiple Attack Vectors**:
     - **Bidi (Trojan Source)**: Make malicious code appear as harmless comments.
     - **Homoglyph**: Evade signature-based detection and confuse human analysts by substituting characters with visually identical ones.
     - **Invisible Ink**: Hide payloads steganographically within benign text or generate imperceptible prompts to jailbreak LLMs.
     - **Language-Specific Exploits**: Target unique weaknesses in Python, JavaScript, and Java.
-- **Enhanced Security**: Improved security measures including safe code execution, path validation, and input sanitization.
-- **Performance Optimizations**: Registry caching and efficient string processing for better performance.
-- **Detection Module**: Includes a scanner to identify the presence of these same Unicode smuggling vulnerabilities in source code.
-- **Configurable Settings**: Centralized configuration system allows for customizable paths and parameters.
 - **Globally Installable**: Can be installed as a system-wide command-line tool using pip.
 
----
+### Enhanced Security Measures
+The framework includes several security enhancements:
 
-## Installation
+- **Safe Code Execution**: The `exec()` vulnerability in glassworm has been replaced with safer AST-based validation and restricted namespaces.
+- **Path Validation**: Directory traversal attacks are prevented with proper path validation.
+- **Input Sanitization**: Payloads are now sanitized to prevent injection attacks.
+- **Encoding Detection**: Automatic encoding detection prevents issues with different file encodings.
+
+### Performance Optimizations
+- **Registry Caching**: The homoglyph registry is now cached to avoid repeated file loading.
+- **Efficient Processing**: Improved string processing algorithms for faster execution.
+- **Configurable Settings**: Centralized configuration for optimized parameters.
+
+### Detection and Scanning Module
+Includes a scanner to identify the presence of these same Unicode smuggling vulnerabilities in source code.
+
+- **File Vulnerability Scanning**: Scan individual files for Unicode smuggling vulnerabilities
+- **Multi-Language Support**: Detect vulnerabilities across Python, JavaScript, Java, and other languages
+- **Comprehensive Detection**: Identifies various types of Unicode exploits including Bidi, homoglyphs, and invisible characters
+
+## INSTALLATION
 
 ### Global Installation (Recommended)
 
@@ -58,9 +115,7 @@ To remove the globally installed package:
 make uninstall
 ```
 
----
-
-## Basic Usage
+## BASIC USAGE
 
 All functionality is accessed through the `noseeum` command.
 
@@ -81,9 +136,7 @@ noseeum detect --file /path/to/your/file.js
 
 For a complete breakdown of every command, option, and argument, refer to the [**USAGE.md**](./docs/USAGE.md) document.
 
----
-
-## Security Improvements
+## SECURITY IMPROVEMENTS
 
 The framework has been enhanced with several security measures:
 
@@ -92,17 +145,13 @@ The framework has been enhanced with several security measures:
 - **Input Sanitization**: Payloads are now sanitized to prevent injection attacks.
 - **Encoding Detection**: Automatic encoding detection prevents issues with different file encodings.
 
----
-
-## Performance Improvements
+## PERFORMANCE IMPROVEMENTS
 
 - **Registry Caching**: The homoglyph registry is now cached to avoid repeated file loading.
 - **Efficient Processing**: Improved string processing algorithms for faster execution.
 - **Configurable Settings**: Centralized configuration for optimized parameters.
 
----
-
-## Development
+## DEVELOPMENT
 
 This project uses a `Makefile` to streamline common development tasks.
 
@@ -110,9 +159,7 @@ This project uses a `Makefile` to streamline common development tasks.
 -   **`make uninstall`**: Removes the `noseeum` package from your system.
 -   **`make clean`**: Deletes all build artifacts, such as `build/`, `dist/`, and `.egg-info/` directories.
 
----
-
-## Package Structure
+## PACKAGE STRUCTURE
 
 The framework is organized as follows:
 - `noseeum/`: Main Python package containing:
