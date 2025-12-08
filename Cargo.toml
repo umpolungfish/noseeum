@@ -1,0 +1,36 @@
+[package]
+name = "rustnoleum"
+version = "1.0.0"
+edition = "2021"
+
+[[bin]]
+name = "rustnoleum"
+path = "src/main.rs"
+
+[dependencies]
+lazy_static = "1.4.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+config = { version = "0.13", features = ["json"] }
+aes-gcm = "0.10.3"
+rand = "0.8"
+flate2 = "1.0"
+reqwest = { version = "0.11", features = ["blocking", "multipart"] }
+winapi = { version = "0.3", features = [
+    "winuser",
+    "libloaderapi",
+    "winreg",
+    "winnt",
+    "tlhelp32",
+    "fileapi",
+    "handleapi",
+    "wincon",
+    "processthreadsapi",
+    "wincred",
+    "memoryapi",
+    "errhandlingapi",
+    "sysinfoapi",
+    "dbghelp",
+    "impl-default",
+    "ctypes"
+] }

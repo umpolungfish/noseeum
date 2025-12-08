@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+include requirements.txt
+include homoglyph_registry.json
+include nfkc_map.json
+include config.json
+recursive-include noseeum/data *.json

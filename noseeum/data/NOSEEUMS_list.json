@@ -1,0 +1,83 @@
+{
+  "bidi_characters": [
+    { "code_point": "U+202A", "name": "LRE (Left-to-Right Embedding)", "description": "Starts embedding of left-to-right text.", "relevance": "Can be used to start a segment of code that will be visually reversed." },
+    { "code_point": "U+202D", "name": "LRO (Left-to-Right Override)", "description": "Forces subsequent characters to be displayed left-to-right.", "relevance": "Key character for reversing the visual order of a block of text." },
+    { "code_point": "U+202C", "name": "PDF (Pop Directional Formatting)", "description": "Ends the effect of an embedding or override.", "relevance": "Necessary to close the Bidi context after the reversed content." },
+    { "code_point": "U+202B", "name": "RLE (Right-to-Left Embedding)", "description": "Starts embedding of right-to-left text.", "relevance": "Used to initiate a right-to-left context for reversal." },
+    { "code_point": "U+202E", "name": "RLO (Right-to-Left Override)", "description": "Forces subsequent characters to be displayed right-to-left.", "relevance": "Core mechanism for visually anagramming source code (Trojan Source)." },
+    { "code_point": "U+2068", "name": "FSI (First Strong Isolate)", "description": "Starts an isolate embedding whose direction is determined by the first strong character.", "relevance": "Provides a more contained method for applying Bidi transformations." },
+    { "code_point": "U+2069", "name": "PDI (Pop Directional Isolate)", "description": "Ends the effect of an isolate embedding.", "relevance": "Closes the isolate context started by FSI." }
+  ],
+  "homoglyph_mappings": {
+    "a": ["а", "α"],
+    "e": ["е"],
+    "o": ["ο", "о"],
+    "p": ["ρ"],
+    "i": ["і"],
+    "c": ["с"],
+    "x": ["х"],
+    "y": ["у"],
+    "A": ["А"],
+    "E": ["Е"],
+    "O": ["О"],
+    "P": ["Р"],
+    "I": ["І"],
+    "C": ["С"],
+    "X": ["Х"],
+    "Y": ["У"]
+  },
+  "zero_width_characters": [
+    { "code_point": "U+200B", "name": "ZERO WIDTH SPACE", "purpose": "Token fragmentation, steganography" },
+    { "code_point": "U+200C", "name": "ZERO WIDTH NON-JOINER (ZWNJ)", "purpose": "Interferes with string matching, token fragmentation" },
+    { "code_point": "U+200D", "name": "ZERO WIDTH JOINER (ZWJ)", "purpose": "Interferes with string matching" },
+    { "code_point": "U+FEFF", "name": "ZERO WIDTH NO-BREAK SPACE (BOM)", "purpose": "Invisible, can disrupt parsers" },
+    { "code_point": "U+00AD", "name": "SOFT HYPHEN", "purpose": "Can be invisible or conditionally visible" }
+  ],
+  "variation_selectors": [
+    { "range": "U+FE00–U+FE0F", "description": "VS1 to VS16 (Standardized Variation Sequences)" },
+    { "range": "U+E0100–U+E01EF", "description": "VS17 to VS256 (Ideographic Variation Sequences)", "relevance": "LLM tokenization manipulation (imperceptible jailbreaks)" }
+  ],
+  "language_vulnerabilities": [
+    {
+      "name": "Python",
+      "bidi_vulnerability": "High (confined to comments/strings, but still exploitable)",
+      "homoglyph_vulnerability": "Very High (due to permissive identifiers and NFKC normalization)",
+      "zero_width_vulnerability": "High (can fragment tokens, used in steganography)",
+      "nfkc_normalization_impact": "Identifiers are NFKC normalized, leading to vast numbers of visually distinct but functionally identical identifiers (PEP 672).",
+      "unicode_escape_abuse": "High (can hide punctuation, commands within strings via `unicode_escape` encoding).",
+      "notes": "Asymmetry between parse-time normalization and editor rendering."
+    },
+    {
+      "name": "JavaScript",
+      "bidi_vulnerability": "High",
+      "homoglyph_vulnerability": "Very High (permissive identifiers in ES2015+ allows non-Latin chars, e.g., Katakana in `puppeteer-extra-plugin-adblock`).",
+      "zero_width_vulnerability": "High",
+      "permissive_identifiers": "Allows wide range of Unicode characters (Annex #31) in identifiers.",
+      "unicode_escape_abuse": "High (compile-time processing of `\uXXXX` escapes).",
+      "notes": "Dynamic execution capabilities amplify risk."
+    },
+    {
+      "name": "Java",
+      "bidi_vulnerability": "High",
+      "homoglyph_vulnerability": "High (JLS permits any 'Java letter' including non-Latin scripts in identifiers).",
+      "zero_width_vulnerability": "High",
+      "permissive_identifiers": "Allows extensive Unicode characters in identifiers.",
+      "unicode_escape_abuse": "High (compile-time processing of `\uXXXX` escapes provides trivial obfuscation).",
+      "notes": "Obfuscation is transparent to bytecode."
+    },
+    {
+      "name": "Rust",
+      "bidi_vulnerability": "Mitigated (proactive patches)",
+      "homoglyph_vulnerability": "Mitigated (proactive patches for CVE-2021-42574 and CVE-2021-42694)",
+      "zero_width_vulnerability": "Medium (still possible in string literals)",
+      "notes": "One of the first ecosystems to respond proactively to Trojan Source."
+    },
+    {
+      "name": "C/C++/C#",
+      "bidi_vulnerability": "High",
+      "homoglyph_vulnerability": "High (depending on compiler and standard version)",
+      "zero_width_vulnerability": "High",
+      "notes": "General susceptibility to Trojan Source due to universal Unicode standard."
+    }
+  ]
+}

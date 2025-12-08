@@ -1,0 +1,2 @@
+// This line looks fine, but it has a hidden command.
+return harmless_value; /* begin comment */‮;system("reboot");/* end comment */
