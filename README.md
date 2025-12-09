@@ -192,4 +192,3 @@ The framework is organized as follows:
   - `data/`: Embedded data files (homoglyph_registry.json, nfkc_map.json)
 - `create_registry.py`: Script to generate the homoglyph registry
 - `create_nfkc_map.py`: Script to generate the NFKC mapping
-- `smuggler.py`, `glassworm.py`, `smuggler_dropper.py`: Standalone scripts with specific attack techniques
