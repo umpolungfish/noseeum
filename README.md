@@ -45,6 +45,19 @@
 
 `Noseeum` prioritizes `precision`, `stealth`, and `operational security` in Unicode-based exploits.
 
+## NOSEEUM IN ACTION
+
+Below is a screencap of the VirusTotal analysis of the original, unencoded powershell malware --> Note the 8/62 detection rate
+
+<img src="./images/boomboom_before.png" alt="boomboom before (HASH = f6adc7db3ce7e756bcfd995c6bfeae1480e4626ab4c049644754903e2610a104)" width="650">
+</div>
+
+Below is a screencap of the VirusTotal analysis of the processed, encoded powershell malware --> Note the 8/62 detection rate
+
+<img src="./images/boomboom_after.png" alt="boomboom after (HASH = b700553732b9c8c2843885dc4f1122d2471beac47d682e67863f81cbb6d9a55f)" width="650">
+</div>
+
+
 ## FEATURES
 
 ### Unified Command-Line Interface

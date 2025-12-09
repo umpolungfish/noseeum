@@ -1,0 +1,2 @@
+This is a test file to demonstrate the stego-file-encode functionality.
+It contains multiple lines of text that will be converted to zero-width characters.
