@@ -32,10 +32,11 @@
 
 ## OVERVIEW
 
-`noseeum` 
-+ is a modular offensive security framework designed for executing Unicode-based attacks  
-+ allows the user to encode their payload in the same/similar fashion as exhibited in the "GlassWorm" malware of late 2025  
-+ consolidates a range of advanced obfuscation and exploitation techniques into a single, extensible command-line interface  
+`noseeum` is a modular offensive security framework designed for executing Unicode-based attacks  
+
+`noseeum` allows the user to encode their payload in the same/similar fashion as exhibited in the "GlassWorm" malware of late 2025  
+
+`noseeum` consolidates a range of advanced obfuscation and exploitation techniques into a single, extensible command-line interface  
 
 **Primary Function:** Execute Unicode smuggling attacks including Trojan Source, homoglyph substitution, and invisible character encoding to hide malicious code in plain sight.
 
