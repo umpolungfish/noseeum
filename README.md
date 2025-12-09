@@ -47,7 +47,7 @@
 
 ## NOSEEUM IN ACTION
 
-Below is a screencap of the VirusTotal analysis of the original, unencoded powershell malware as well as its "MITRE ATT&CK Tactics and Techniques" Chart  
+Below is a screencap of the VirusTotal analysis of the unencoded powershell malware (BEFORE processing with `noseeum`) as well as its "MITRE ATT&CK Tactics and Techniques" Chart  
 + **NOTE THE `8/62` DETECTION RATE**
 + HASH = `f6adc7db3ce7e756bcfd995c6bfeae1480e4626ab4c049644754903e2610a104`
 
@@ -57,7 +57,7 @@ Below is a screencap of the VirusTotal analysis of the original, unencoded power
 <img src="./images/boomboom_before_MITRE.png" alt="MITRE Chart for (HASH = f6adc7db3ce7e756bcfd995c6bfeae1480e4626ab4c049644754903e2610a104)" width="650">
 </div>
 
-Below is a screencap of the VirusTotal analysis of the processed, encoded powershell malware as well as its "MITRE ATT&CK Tactics and Techniques" Chart 
+Below is a screencap of the VirusTotal analysis of the `Zero Width Character`-encoded powershell malware (AFTER processing with `noseeum`) as well as its "MITRE ATT&CK Tactics and Techniques" Chart 
 + **NOTE THE `0/62` DETECTION RATE**
 + HASH = `b700553732b9c8c2843885dc4f1122d2471beac47d682e67863f81cbb6d9a55f`
 
