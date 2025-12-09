@@ -32,24 +32,18 @@
 
 ## OVERVIEW
 
+**Primary Function:** Execute Unicode smuggling attacks including Trojan Source, homoglyph substitution, and invisible character encoding to hide malicious code in plain sight.
+
 `noseeum` is a modular offensive security framework designed for executing Unicode-based attacks  
 
 `noseeum` allows the user to encode their payload in the same/similar fashion as exhibited in the "GlassWorm" malware of late 2025  
 
 `noseeum` consolidates a range of advanced obfuscation and exploitation techniques into a single, extensible command-line interface  
 
-**Primary Function:** Execute Unicode smuggling attacks including Trojan Source, homoglyph substitution, and invisible character encoding to hide malicious code in plain sight.
-
-**Technology Stack:**
-- Python 3 for core implementation
-- Unicode control characters for attack vectors
-- Modular architecture with pluggable attack modules
-- Command-line interface powered by Click
-- Cross-platform compatibility
-
 ## NOSEEUM IN ACTION
 
 Below is a screencap of the VirusTotal analysis of the unencoded powershell malware (BEFORE processing with `noseeum`) as well as its "MITRE ATT&CK Tactics and Techniques" Chart  
+
 + **NOTE THE `8/62` DETECTION RATE**
 + HASH = `f6adc7db3ce7e756bcfd995c6bfeae1480e4626ab4c049644754903e2610a104`
 
@@ -60,6 +54,7 @@ Below is a screencap of the VirusTotal analysis of the unencoded powershell malw
 </div>
 
 Below is a screencap of the VirusTotal analysis of the `Zero Width Character`-encoded powershell malware (AFTER processing with `noseeum`) as well as its "MITRE ATT&CK Tactics and Techniques" Chart 
+
 + **NOTE THE `0/62` DETECTION RATE**
 + HASH = `b700553732b9c8c2843885dc4f1122d2471beac47d682e67863f81cbb6d9a55f`
 
@@ -72,32 +67,19 @@ Below is a screencap of the VirusTotal analysis of the `Zero Width Character`-en
 ## FEATURES
 
 ### Unified Command-Line Interface
-Noseeum provides a single, clean command-line interface powered by Python's `click` library.
+Noseeum provides a single, clean command-line interface powered by Python's `click` library
 
-- **Modular Architecture**: Each attack vector is a self-contained module, allowing for rapid development and integration of new exploits.
+- **Modular Architecture**: Each attack vector is a self-contained module, allowing for rapid development and integration of new exploits
 - **Multiple Attack Vectors**:
-    - **Bidi (Trojan Source)**: Make malicious code appear as harmless comments.
-    - **Homoglyph**: Evade signature-based detection and confuse human analysts by substituting characters with visually identical ones.
-    - **Invisible Ink**: Hide payloads steganographically within benign text or generate imperceptible prompts to jailbreak LLMs.
-    - **File Steganography**: Encode entire files as zero-width character sequences and decode them back.
-    - **Language-Specific Exploits**: Target unique weaknesses in Python, JavaScript, and Java.
-- **Globally Installable**: Can be installed as a system-wide command-line tool using pip.
-
-### Enhanced Security Measures
-The framework includes several security enhancements:
-
-- **Safe Code Execution**: The `exec()` vulnerability in glassworm has been replaced with safer AST-based validation and restricted namespaces.
-- **Path Validation**: Directory traversal attacks are prevented with proper path validation.
-- **Input Sanitization**: Payloads are now sanitized to prevent injection attacks.
-- **Encoding Detection**: Automatic encoding detection prevents issues with different file encodings.
-
-### Performance Optimizations
-- **Registry Caching**: The homoglyph registry is now cached to avoid repeated file loading.
-- **Efficient Processing**: Improved string processing algorithms for faster execution.
-- **Configurable Settings**: Centralized configuration for optimized parameters.
+    - **Bidi (Trojan Source)**: Make malicious code appear as harmless comments
+    - **Homoglyph**: Evade signature-based detection and confuse human analysts by substituting characters with visually identical ones
+    - **Invisible Ink**: Hide payloads steganographically within benign text or generate imperceptible prompts to jailbreak LLMs
+    - **File Steganography**: Encode entire files as zero-width character sequences and decode them back
+    - **Language-Specific Exploits**: Target unique weaknesses in Python, JavaScript, and Java
+- **Globally Installable**: Can be installed as a system-wide command-line tool using pip
 
 ### Detection and Scanning Module
-Includes a scanner to identify the presence of these same Unicode smuggling vulnerabilities in source code.
+Includes a scanner to identify the presence of these same Unicode smuggling vulnerabilities in source code
 
 - **File Vulnerability Scanning**: Scan individual files for Unicode smuggling vulnerabilities
 - **Multi-Language Support**: Detect vulnerabilities across Python, JavaScript, Java, and other languages
@@ -131,7 +113,7 @@ Noseeum can be installed as a globally accessible command-line tool:
     make install
     ```
 
-This will install the `noseeum` command globally on your system, making it accessible from any directory.
+This will install the `noseeum` command globally on your system, making it accessible from any directory
 
 ### Uninstallation
 
@@ -142,7 +124,7 @@ make uninstall
 
 ## BASIC USAGE
 
-All functionality is accessed through the `noseeum` command.
+All functionality is accessed through the `noseeum` command
 
 **View all available commands:**
 ```bash
@@ -159,30 +141,15 @@ noseeum attack --help
 noseeum detect --file /path/to/your/file.js
 ```
 
-For a complete breakdown of every command, option, and argument, refer to the [**USAGE.md**](./docs/USAGE.md) document.
-
-## SECURITY IMPROVEMENTS
-
-The framework has been enhanced with several security measures:
-
-- **Safe Code Execution**: The `exec()` vulnerability in glassworm has been replaced with safer AST-based validation and restricted namespaces.
-- **Path Validation**: Directory traversal attacks are prevented with proper path validation.
-- **Input Sanitization**: Payloads are now sanitized to prevent injection attacks.
-- **Encoding Detection**: Automatic encoding detection prevents issues with different file encodings.
-
-## PERFORMANCE IMPROVEMENTS
-
-- **Registry Caching**: The homoglyph registry is now cached to avoid repeated file loading.
-- **Efficient Processing**: Improved string processing algorithms for faster execution.
-- **Configurable Settings**: Centralized configuration for optimized parameters.
-
+For a complete breakdown of every command, option, and argument, refer to the [**USAGE.md**](./docs/USAGE.md) document
+ 
 ## DEVELOPMENT
 
 This project uses a `Makefile` to streamline common development tasks.
 
--   **`make install`**: Sets up the development environment, installs dependencies from `requirements.txt`, creates required data files, and installs the `noseeum` package in editable mode.
--   **`make uninstall`**: Removes the `noseeum` package from your system.
--   **`make clean`**: Deletes all build artifacts, such as `build/`, `dist/`, and `.egg-info/` directories.
+-   **`make install`**: Sets up the development environment, installs dependencies from `requirements.txt`, creates required data files, and installs the `noseeum` package in editable mode
+-   **`make uninstall`**: Removes the `noseeum` package from your system
+-   **`make clean`**: Deletes all build artifacts, such as `build/`, `dist/`, and `.egg-info/` directories
 
 ## PACKAGE STRUCTURE
 
