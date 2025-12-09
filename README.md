@@ -55,6 +55,7 @@ Noseeum provides a single, clean command-line interface powered by Python's `cli
     - **Bidi (Trojan Source)**: Make malicious code appear as harmless comments.
     - **Homoglyph**: Evade signature-based detection and confuse human analysts by substituting characters with visually identical ones.
     - **Invisible Ink**: Hide payloads steganographically within benign text or generate imperceptible prompts to jailbreak LLMs.
+    - **File Steganography**: Encode entire files as zero-width character sequences and decode them back.
     - **Language-Specific Exploits**: Target unique weaknesses in Python, JavaScript, and Java.
 - **Globally Installable**: Can be installed as a system-wide command-line tool using pip.
 

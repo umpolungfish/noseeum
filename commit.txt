@@ -1,11 +1,9 @@
-feat(installation): Make noseeum globally installable as a CLI tool
-- Update setup.py to include data files in package using package_data
-- Create MANIFEST.in to explicitly specify files included in distribution
-- Add importlib-resources dependency for older Python versions
-- Move data files to noseeum/data subdirectory for proper packaging
-- Update attack modules to access data files using importlib.resources
-- Update README.md with installation instructions for global CLI usage
-- Update USAGE.md with prerequisites and package distribution information
-- Modify Makefile install command to properly include data files
-- Add instructions for generating required registry files during installation
-- Add error handling fallbacks for when data files aren't accessible from package
+feat(steganography): Add file steganography functionality without carrier requirement
+
+- Add stego-file-encode command to encode entire input file as zero-width characters without requiring a carrier file
+- Add stego-file-decode command to decode stego-encoded files back to original content
+- Add stego-self-encode command to embed additional payload within input file without separate carrier
+- Update README.md to document new file steganography feature
+- Update USAGE.md with comprehensive documentation for new invisible attack commands
+- All new commands are accessible through the existing invisible attack module
+- Maintains backward compatibility with existing stego-encode functionality

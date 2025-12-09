@@ -119,6 +119,55 @@ noseeum attack invisible stego-encode --input-file <PATH> --carrier-file <PATH> 
 noseeum attack invisible stego-encode --input-file ./secret.txt --carrier-file ./carrier.txt --output-file ./stego_file.txt
 ```
 
+#### `stego-file-encode`
+Encodes an entire input file as zero-width character sequences without requiring a carrier file.
+
+**Syntax:**
+```bash
+noseeum attack invisible stego-file-encode --input-file <PATH> [--output-file <PATH>]
+```
+**Options:**
+- `--input-file <PATH>`: (Required) The file to encode steganographically.
+- `--output-file <PATH>`: (Optional) The output file with the stego-encoded content. If not specified, overwrites the input file.
+
+**Example:**
+```bash
+noseeum attack invisible stego-file-encode --input-file ./script.py --output-file ./encoded_script.py
+```
+
+#### `stego-file-decode`
+Decodes a stego-encoded file back to its original content.
+
+**Syntax:**
+```bash
+noseeum attack invisible stego-file-decode --input-file <PATH> [--output-file <PATH>]
+```
+**Options:**
+- `--input-file <PATH>`: (Required) The stego-encoded file to decode.
+- `--output-file <PATH>`: (Optional) The output file for the decoded content. If not specified, displays to console.
+
+**Example:**
+```bash
+noseeum attack invisible stego-file-decode --input-file ./encoded_script.py --output-file ./decoded_script.py
+```
+
+#### `stego-self-encode`
+Encodes a payload within the input file itself using zero-width characters (without a separate carrier file).
+
+**Syntax:**
+```bash
+noseeum attack invisible stego-self-encode --input-file <PATH> --payload <STRING> [--output-file <PATH>]
+```
+**Options:**
+- `--input-file <PATH>`: (Required) The file to encode with steganographic payload.
+- `--payload <STRING>`: (Required) The payload to embed within the input file.
+- `--output-file <PATH>`: (Optional) The output file with the embedded payload. If not specified, overwrites the input file.
+
+**Example:**
+```bash
+noseeum attack invisible stego-self-encode --input-file ./carrier.txt --payload "secret data" --output-file ./stego_file.txt
+```
+
 #### `stego-decode`
 Decodes a hidden payload from a file containing zero-width characters.
 
