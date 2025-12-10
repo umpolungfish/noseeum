@@ -76,6 +76,14 @@ Noseeum provides a single, clean command-line interface powered by Python's `cli
     - **Invisible Ink**: Hide payloads steganographically within benign text or generate imperceptible prompts to jailbreak LLMs
     - **File Steganography**: Encode entire files as zero-width character sequences and decode them back
     - **Language-Specific Exploits**: Target unique weaknesses in Python, JavaScript, and Java
+    - **Normalization Exploitation**: Craft payloads that normalize differently across system components (parser vs. scanner)
+    - **Unassigned Planes / Variation Selectors**: Generate syntactically valid identifiers using characters from unassigned Unicode planes (U+20000–U+2FFFD)
+    - **Payload-injection via Identifier Characters**: Encode malicious data within language constructs like object properties, class names, or function names
+- **Advanced Language Modules**:
+    - **Go**: Exploits Go's configurable lexer and permissive Unicode handling
+    - **Kotlin**: Uses permissive frontend with restrictive backend to create compilation-failing code
+    - **JavaScript**: Performs AST-level manipulations and low-entropy payload generation
+    - **Swift**: Leverages ambiguous identifier handling and unassigned planes support
 - **Globally Installable**: Can be installed as a system-wide command-line tool using pip
 
 ### Detection and Scanning Module

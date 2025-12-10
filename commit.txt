@@ -1,9 +1,29 @@
-feat(steganography): Add file steganography functionality without carrier requirement
+feat: Complete expansion of noseeum framework with advanced Unicode obfuscation techniques
 
-- Add stego-file-encode command to encode entire input file as zero-width characters without requiring a carrier file
-- Add stego-file-decode command to decode stego-encoded files back to original content
-- Add stego-self-encode command to embed additional payload within input file without separate carrier
-- Update README.md to document new file steganography feature
-- Update USAGE.md with comprehensive documentation for new invisible attack commands
-- All new commands are accessible through the existing invisible attack module
-- Maintains backward compatibility with existing stego-encode functionality
+- Implement modular architecture core with engine, grammar database, stealth metrics, and evasion library
+- Add normalization exploitation module to craft payloads that normalize differently across system components
+- Enhance homoglyph module with support for unassigned planes and variation selectors
+- Implement payload injection via identifier characters using visually distinct Unicode characters
+- Add Hangul encoding module implementing JavaScript phishing kit technique using Hangul half-width/width characters
+- Create language-specific modules for Go, Kotlin, JavaScript, and Swift exploitation
+- Add linguistic noise generator for contextual camouflage that blends with target code
+- Develop YARA-resilient payload generation to bypass pattern-matching detection tools
+- Create integration engine to orchestrate all components in a unified pipeline
+- Implement comprehensive testing framework with validation for all modules
+- Add new CLI commands: info, techniques, vulnerabilities with enhanced organization
+- Reorganize CLI into logical groups: basic attacks, advanced, language-specific
+- Update documentation with comprehensive usage guide for all new features
+- Add stealth metrics engine with entropy calculation and baseline comparisons
+- Implement evasion tactics library with multiple strategies for bypassing analysis tools
+- Enhance detector module with language-specific vulnerability information
+- Add support for advanced techniques like Unicode normalization gaps and unassigned plane characters
+- Implement Go-specific attacks leveraging configurable lexer and permissive Unicode handling
+- Add Kotlin-specific attacks using permissive frontend with restrictive backend
+- Create JavaScript-specific attacks targeting AST-based analysis tools
+- Develop Swift-specific attacks using ambiguous identifier handling and unassigned planes
+- Update README with comprehensive feature list and new attack vectors
+- Enhance USAGE.md with detailed documentation for all commands and options
+- Implement advanced language grammar database with detailed vulnerability information
+- Add quantitative and qualitative stealth features including entropy optimization
+- Create advanced evasion techniques to bypass modern detection tools like YARA
+- Add advanced features for normalization exploitation, unassigned planes, and payload injection

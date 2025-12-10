@@ -43,6 +43,51 @@ noseeum detect --file <PATH_TO_FILE>
 noseeum detect --file ./examples/malicious_bidi.js
 ```
 
+### `info`
+
+Display information about the noseeum framework architecture showing registered modules, supported languages, and available tactics.
+
+**Syntax:**
+```bash
+noseeum info
+```
+
+**Example:**
+```bash
+noseeum info
+```
+
+### `techniques`
+
+List all available obfuscation techniques with descriptions.
+
+**Syntax:**
+```bash
+noseeum techniques
+```
+
+**Example:**
+```bash
+noseeum techniques
+```
+
+### `vulnerabilities`
+
+Show vulnerabilities for a specific programming language.
+
+**Syntax:**
+```bash
+noseeum vulnerabilities [--target-language <LANGUAGE>]
+```
+
+**Options:**
+- `--target-language, -l <LANGUAGE>`: Target programming language for vulnerability scan. Defaults to 'python'. Supported values: 'python', 'javascript', 'java', 'go', 'kotlin', 'swift', 'rust', 'c', 'cpp'.
+
+**Example:**
+```bash
+noseeum vulnerabilities --target-language javascript
+```
+
 ---
 
 ## `attack`
@@ -81,21 +126,23 @@ noseeum attack bidi --payload-code "console.log('pwned');" --target-file ./examp
 
 ### `homoglyph`
 
-Performs homoglyph obfuscation on a source file. It substitutes ASCII characters with visually identical Unicode characters from the `homoglyph_registry.json` to evade signature-based detection and confuse analysts. The registry is cached for improved performance.
+Performs enhanced homoglyph obfuscation on a source file. It substitutes ASCII characters with visually identical Unicode characters from the `homoglyph_registry.json` to evade signature-based detection and confuse analysts. The registry is cached for improved performance. Includes support for unassigned planes and variation selectors.
 
 **Syntax:**
 ```bash
-noseeum attack homoglyph --input-file <PATH> --output-file <PATH> [--density <FLOAT>]
+noseeum attack homoglyph --input-file <PATH> --output-file <PATH> [--density <FLOAT>] [--use-unassigned-planes] [--use-variation-selectors]
 ```
 
 **Options:**
 - `--input-file <PATH>`: (Required) The source file to obfuscate.
 - `--output-file <PATH>`: (Required) The path to write the obfuscated code to.
 - `--density <FLOAT>`: (Optional) A number between 0.0 and 1.0 representing the probability of substitution for any given character. Defaults to `0.1`.
+- `--use-unassigned-planes`: (Optional) Use characters from unassigned Unicode planes.
+- `--use-variation-selectors`: (Optional) Use variation selectors for metadata embedding.
 
 **Example:**
 ```bash
-noseeum attack homoglyph --input-file ./examples/clean.py --output-file ./examples/obfuscated.py --density 0.5
+noseeum attack homoglyph --input-file ./examples/clean.py --output-file ./examples/obfuscated.py --density 0.5 --use-unassigned-planes --use-variation-selectors
 ```
 
 ### `invisible`
@@ -254,6 +301,155 @@ noseeum attack language java-unicode-escape --input-file <PATH> --output-file <P
 noseeum attack language java-unicode-escape --input-file ./clean.java --output-file ./obfuscated.java
 ```
 
+### `advanced`
+
+Advanced obfuscation techniques beyond basic attacks. These commands implement sophisticated Unicode exploitation techniques including normalization exploits, unassigned planes usage, and payload injection.
+
+#### `normalization`
+
+Apply normalization-based obfuscation to a file. Exploits Unicode normalization inconsistencies between parsers and scanners.
+
+**Syntax:**
+```bash
+noseeum attack advanced normalization --input-file <PATH> --output-file <PATH> [--language <LANGUAGE>]
+```
+**Options:**
+- `--input-file <PATH>`: (Required) Input file to obfuscate.
+- `--output-file <PATH>`: (Required) Output file for obfuscated content.
+- `--language <LANGUAGE>`: (Optional) Target programming language. Defaults to 'python'. Supported values: 'python', 'javascript', 'java', 'go', 'kotlin', 'swift', 'rust', 'c', 'cpp'.
+
+**Example:**
+```bash
+noseeum attack advanced normalization --input-file ./script.py --output-file ./obfuscated.py --language javascript
+```
+
+#### `unassigned-planes`
+
+Apply unassigned planes obfuscation to a file. Uses characters from unassigned Unicode planes to create identifiers.
+
+**Syntax:**
+```bash
+noseeum attack advanced unassigned-planes --input-file <PATH> --output-file <PATH> [--language <LANGUAGE>]
+```
+**Options:**
+- `--input-file <PATH>`: (Required) Input file to obfuscate.
+- `--output-file <PATH>`: (Required) Output file for obfuscated content.
+- `--language <LANGUAGE>`: (Optional) Target programming language. Defaults to 'swift'. Supported values: 'python', 'javascript', 'java', 'go', 'kotlin', 'swift', 'rust', 'c', 'cpp'.
+
+**Example:**
+```bash
+noseeum attack advanced unassigned-planes --input-file ./script.swift --output-file ./obfuscated.swift --language swift
+```
+
+#### `payload-injection`
+
+Apply payload injection obfuscation to a file. Encodes malicious data within language constructs using visually distinct Unicode characters.
+
+**Syntax:**
+```bash
+noseeum attack advanced payload-injection --input-file <PATH> --output-file <PATH> [--language <LANGUAGE>] [--payload-data <STRING>]
+```
+**Options:**
+- `--input-file <PATH>`: (Required) Input file to obfuscate.
+- `--output-file <PATH>`: (Required) Output file for obfuscated content.
+- `--language <LANGUAGE>`: (Optional) Target programming language. Defaults to 'javascript'. Supported values: 'python', 'javascript', 'java', 'go', 'kotlin', 'swift', 'rust', 'c', 'cpp'.
+- `--payload-data <STRING>`: (Optional) Data to encode in the payload. Defaults to 'malicious_payload'.
+
+**Example:**
+```bash
+noseeum attack advanced payload-injection --input-file ./script.js --output-file ./obfuscated.js --payload-data "console.log('injected')"
+```
+
+#### `hangul-encoding`
+
+Apply Hangul encoding obfuscation to a file. Uses Hangul half-width and full-width characters to encode payloads.
+
+**Syntax:**
+```bash
+noseeum attack advanced hangul-encoding --input-file <PATH> --output-file <PATH> [--language <LANGUAGE>]
+```
+**Options:**
+- `--input-file <PATH>`: (Required) Input file to obfuscate.
+- `--output-file <PATH>`: (Required) Output file for obfuscated content.
+- `--language <LANGUAGE>`: (Optional) Target programming language. Defaults to 'javascript'. Supported values: 'python', 'javascript', 'java', 'go'.
+
+**Example:**
+```bash
+noseeum attack advanced hangul-encoding --input-file ./script.js --output-file ./obfuscated.js --language javascript
+```
+
+### `language-specific`
+
+Language-specific obfuscation techniques. These commands target specific programming languages' Unicode handling vulnerabilities.
+
+#### `go-attack`
+
+Apply Go-specific obfuscation techniques to a file. Uses Go's configurable scanner to create syntactically valid but potentially failing code.
+
+**Syntax:**
+```bash
+noseeum attack language-specific go-attack --input-file <PATH> --output-file <PATH>
+```
+**Options:**
+- `--input-file <PATH>`: (Required) Input Go file to obfuscate.
+- `--output-file <PATH>`: (Required) Output file for obfuscated content.
+
+**Example:**
+```bash
+noseeum attack language-specific go-attack --input-file ./main.go --output-file ./obfuscated.go
+```
+
+#### `kotlin-attack`
+
+Apply Kotlin-specific obfuscation techniques to a file. Creates code that passes syntax analysis but fails during compilation.
+
+**Syntax:**
+```bash
+noseeum attack language-specific kotlin-attack --input-file <PATH> --output-file <PATH>
+```
+**Options:**
+- `--input-file <PATH>`: (Required) Input Kotlin file to obfuscate.
+- `--output-file <PATH>`: (Required) Output file for obfuscated content.
+
+**Example:**
+```bash
+noseeum attack language-specific kotlin-attack --input-file ./Main.kt --output-file ./obfuscated.kt
+```
+
+#### `javascript-attack`
+
+Apply JavaScript-specific obfuscation techniques to a file. Targets AST-based analysis and avoids high-entropy strings.
+
+**Syntax:**
+```bash
+noseeum attack language-specific javascript-attack --input-file <PATH> --output-file <PATH>
+```
+**Options:**
+- `--input-file <PATH>`: (Required) Input JavaScript file to obfuscate.
+- `--output-file <PATH>`: (Required) Output file for obfuscated content.
+
+**Example:**
+```bash
+noseeum attack language-specific javascript-attack --input-file ./script.js --output-file ./obfuscated.js
+```
+
+#### `swift-attack`
+
+Apply Swift-specific obfuscation techniques to a file. Uses unassigned planes and parser ambiguities to create confusing code structures.
+
+**Syntax:**
+```bash
+noseeum attack language-specific swift-attack --input-file <PATH> --output-file <PATH>
+```
+**Options:**
+- `--input-file <PATH>`: (Required) Input Swift file to obfuscate.
+- `--output-file <PATH>`: (Required) Output file for obfuscated content.
+
+**Example:**
+```bash
+noseeum attack language-specific swift-attack --input-file ./main.swift --output-file ./obfuscated.swift
+```
+
 ---
 
 ## Configuration
@@ -281,3 +477,14 @@ When installed with pip, Noseeum embeds the required data files directly within 
 - **Path Validation**: All file paths are validated to prevent directory traversal attacks.
 - **Input Sanitization**: Payloads and file inputs are sanitized to prevent code injection.
 - **Encoding Detection**: Automatic encoding detection prevents issues with different file encodings.
+
+## Advanced Features
+
+- **Modular Architecture**: The framework is built on a modular architecture allowing for easy expansion and integration of new techniques.
+- **Normalization Exploitation**: Craft payloads that normalize differently across system components (parser vs. scanner) using standard or custom normalization tables.
+- **Unassigned Planes / Variation Selectors**: Generate syntactically valid identifiers using characters from unassigned Unicode planes (U+20000–U+2FFFD) or variation selectors (U+FE00–U+FE0F).
+- **Payload-injection via Identifier Characters**: Encode malicious data within language constructs like object properties, class names, or function names using visually distinct but valid Unicode characters.
+- **Language-Specific Evasion**: Each language module is designed to exploit specific vulnerabilities and characteristics, such as Go's lexer behavior, Kotlin's frontend/backend mismatch, JavaScript's AST analysis, and Swift's identifier grammar.
+- **Quantitative Stealth**: Entropy-based metrics to keep obfuscated content below detection thresholds.
+- **Qualitative Stealth**: Linguistic noise generation and naming convention matching to blend with legitimate code.
+- **YARA Resilience**: Techniques to bypass pattern-matching detection tools, including avoiding non-printable ASCII characters in newer YARA versions.
