@@ -32,13 +32,13 @@
 
 ## OVERVIEW
 
-**Primary Function:** Execute Unicode smuggling attacks including Trojan Source, homoglyph substitution, and invisible character encoding to hide malicious code in plain sight.
+**Primary Function:** Execute Unicode smuggling attacks including Trojan Source, homoglyph substitution, and invisible character encoding to hide malicious code in plain sight
 
-`noseeum` is a modular offensive security framework designed for executing Unicode-based attacks  
+`noseeum` is a modular offensive security framework for executing Unicode-based attacks  
 
-`noseeum` allows the user to encode their payload in the same/similar fashion as exhibited in the "GlassWorm" malware of late 2025  
+`noseeum` encodes their payload in the same/similar fashion as exhibited in the "GlassWorm" malware of late 2025  
 
-`noseeum` consolidates a range of advanced obfuscation and exploitation techniques into a single, extensible command-line interface  
+`noseeum` employs a range of obfuscation and encoding techniques into an extensible CLI  
 
 ## NOSEEUM IN ACTION
 
@@ -69,24 +69,30 @@ Below is a screencap of the VirusTotal analysis of the `Zero Width Character`-en
 ### Unified Command-Line Interface
 Noseeum provides a single, clean command-line interface powered by Python's `click` library
 
-- **Modular Architecture**: Each attack vector is a self-contained module, allowing for rapid development and integration of new exploits
-- **Multiple Attack Vectors**:
-    - **Bidi (Trojan Source)**: Make malicious code appear as harmless comments
-    - **Homoglyph**: Evade signature-based detection and confuse human analysts by substituting characters with visually identical ones
-    - **Invisible Ink**: Hide payloads steganographically within benign text or generate imperceptible prompts to jailbreak LLMs
-    - **File Steganography**: Encode entire files as zero-width character sequences and decode them back
-    - **Language-Specific Exploits**: Target unique weaknesses in Python, JavaScript, and Java
-    - **Normalization Exploitation**: Craft payloads that normalize differently across system components (parser vs. scanner)
-    - **Unassigned Planes / Variation Selectors**: Generate syntactically valid identifiers using characters from unassigned Unicode planes (U+20000–U+2FFFD)
-    - **Payload-injection via Identifier Characters**: Encode malicious data within language constructs like object properties, class names, or function names
-- **Advanced Language Modules**:
-    - **Go**: Exploits Go's configurable lexer and permissive Unicode handling
-    - **Kotlin**: Uses permissive frontend with restrictive backend to create compilation-failing code
-    - **JavaScript**: Performs AST-level manipulations and low-entropy payload generation
-    - **Swift**: Leverages ambiguous identifier handling and unassigned planes support
-- **Globally Installable**: Can be installed as a system-wide command-line tool using pip
+- **Modular Architecture**: Each attack vector is a self-contained module, allowing for rapid development and integration of new exploits  
 
-### Detection and Scanning Module
+- **Multiple Attack Vectors**:  
+
+    - **`Bidi (Trojan Source)`**: Make malicious code appear as harmless comments
+    - **`Homoglyph`**: Evade signature-based detection and confuse human analysts by substituting characters with visually identical ones
+    - **`Invisible Ink`**: Hide payloads steganographically within benign text or generate imperceptible prompts to jailbreak LLMs
+    - **`File Steganography`**: Encode entire files as zero-width character sequences and decode them back
+    - **`Language-Specific Exploits`**: Target unique weaknesses in Python, JavaScript, and Java
+    - **`Normalization Exploitation`**: Craft payloads that normalize differently across system components (parser vs. scanner)
+    - **`Unassigned Planes / Variation Selectors`**: Generate syntactically valid identifiers using characters from unassigned Unicode planes (U+20000–U+2FFFD)
+    - **`Payload-injection via Identifier Characters`**: Encode malicious data within language constructs like object properties, class names, or function names  
+
+- **Advanced Language Modules**:  
+
+    - **`Go`**: Exploits Go's configurable lexer and permissive Unicode handling
+    - **`Kotlin`**: Uses permissive frontend with restrictive backend to create compilation-failing code
+    - **`JavaScript`**: Performs AST-level manipulations and low-entropy payload generation
+    - **`Swift`**: Leverages ambiguous identifier handling and unassigned planes support  
+
+- **Globally Installable`**: Can be installed as a system-wide command-line tool using pip
+
+### Detection and Scanning Module  
+
 Includes a scanner to identify the presence of these same Unicode smuggling vulnerabilities in source code
 
 - **File Vulnerability Scanning**: Scan individual files for Unicode smuggling vulnerabilities
@@ -97,7 +103,7 @@ Includes a scanner to identify the presence of these same Unicode smuggling vuln
 
 ### Global Installation (Recommended)
 
-Noseeum can be installed as a globally accessible command-line tool:
+`noseeum` can be installed as a globally accessible command-line tool:
 
 1. **Clone the repository:**
     ```bash
@@ -172,4 +178,4 @@ The framework is organized as follows:
 
 ## LICENSE
 
-`noseeum` is released under the ![UNLICENSE](./UNLICENSE)
+`noseeum` is sicced upon the Whyrld under the ![UNLICENSE](./UNLICENSE)
