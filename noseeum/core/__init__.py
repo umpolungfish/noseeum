@@ -1,7 +1,7 @@
 """
 Core components for the noseeum framework.
 """
-from .engine import engine, ObfuscationTechnique
+from .engine import engine, ObfuscationTechnique, LanguageSupport
 from .grammar_db import grammar_db
 from .stealth_engine import stealth_engine
 from .evasion_library import evasion_library
@@ -18,6 +18,7 @@ from noseeum.attacks.go_attack import go_attack_module
 from noseeum.attacks.kotlin_attack import kotlin_attack_module
 from noseeum.attacks.javascript_attack import javascript_attack_module
 from noseeum.attacks.swift_attack import swift_attack_module
+from .language_dispatcher import language_dispatcher_module
 
 # Register the new modules with the engine
 engine.register_module(ObfuscationTechnique.NORMALIZATION, normalization_module)
@@ -25,8 +26,11 @@ engine.register_module(ObfuscationTechnique.UNASSIGNED_PLANES, unassigned_planes
 engine.register_module(ObfuscationTechnique.PAYLOAD_INJECTION, payload_injection_module)
 engine.register_module(ObfuscationTechnique.HANGUL_ENCODING, hangul_encoding_module)
 
-# Register language-specific modules under the language_specific technique
-engine.register_module(ObfuscationTechnique.LANGUAGE_SPECIFIC, go_attack_module)
-engine.register_module(ObfuscationTechnique.LANGUAGE_SPECIFIC, kotlin_attack_module)
-engine.register_module(ObfuscationTechnique.LANGUAGE_SPECIFIC, javascript_attack_module)
-engine.register_module(ObfuscationTechnique.LANGUAGE_SPECIFIC, swift_attack_module)
+# Register language-specific modules with the dispatcher
+language_dispatcher_module.register_language_module(LanguageSupport.GO, go_attack_module)
+language_dispatcher_module.register_language_module(LanguageSupport.KOTLIN, kotlin_attack_module)
+language_dispatcher_module.register_language_module(LanguageSupport.JAVASCRIPT, javascript_attack_module)
+language_dispatcher_module.register_language_module(LanguageSupport.SWIFT, swift_attack_module)
+
+# Register the language dispatcher under the LANGUAGE_SPECIFIC technique
+engine.register_module(ObfuscationTechnique.LANGUAGE_SPECIFIC, language_dispatcher_module)
