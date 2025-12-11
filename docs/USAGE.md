@@ -471,6 +471,17 @@ When installed with pip, Noseeum embeds the required data files directly within 
 
 ---
 
+## Code Quality & Reliability
+
+The framework has undergone significant improvements to ensure stability and compatibility:
+
+- **Python 3.8+ Compatibility**: Full support for Python 3.8 and newer versions
+- **Robust Error Handling**: Proper exception handling throughout all modules
+- **Code Deduplication**: Shared utilities for common operations (file encoding, path validation)
+- **Complete Language Support**: Grammar definitions for all declared languages (Python, JavaScript, Java, Go, Kotlin, Swift, Rust, C, C++)
+- **Improved Path Validation**: Enhanced security against directory traversal
+- **Consistent CLI Output**: Standardized error messaging using click.echo()
+
 ## Security Features
 
 - **Safe Code Execution**: Payloads are validated using AST parsing before execution to prevent arbitrary code execution vulnerabilities.

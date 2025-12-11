@@ -1,29 +1,65 @@
-feat: Complete expansion of noseeum framework with advanced Unicode obfuscation techniques
+fix: Critical bug fixes and code quality improvements for stability and compatibility
 
-- Implement modular architecture core with engine, grammar database, stealth metrics, and evasion library
-- Add normalization exploitation module to craft payloads that normalize differently across system components
-- Enhance homoglyph module with support for unassigned planes and variation selectors
-- Implement payload injection via identifier characters using visually distinct Unicode characters
-- Add Hangul encoding module implementing JavaScript phishing kit technique using Hangul half-width/width characters
-- Create language-specific modules for Go, Kotlin, JavaScript, and Swift exploitation
-- Add linguistic noise generator for contextual camouflage that blends with target code
-- Develop YARA-resilient payload generation to bypass pattern-matching detection tools
-- Create integration engine to orchestrate all components in a unified pipeline
-- Implement comprehensive testing framework with validation for all modules
-- Add new CLI commands: info, techniques, vulnerabilities with enhanced organization
-- Reorganize CLI into logical groups: basic attacks, advanced, language-specific
-- Update documentation with comprehensive usage guide for all new features
-- Add stealth metrics engine with entropy calculation and baseline comparisons
-- Implement evasion tactics library with multiple strategies for bypassing analysis tools
-- Enhance detector module with language-specific vulnerability information
-- Add support for advanced techniques like Unicode normalization gaps and unassigned plane characters
-- Implement Go-specific attacks leveraging configurable lexer and permissive Unicode handling
-- Add Kotlin-specific attacks using permissive frontend with restrictive backend
-- Create JavaScript-specific attacks targeting AST-based analysis tools
-- Develop Swift-specific attacks using ambiguous identifier handling and unassigned planes
-- Update README with comprehensive feature list and new attack vectors
-- Enhance USAGE.md with detailed documentation for all commands and options
-- Implement advanced language grammar database with detailed vulnerability information
-- Add quantitative and qualitative stealth features including entropy optimization
-- Create advanced evasion techniques to bypass modern detection tools like YARA
-- Add advanced features for normalization exploitation, unassigned planes, and payload injection
+## Critical Bug Fixes
+- Fix identifier replacement logic in homoglyph module (lines 138, 177)
+  * Previous logic used incorrect string slicing that could produce wrong output
+  * Changed from `content[start:end].replace(old, new, 1)` to direct replacement
+  * Ensures proper homoglyph substitution in all cases
+
+## Compatibility Improvements
+- Add Python 3.8 compatibility by fixing type annotations
+  * Replace `list[LanguageSupport]` with `List[LanguageSupport]` from typing module
+  * Add proper List import to homoglyph.py
+  * Framework now supports Python 3.8+ instead of requiring 3.9+
+
+## Code Quality Enhancements
+- Consolidate duplicate file encoding logic into shared utility
+  * Remove duplicate `read_file_with_encoding()` from bidi.py and homoglyph.py
+  * Add centralized implementation in utils/error_handlers.py
+  * Update imports in all affected modules
+  * Follows DRY principle and improves maintainability
+
+- Replace bare except clauses with specific exception types
+  * Update integration.py to use `except Exception:` instead of bare `except:`
+  * Prevents catching system signals and keyboard interrupts
+  * Improves debugging and error handling
+
+- Standardize CLI error output
+  * Replace all `print()` calls with `click.echo(..., err=True)`
+  * Add click imports to config.py and integration.py
+  * Ensures consistent error messaging across CLI
+
+## Missing Functionality
+- Add complete language grammar definitions
+  * Implement grammar data for Java, Rust, C, and C++ in grammar_db.py
+  * Include Unicode behaviors, normalization settings, and vulnerabilities
+  * Completes support for all languages declared in LanguageSupport enum
+
+- Improve path validation function
+  * Replace `os.path.commonpath()` with `path.startswith()` for reliability
+  * Add proper path separator handling to prevent edge cases
+  * Enhanced security for directory traversal prevention
+
+## Testing Infrastructure
+- Add pytest to requirements.txt and setup.py
+  * Include pytest in direct requirements for easy access
+  * Add extras_require['dev'] in setup.py for development dependencies
+  * Enables `pytest tests/` to run without manual installation
+
+## Files Modified (8)
+- noseeum/attacks/homoglyph.py - Bug fix, compatibility, deduplication
+- noseeum/attacks/bidi.py - Code deduplication
+- noseeum/utils/error_handlers.py - Shared utilities, improved validation
+- noseeum/core/integration.py - Error handling, CLI consistency
+- noseeum/config.py - CLI consistency
+- noseeum/core/grammar_db.py - Complete language support
+- requirements.txt - Testing dependency
+- setup.py - Testing dependency
+
+## Impact
+- More reliable identifier replacement in homoglyph attacks
+- Broader Python version compatibility (3.8+)
+- Cleaner, more maintainable codebase
+- Complete language support for all declared languages
+- Better error handling and reporting
+- Easier testing and development workflow

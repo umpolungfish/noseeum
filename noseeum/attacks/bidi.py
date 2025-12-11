@@ -3,7 +3,7 @@ import os
 from typing import Optional
 
 # Import error handling utilities
-from noseeum.utils.error_handlers import validate_line_number, handle_file_error
+from noseeum.utils.error_handlers import validate_line_number, handle_file_error, read_file_with_encoding
 
 def sanitize_payload(payload: str) -> str:
     """
@@ -20,23 +20,6 @@ def sanitize_payload(payload: str) -> str:
     # Additional sanitization could be based on the target programming language
     return sanitized
 
-
-def read_file_with_encoding(file_path: str) -> str:
-    """
-    Read a file with automatic encoding detection.
-    Tries UTF-8 first, then falls back to other common encodings.
-    """
-    encodings = ['utf-8', 'latin-1', 'cp1252', 'ascii']
-
-    for encoding in encodings:
-        try:
-            with open(file_path, 'r', encoding=encoding) as f:
-                return f.read()
-        except UnicodeDecodeError:
-            continue
-
-    # If all encodings fail, raise an exception
-    raise ValueError(f"Could not decode file '{file_path}' with any of the tried encodings: {encodings}")
 
 @click.command()
 @click.option('--payload-code', required=True, help='The malicious code to hide.')

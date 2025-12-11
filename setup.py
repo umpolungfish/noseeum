@@ -18,6 +18,9 @@ setup(
         'requests',
         'importlib-resources; python_version<"3.9"',
     ],
+    extras_require={
+        'dev': ['pytest'],
+    },
     entry_points={
         'console_scripts': [
             'noseeum = noseeum.cli:main',

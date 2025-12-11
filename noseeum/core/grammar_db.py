@@ -94,7 +94,63 @@ class LanguageGrammarDatabase:
                 "Invisible character encoding"
             ]
         }
-        
+
+        # Java grammar
+        self.grammars[LanguageSupport.JAVA] = {
+            "name": "Java",
+            "whitespace_chars": [],
+            "identifier_chars": ["unicode_letters_digits"],
+            "normalization_behavior": "none",
+            "backend_restrictions": ["JVM bytecode restrictions"],
+            "vulnerabilities": [
+                "Trojan Source (Bidi) vulnerabilities",
+                "Homoglyph substitution in identifiers",
+                "Unicode escapes (\\uXXXX) in source code"
+            ]
+        }
+
+        # Rust grammar
+        self.grammars[LanguageSupport.RUST] = {
+            "name": "Rust",
+            "whitespace_chars": [],
+            "identifier_chars": ["XID_Start", "XID_Continue"],
+            "normalization_behavior": "nfc",  # Rust uses NFC normalization
+            "backend_restrictions": [],
+            "vulnerabilities": [
+                "Trojan Source vulnerabilities despite warnings",
+                "Homoglyph attacks in identifiers",
+                "Mixed-script confusables"
+            ]
+        }
+
+        # C grammar
+        self.grammars[LanguageSupport.C] = {
+            "name": "C",
+            "whitespace_chars": [],
+            "identifier_chars": ["ascii_alphanumeric", "underscore"],
+            "normalization_behavior": "none",
+            "backend_restrictions": ["compiler-specific"],
+            "vulnerabilities": [
+                "Trigraphs and digraphs (legacy)",
+                "Comment injection via Bidi controls",
+                "Limited Unicode support (C99+)"
+            ]
+        }
+
+        # C++ grammar
+        self.grammars[LanguageSupport.CPP] = {
+            "name": "C++",
+            "whitespace_chars": [],
+            "identifier_chars": ["ascii_alphanumeric", "underscore", "unicode_c11"],
+            "normalization_behavior": "none",
+            "backend_restrictions": ["compiler-specific"],
+            "vulnerabilities": [
+                "Trojan Source (Bidi) vulnerabilities",
+                "Comment injection attacks",
+                "Universal character names (\\uXXXX, \\UXXXXXXXX)"
+            ]
+        }
+
     def add_language(self, language: LanguageSupport, grammar_data: Dict[str, Any]):
         """Add or update grammar information for a language."""
         self.grammars[language] = grammar_data

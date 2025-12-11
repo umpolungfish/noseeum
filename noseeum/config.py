@@ -3,6 +3,7 @@ Configuration management for the Noseeum framework.
 """
 import json
 import os
+import click
 from typing import Dict, Any, Optional
 try:
     # For Python 3.9+
@@ -65,7 +66,7 @@ class ConfigManager:
                 self.config.update(file_config)
             return True
         except (IOError, json.JSONDecodeError, ValueError) as e:
-            print(f"Warning: Could not load configuration from '{self.config_path}': {e}")
+            click.echo(f"Warning: Could not load configuration from '{self.config_path}': {e}", err=True)
             return False
     
     def save_config(self) -> bool:
@@ -80,7 +81,7 @@ class ConfigManager:
                 json.dump(self.config, f, indent=2)
             return True
         except (IOError, ValueError) as e:
-            print(f"Error: Could not save configuration to '{self.config_path}': {e}")
+            click.echo(f"Error: Could not save configuration to '{self.config_path}': {e}", err=True)
             return False
     
     def get(self, key: str, default: Any = None) -> Any:

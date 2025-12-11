@@ -2,11 +2,11 @@ import click
 import json
 import random
 import re
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 
 # Import configuration and error handling utilities
 from noseeum.config import get_config
-from noseeum.utils.error_handlers import handle_registry_load_error
+from noseeum.utils.error_handlers import handle_registry_load_error, read_file_with_encoding
 
 # Import core modules for advanced techniques
 from noseeum.core.engine import ObfuscationModule, ObfuscationTechnique, LanguageSupport
@@ -56,7 +56,7 @@ class EnhancedHomoglyphModule(ObfuscationModule):
     def get_description(self) -> str:
         return "Advanced homoglyph substitution with support for unassigned planes and variation selectors"
 
-    def get_supported_languages(self) -> list[LanguageSupport]:
+    def get_supported_languages(self) -> List[LanguageSupport]:
         return [
             LanguageSupport.PYTHON, LanguageSupport.JAVASCRIPT,
             LanguageSupport.JAVA, LanguageSupport.GO,
@@ -135,7 +135,7 @@ class EnhancedHomoglyphModule(ObfuscationModule):
         # Apply replacements in reverse order to maintain positions
         for span, old, new in reversed(replacements):
             start, end = span
-            content = content[:start] + content[start:end].replace(old, new, 1)
+            content = content[:start] + new + content[end:]
 
         return content
 
@@ -174,31 +174,13 @@ class EnhancedHomoglyphModule(ObfuscationModule):
         # Apply replacements in reverse order to maintain positions
         for span, old, new in reversed(replacements):
             start, end = span
-            content = content[:start] + content[start:end].replace(old, new, 1)
+            content = content[:start] + new + content[end:]
 
         return content
 
 
 # Create an instance of the enhanced module
 enhanced_homoglyph_module = EnhancedHomoglyphModule()
-
-
-def read_file_with_encoding(file_path: str) -> str:
-    """
-    Read a file with automatic encoding detection.
-    Tries UTF-8 first, then falls back to other common encodings.
-    """
-    encodings = ['utf-8', 'latin-1', 'cp1252', 'ascii']
-
-    for encoding in encodings:
-        try:
-            with open(file_path, 'r', encoding=encoding) as f:
-                return f.read()
-        except UnicodeDecodeError:
-            continue
-
-    # If all encodings fail, raise an exception
-    raise ValueError(f"Could not decode file '{file_path}' with any of the tried encodings: {encodings}")
 
 
 @click.command()

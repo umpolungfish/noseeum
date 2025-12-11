@@ -170,11 +170,31 @@ This project uses a `Makefile` to streamline common development tasks.
 The framework is organized as follows:
 - `noseeum/`: Main Python package containing:
   - `attacks/`: Individual modules for each attack vector
+  - `core/`: Core engine, grammar database, and integration components
   - `detector/`: Scanning and detection functionality
   - `utils/`: Helper utilities and error handling
   - `data/`: Embedded data files (homoglyph_registry.json, nfkc_map.json)
 - `create_registry.py`: Script to generate the homoglyph registry
 - `create_nfkc_map.py`: Script to generate the NFKC mapping
+
+## RECENT IMPROVEMENTS
+
+### Code Quality & Reliability (Latest)
+- **Fixed critical logic bug** in homoglyph identifier replacement that could cause incorrect output
+- **Added Python 3.8+ compatibility** by replacing Python 3.9+ type annotations
+- **Improved error handling** by replacing bare except clauses with proper exception types
+- **Consolidated duplicate code** by moving file encoding logic to shared utilities
+- **Enhanced CLI consistency** by standardizing error output with click.echo()
+- **Completed language support** by adding grammar definitions for Java, Rust, C, and C++
+- **Improved path validation** with more reliable directory traversal prevention
+- **Added pytest dependency** to requirements for proper test execution
+
+### Testing
+Run the test suite with:
+```bash
+pip install -e ".[dev]"  # Install with dev dependencies
+pytest tests/
+```
 
 ## LICENSE
 

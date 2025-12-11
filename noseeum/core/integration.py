@@ -2,6 +2,7 @@
 Integration Module for the noseeum framework.
 This module orchestrates all components to provide a unified obfuscation pipeline.
 """
+import click
 from typing import Dict, Any, List
 from .engine import engine, ObfuscationTechnique, LanguageSupport
 from .grammar_db import grammar_db
@@ -47,7 +48,7 @@ class IntegrationEngine:
             try:
                 result = step(result, target_language, config)
             except Exception as e:
-                print(f"Error in pipeline step {step.__name__}: {e}")
+                click.echo(f"Error in pipeline step {step.__name__}: {e}", err=True)
                 # Continue to next step even if one fails
                 continue
         
@@ -103,7 +104,7 @@ class IntegrationEngine:
                 ObfuscationTechnique.NORMALIZATION,
                 target_language
             )
-        except:
+        except Exception:
             # If normalization fails, continue with original content
             pass
         
@@ -115,7 +116,7 @@ class IntegrationEngine:
                     ObfuscationTechnique.UNASSIGNED_PLANES,
                     target_language
                 )
-            except:
+            except Exception:
                 # If unassigned planes fail, continue with original content
                 pass
         
