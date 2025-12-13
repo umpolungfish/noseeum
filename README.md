@@ -2,7 +2,7 @@
   <h1>noseeum</h1>
   <p><b>A FRAMEWORK FOR UNICODE-BASED EXPLOITATION</b></p>
 
-![noseeum](https://imgur.com/pUsCMHQ)
+![noseeum](./images/wurm.png)
 </div>
 
 <div align="center">
