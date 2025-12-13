@@ -2,7 +2,7 @@
   <h1>Noseeum</h1>
   <p><b>A UNIFIED FRAMEWORK FOR UNICODE-BASED EXPLOITATION</b></p>
 
-  <img src="./images/glassworm.png" alt="Noseeum logo" width="400">
+  <img src="https://imgur.com/pUsCMHQ" alt="Noseeum logo" width="600">
 </div>
 
 <div align="center">
@@ -47,10 +47,12 @@ Below is a screencap of the VirusTotal analysis of the unencoded powershell malw
 + **NOTE THE `8/62` DETECTION RATE**
 + HASH = `f6adc7db3ce7e756bcfd995c6bfeae1480e4626ab4c049644754903e2610a104`
 
-<img src="./images/boomboom_before.png" alt="boomboom before (HASH = f6adc7db3ce7e756bcfd995c6bfeae1480e4626ab4c049644754903e2610a104)" width="650">
+<img src="https://imgur.com/P3j33GT" alt="boomboom before (HASH = 
+f6adc7db3ce7e756bcfd995c6bfeae1480e4626ab4c049644754903e2610a104)" width="650">
 </div>
 
-<img src="./images/boomboom_before_MITRE.png" alt="MITRE Chart for (HASH = f6adc7db3ce7e756bcfd995c6bfeae1480e4626ab4c049644754903e2610a104)" width="650">
+<img src="https://imgur.com/jQIisUN" alt="MITRE Chart for (HASH = 
+f6adc7db3ce7e756bcfd995c6bfeae1480e4626ab4c049644754903e2610a104)" width="650">
 </div>
 
 Below is a screencap of the VirusTotal analysis of the `Zero Width Character`-encoded powershell malware (AFTER processing with `noseeum`) as well as its "MITRE ATT&CK Tactics and Techniques" Chart 
@@ -58,10 +60,12 @@ Below is a screencap of the VirusTotal analysis of the `Zero Width Character`-en
 + **NOTE THE `0/62` DETECTION RATE**
 + HASH = `b700553732b9c8c2843885dc4f1122d2471beac47d682e67863f81cbb6d9a55f`
 
-<img src="./images/boomboom_after.png" alt="boomboom after (HASH = b700553732b9c8c2843885dc4f1122d2471beac47d682e67863f81cbb6d9a55f)" width="650">
+<img src="https://imgur.com/XmbiBPH" alt="boomboom after (HASH = 
+b700553732b9c8c2843885dc4f1122d2471beac47d682e67863f81cbb6d9a55f)" width="650">
 </div>
 
-<img src="./images/boomboom_after_MITRE.png" alt="MITRE Chart for (HASH = b700553732b9c8c2843885dc4f1122d2471beac47d682e67863f81cbb6d9a55f)" width="650">
+<img src="https://imgur.com/nWcx747" alt="MITRE Chart for (HASH = 
+b700553732b9c8c2843885dc4f1122d2471beac47d682e67863f81cbb6d9a55f)" width="650">
 </div>  
 
 ## FEATURES
