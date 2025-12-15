@@ -2,7 +2,8 @@
   <h1>noseeum</h1>
   <p><b>A FRAMEWORK FOR UNICODE-BASED EXPLOITATION</b></p>
 
-![glasswurm](https://imgur.com/pUsCMHQ)
+https://imgur.com/pUsCMHQ
+
 </div>
 
 <div align="center">
@@ -47,10 +48,10 @@ Below is a screencap of the VirusTotal analysis of the unencoded powershell malw
 + **NOTE THE `8/62` DETECTION RATE**
 + HASH = `f6adc7db3ce7e756bcfd995c6bfeae1480e4626ab4c049644754903e2610a104`
 
-![before](https://imgur.com/XmbiBPH)
+https://imgur.com/XmbiBPH
 </div>
 
-![before MITRE](https://imgur.com/nWcx747)
+https://imgur.com/nWcx747
 </div>
 
 Below is a screencap of the VirusTotal analysis of the `Zero Width Character`-encoded powershell malware (AFTER processing with `noseeum`) as well as its "MITRE ATT&CK Tactics and Techniques" Chart 
@@ -58,10 +59,10 @@ Below is a screencap of the VirusTotal analysis of the `Zero Width Character`-en
 + **NOTE THE `0/62` DETECTION RATE**
 + HASH = `b700553732b9c8c2843885dc4f1122d2471beac47d682e67863f81cbb6d9a55f`
 
-![after](https://imgur.com/P3j33GT)
+https://imgur.com/P3j33GT
 </div>
 
-![after MITRE](https://imgur.com/jQIisUN)
+https://imgur.com/jQIisUN
 </div>  
 
 ## FEATURES
