@@ -102,15 +102,15 @@ class EnhancedHomoglyphModule(ObfuscationModule):
 
         return "".join(new_content)
 
-from noseeum.core.grammar_db import grammar_db
-
-
-class EnhancedHomoglyphModule(ObfuscationModule):
-    """Enhanced homoglyph module with support for unassigned planes and variation selectors."""
+    def _apply_unassigned_planes(self, content: str, target_language: LanguageSupport, density: float) -> str:
+        """Apply unassigned plane characters to identifiers."""
+        # Find identifiers in the content
+        identifier_pattern = r'\b([a-zA-Z_][a-zA-Z0-9_]*)\b'
         matches = re.finditer(identifier_pattern, content)
 
         # Keep track of replacements to avoid position conflicts
         replacements = []
+        lang_keywords = grammar_db.get_keywords(target_language)
 
         for match in matches:
             identifier = match.group(1)
@@ -118,8 +118,7 @@ class EnhancedHomoglyphModule(ObfuscationModule):
                 continue  # Skip based on density or if too short
 
             # Skip if it's a language keyword
-            lang_info = grammar_db.get_language_info(target_language)
-            if 'vulnerabilities' in lang_info and any(keyword in identifier for keyword in lang_info['vulnerabilities']):
+            if identifier in lang_keywords:
                 continue
 
             # Add a character from an unassigned plane
