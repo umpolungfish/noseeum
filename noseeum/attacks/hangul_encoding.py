@@ -61,18 +61,14 @@ const hangulDecoder = new Proxy({}, {
 
 // Decoding function for Hangul-encoded strings
 function decodeHangulPayload(encodedStr) {
+  const HANGUL_BASE = 0xAC00;
   let decoded = '';
-  for (let i = 0; i < encodedStr.length; i++) {
-    const char = encodedStr.charCodeAt(i);
-    // Reverse the encoding process
-    if (char >= 0xFFA0 && char <= 0xFFDF) {
-      // Hangul half-width range - decode back to original
-      decoded += String.fromCharCode(char - 0xFF80); // Simplified decoding
-    } else if (char >= 0x3130 && char <= 0x318F) {
-      // Hangul compatibility jamo range
-      decoded += String.fromCharCode(char - 0x3000); // Simplified decoding
-    } else {
-      decoded += encodedStr[i];
+  for (let i = 0; i < encodedStr.length; i += 4) {
+    const hex_val = encodedStr.substring(i, i + 4).split('').map(char => {
+      return (char.charCodeAt(0) - HANGUL_BASE).toString(16);
+    }).join('');
+    if (hex_val) {
+        decoded += String.fromCharCode(parseInt(hex_val, 16));
     }
   }
   return decoded;
@@ -106,18 +102,14 @@ function decodeHangulPayload(encodedStr) {
                 decoder_func = '''
 def decode_hangul_payload(encoded_str):
     """Decode Hangul-encoded payload."""
+    HANGUL_BASE = 0xAC00
     decoded = ""
-    for char in encoded_str:
-        char_code = ord(char)
-        # Apply reverse mapping
-        if 0xFFA0 <= char_code <= 0xFFDF:
-            # Hangul half-width range
-            decoded += chr(char_code - 0xFF80)  # Simplified decoding
-        elif 0x3130 <= char_code <= 0x318F:
-            # Hangul compatibility jamo range
-            decoded += chr(char_code - 0x3000)  # Simplified decoding
-        else:
-            decoded += char
+    for i in range(0, len(encoded_str), 4):
+        chunk = encoded_str[i:i+4]
+        if not chunk:
+            continue
+        hex_val = "".join([hex(ord(c) - HANGUL_BASE)[2:] for c in chunk])
+        decoded += chr(int(hex_val, 16))
     return decoded
 '''
                 result = decoder_func + "\n" + result
@@ -125,23 +117,16 @@ def decode_hangul_payload(encoded_str):
         return result
     
     def _encode_to_hangul_sequence(self, text: str) -> str:
-        """Encode text using Hangul characters (U+FFA0 and U+3164 range)."""
-        encoded = ""
+        """Encode text using a sequence of Hangul characters representing hex values of codepoints."""
+        # Map hex digits 0-F to 16 Hangul characters from U+AC00
+        HANGUL_MAP = [chr(c) for c in range(0xAC00, 0xAC10)]
+        encoded = []
         for char in text:
-            codepoint = ord(char)
-            
-            # Map to Hangul half-width area (U+FFA0-U+FFDF) or compatibility area
-            # This is a simplified version of the mapping
-            if codepoint < 128:  # ASCII range
-                # Map to Hangul half-width area
-                mapped_code = 0xFFA0 + (codepoint % 32)
-                encoded += chr(mapped_code)
-            else:
-                # For non-ASCII, use the Hangul compatibility jamo (U+3130-U+318F)
-                mapped_code = 0x3130 + (codepoint % 96)
-                encoded += chr(mapped_code)
-        
-        return encoded
+            # Represent character's codepoint as a 4-digit hex string
+            hex_val = f'{ord(char):04x}'
+            for hex_digit in hex_val:
+                encoded.append(HANGUL_MAP[int(hex_digit, 16)])
+        return "".join(encoded)
 
 
 # Create an instance of the module

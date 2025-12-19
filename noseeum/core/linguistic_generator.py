@@ -9,47 +9,13 @@ from enum import Enum
 from .engine import LanguageSupport
 
 
+from .grammar_db import grammar_db
+
+
 class LinguisticNoiseGenerator:
     """Generator for contextual linguistic noise that blends with target code."""
     
     def __init__(self):
-        self.language_keywords = {
-            LanguageSupport.PYTHON: [
-                "import", "from", "def", "class", "return", "if", "else", "elif",
-                "for", "while", "try", "except", "finally", "with", "as", "pass",
-                "continue", "break", "yield", "lambda", "async", "await"
-            ],
-            LanguageSupport.JAVASCRIPT: [
-                "function", "var", "let", "const", "return", "if", "else", "for",
-                "while", "do", "switch", "case", "default", "try", "catch", "finally",
-                "class", "extends", "constructor", "this", "import", "export", "from",
-                "async", "await", "yield", "const"
-            ],
-            LanguageSupport.JAVA: [
-                "public", "private", "protected", "static", "final", "class", "interface",
-                "extends", "implements", "import", "package", "return", "if", "else",
-                "for", "while", "do", "switch", "case", "default", "try", "catch",
-                "finally", "throw", "throws", "new", "this", "super"
-            ],
-            LanguageSupport.GO: [
-                "package", "import", "func", "type", "struct", "interface", "var", "const",
-                "return", "if", "else", "for", "range", "switch", "case", "default",
-                "defer", "go", "select", "map", "chan", "make", "new"
-            ],
-            LanguageSupport.KOTLIN: [
-                "fun", "class", "interface", "object", "package", "import", "return",
-                "if", "else", "when", "for", "while", "try", "catch", "finally",
-                "val", "var", "public", "private", "protected", "internal", "data",
-                "sealed", "abstract", "enum", "companion", "inline", "override"
-            ],
-            LanguageSupport.SWIFT: [
-                "func", "class", "struct", "enum", "protocol", "extension", "import",
-                "let", "var", "return", "if", "else", "for", "while", "switch", "case",
-                "default", "try", "catch", "throw", "throws", "rethrows", "as", "is",
-                "self", "Self", "super", "public", "private", "internal", "fileprivate"
-            ]
-        }
-        
         self.language_conventions = {
             LanguageSupport.PYTHON: {
                 "naming_style": "snake_case",
@@ -182,8 +148,10 @@ class LinguisticNoiseGenerator:
         
         # Add a few random language keywords in comments to appear more authentic
         for _ in range(1):
-            keyword = random.choice(self.language_keywords.get(language, ["value"]))
-            noise_parts.append(f"// {keyword.upper()} handling")
+            keywords = grammar_db.get_keywords(language)
+            if keywords:
+                keyword = random.choice(keywords)
+                noise_parts.append(f"// {keyword.upper()} handling")
         
         return "\n".join(noise_parts)
     

@@ -22,7 +22,46 @@ class LanguageGrammarDatabase:
     
     def __init__(self):
         self.grammars: Dict[LanguageSupport, Dict[str, Any]] = {}
+        self.keywords: Dict[LanguageSupport, List[str]] = {}
         self._initialize_default_grammars()
+        self._initialize_default_keywords()
+
+    def _initialize_default_keywords(self):
+        """Initialize default keywords for supported languages."""
+        self.keywords[LanguageSupport.PYTHON] = [
+            "import", "from", "def", "class", "return", "if", "else", "elif",
+            "for", "while", "try", "except", "finally", "with", "as", "pass",
+            "continue", "break", "yield", "lambda", "async", "await"
+        ]
+        self.keywords[LanguageSupport.JAVASCRIPT] = [
+            "function", "var", "let", "const", "return", "if", "else", "for",
+            "while", "do", "switch", "case", "default", "try", "catch", "finally",
+            "class", "extends", "constructor", "this", "import", "export", "from",
+            "async", "await", "yield"
+        ]
+        self.keywords[LanguageSupport.JAVA] = [
+            "public", "private", "protected", "static", "final", "class", "interface",
+            "extends", "implements", "import", "package", "return", "if", "else",
+            "for", "while", "do", "switch", "case", "default", "try", "catch",
+            "finally", "throw", "throws", "new", "this", "super"
+        ]
+        self.keywords[LanguageSupport.GO] = [
+            "package", "import", "func", "type", "struct", "interface", "var", "const",
+            "return", "if", "else", "for", "range", "switch", "case", "default",
+            "defer", "go", "select", "map", "chan", "make", "new"
+        ]
+        self.keywords[LanguageSupport.KOTLIN] = [
+            "fun", "class", "interface", "object", "package", "import", "return",
+            "if", "else", "when", "for", "while", "try", "catch", "finally",
+            "val", "var", "public", "private", "protected", "internal", "data",
+            "sealed", "abstract", "enum", "companion", "inline", "override"
+        ]
+        self.keywords[LanguageSupport.SWIFT] = [
+            "func", "class", "struct", "enum", "protocol", "extension", "import",
+            "let", "var", "return", "if", "else", "for", "while", "switch", "case",
+            "default", "try", "catch", "throw", "throws", "rethrows", "as", "is",
+            "self", "Self", "super", "public", "private", "internal", "fileprivate"
+        ]
     
     def _initialize_default_grammars(self):
         """Initialize default grammar information for supported languages."""
@@ -172,6 +211,10 @@ class LanguageGrammarDatabase:
         """Get identifier character information for a specific language."""
         lang_info = self.get_language_info(language)
         return lang_info.get("identifier_chars", [])
+
+    def get_keywords(self, language: LanguageSupport) -> List[str]:
+        """Get keyword information for a specific language."""
+        return self.keywords.get(language, [])
 
 
 # Global instance of the database

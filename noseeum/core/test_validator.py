@@ -109,30 +109,17 @@ class TestObfuscationTechniques(unittest.TestCase):
         ]
 
         for lang, content in test_cases:
-            try:
-                result = engine.apply_obfuscation(
-                    content,
-                    ObfuscationTechnique.LANGUAGE_SPECIFIC,
-                    lang
-                )
-
-                # Check that the result is different from the original
-                self.assertNotEqual(result, content, f"Language {lang} obfuscation did not modify content")
-
-                print(f"Language-specific obfuscation test passed for {lang}")
-                break  # Just test the first successful one to avoid too many tests
-
-            except ValueError as e:
-                if "not supported" in str(e):
-                    continue  # Try next language
-                else:
-                    raise e
-            except Exception as e:
-                print(f"Language-specific obfuscation test failed for {lang}: {e}")
-                self.fail(f"Language-specific obfuscation failed for {lang}: {e}")
-
-        else:  # If all languages failed
-            self.fail("No language-specific obfuscation modules are working")
+            with self.subTest(lang=lang.value):
+                try:
+                    result = engine.apply_obfuscation(
+                        content,
+                        ObfuscationTechnique.LANGUAGE_SPECIFIC,
+                        lang
+                    )
+                    self.assertNotEqual(result, content, f"Language {lang.value} obfuscation did not modify content")
+                    print(f"Language-specific obfuscation test passed for {lang.value}")
+                except Exception as e:
+                    self.fail(f"Language-specific obfuscation test failed for {lang.value}: {e}")
     
     def test_stealth_metrics(self):
         """Test stealth metrics calculation."""

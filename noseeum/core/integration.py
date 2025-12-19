@@ -56,41 +56,16 @@ class IntegrationEngine:
     
     def apply_language_specific_obfuscation(self, content: str, target_language: LanguageSupport, 
                                            config: Dict[str, Any]) -> str:
-        """Apply language-specific obfuscation techniques."""
-        # Apply basic obfuscation based on the language's vulnerabilities
-        vulnerabilities = grammar_db.get_vulnerabilities(target_language)
-        
-        result = content
-        if target_language == LanguageSupport.GO:
-            # Apply Go-specific techniques
-            result = engine.apply_obfuscation(
-                result, 
-                ObfuscationTechnique.LANGUAGE_SPECIFIC, 
+        """Apply language-specific obfuscation techniques using the dispatcher."""
+        try:
+            return engine.apply_obfuscation(
+                content,
+                ObfuscationTechnique.LANGUAGE_SPECIFIC,
                 target_language
             )
-        elif target_language == LanguageSupport.KOTLIN:
-            # Apply Kotlin-specific techniques
-            result = engine.apply_obfuscation(
-                result, 
-                ObfuscationTechnique.LANGUAGE_SPECIFIC, 
-                target_language
-            )
-        elif target_language == LanguageSupport.JAVASCRIPT:
-            # Apply JavaScript-specific techniques
-            result = engine.apply_obfuscation(
-                result, 
-                ObfuscationTechnique.LANGUAGE_SPECIFIC, 
-                target_language
-            )
-        elif target_language == LanguageSupport.SWIFT:
-            # Apply Swift-specific techniques
-            result = engine.apply_obfuscation(
-                result, 
-                ObfuscationTechnique.LANGUAGE_SPECIFIC, 
-                target_language
-            )
-        
-        return result
+        except ValueError:
+            # This language doesn't have a specific module registered in the dispatcher.
+            return content
     
     def apply_advanced_techniques(self, content: str, target_language: LanguageSupport, 
                                  config: Dict[str, Any]) -> str:

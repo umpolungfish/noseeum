@@ -34,34 +34,37 @@ class JavaScriptAttackModule(ObfuscationModule):
         
         # 1. Create low-entropy payloads instead of high-entropy encoded blobs
         string_pattern = r'(["\'])(.*?)(\1)'
-        matches = re.finditer(string_pattern, result)
+        matches = list(re.finditer(string_pattern, result))
         
-        for match in reversed(list(matches)):
+        replacements = []
+        array_defs = []
+        
+        for match in matches:
             start, end = match.span()
-            quote_char = match.group(1)
             string_content = match.group(2)
             
             # Instead of keeping high-entropy strings, break them into smaller parts
-            # This helps avoid entropy-based detection
             if len(string_content) > 20:  # Only for longer strings
-                # Split into smaller parts and reconstruct using array access
                 parts = []
-                chunk_size = 5  # Small chunks to keep entropy low
+                chunk_size = 5
                 for i in range(0, len(string_content), chunk_size):
                     parts.append(string_content[i:i+chunk_size])
                 
-                # Create an array of string parts
                 array_parts = [f'"{part}"' for part in parts]
-                array_name = f"str_{abs(hash(string_content)) % 10000}"  # Create unique name
+                array_name = f"str_{abs(hash(string_content)) % 10000}"
                 
-                # Add the array definition before the usage
                 array_def = f"var {array_name}=[{','.join(array_parts)}];"
+                array_defs.append(array_def)
                 
-                # Replace the original string with array reconstruction
                 reconstruction = f"{array_name}.join('')"
-                
-                # Add array definition and replace usage
-                result = array_def + result[:start] + reconstruction + result[end:]
+                replacements.append((start, end, reconstruction))
+
+        # Apply replacements in reverse to avoid index issues
+        for start, end, reconstruction in reversed(replacements):
+            result = result[:start] + reconstruction + result[end:]
+            
+        if array_defs:
+            result = "\n".join(array_defs) + "\n" + result
         
         # 2. Insert junk/anti-analysis code to complicate AST
         lines = result.split('\n')

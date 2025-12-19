@@ -64,7 +64,7 @@ class SwiftAttackModule(ObfuscationModule):
         # Apply replacements in reverse order to maintain string positions
         for span, old, new in reversed(replacements):
             start, end = span
-            result = result[:start] + result[start:end].replace(old, new, 1)
+            result = result[:start] + new + result[end:]
         
         # 2. Exploit parser ambiguities to create confusing code structures
         # Add visually similar but different characters to operators or identifiers
@@ -95,7 +95,7 @@ class SwiftAttackModule(ObfuscationModule):
         # Apply these replacements in reverse order
         for span, old, new in reversed(replacements):
             start, end = span
-            result = result[:start] + result[start:end].replace(old, new, 1)
+            result = result[:start] + new + result[end:]
         
         return result
 
