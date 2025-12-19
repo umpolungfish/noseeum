@@ -1,0 +1,286 @@
+[33mcommit e558b21a7131c04739bda968ba0ae7f13c4ed042[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Sun Dec 14 22:21:31 2025 -0800
+
+    README updates 3
+
+[33mcommit 460d1fb140abdd99d117008bc9e4dca8f669ac29[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Sun Dec 14 22:19:35 2025 -0800
+
+    README updates 2
+
+[33mcommit fcbbfad31bd93f7aaef677bcd0663d9dac16b85e[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Sun Dec 14 22:15:01 2025 -0800
+
+    README updates
+
+[33mcommit fc03cf570d9bc6adce7224195ec8a2f9c6a03c1a[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Sat Dec 13 03:17:13 2025 -0800
+
+    update3
+
+[33mcommit 09da7e16b106fe9cd399b284cce350a55c3546e2[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Sat Dec 13 03:15:58 2025 -0800
+
+    update2
+
+[33mcommit edde50abf1c3e608e8d6921d5b65e75d57f1fc85[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Sat Dec 13 02:48:21 2025 -0800
+
+    update
+
+[33mcommit 34274469597ab50f9d24fab48749f042f4f5fecf[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Thu Dec 11 06:25:42 2025 -0800
+
+    fix: Resolve language-specific technique collision by implementing dispatcher module
+    
+    ## Problem
+    - Multiple language-specific modules (Go, Kotlin, JavaScript, Swift) were registered under
+      the same ObfuscationTechnique.LANGUAGE_SPECIFIC key, causing only the last registered
+      module to be available for all language-specific attacks
+    - This resulted in "Language go not supported by language_specific" error when attempting
+      to use Go-specific attacks
+    
+    ## Solution
+    - Created LanguageSpecificDispatcherModule in noseeum/core/language_dispatcher.py that
+      acts as a router to appropriate language-specific implementations
+    - Updated core engine initialization to register all language-specific modules with
+      the dispatcher instead of directly with the engine under the same technique key
+    - Modified core/__init__.py to properly import and configure the dispatcher module
+    
+    ## Technical Details
+    - The dispatcher module maintains a dictionary mapping LanguageSupport enum values
+      to their corresponding language-specific modules
+    - When LANGUAGE_SPECIFIC technique is invoked, dispatcher routes to the appropriate
+      module based on target language parameter
+    - All existing language-specific functionality preserved while fixing the collision
+    
+    ## Files Modified
+    - noseeum/core/__init__.py - Register dispatcher instead of individual modules
+    - noseeum/core/language_dispatcher.py - New dispatcher module implementation
+    - noseeum/core/engine.py - No changes needed (used correctly by dispatcher)
+    
+    ## Verification
+    - Command "noseeum attack language-specific go-attack" now executes successfully
+    - All other language-specific attacks remain functional
+    - No regression in existing functionality
+
+[33mcommit a35a14f785d693fc5222914c0c79b365ab87874f[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Wed Dec 10 22:15:51 2025 -0800
+
+    fix: Critical bug fixes and code quality improvements for stability and compatibility
+    
+    ## Critical Bug Fixes
+    - Fix identifier replacement logic in homoglyph module (lines 138, 177)
+      * Previous logic used incorrect string slicing that could produce wrong output
+      * Changed from `content[start:end].replace(old, new, 1)` to direct replacement
+      * Ensures proper homoglyph substitution in all cases
+    
+    ## Compatibility Improvements
+    - Add Python 3.8 compatibility by fixing type annotations
+      * Replace `list[LanguageSupport]` with `List[LanguageSupport]` from typing module
+      * Add proper List import to homoglyph.py
+      * Framework now supports Python 3.8+ instead of requiring 3.9+
+    
+    ## Code Quality Enhancements
+    - Consolidate duplicate file encoding logic into shared utility
+      * Remove duplicate `read_file_with_encoding()` from bidi.py and homoglyph.py
+      * Add centralized implementation in utils/error_handlers.py
+      * Update imports in all affected modules
+      * Follows DRY principle and improves maintainability
+    
+    - Replace bare except clauses with specific exception types
+      * Update integration.py to use `except Exception:` instead of bare `except:`
+      * Prevents catching system signals and keyboard interrupts
+      * Improves debugging and error handling
+    
+    - Standardize CLI error output
+      * Replace all `print()` calls with `click.echo(..., err=True)`
+      * Add click imports to config.py and integration.py
+      * Ensures consistent error messaging across CLI
+    
+    ## Missing Functionality
+    - Add complete language grammar definitions
+      * Implement grammar data for Java, Rust, C, and C++ in grammar_db.py
+      * Include Unicode behaviors, normalization settings, and vulnerabilities
+      * Completes support for all languages declared in LanguageSupport enum
+    
+    - Improve path validation function
+      * Replace `os.path.commonpath()` with `path.startswith()` for reliability
+      * Add proper path separator handling to prevent edge cases
+      * Enhanced security for directory traversal prevention
+    
+    ## Testing Infrastructure
+    - Add pytest to requirements.txt and setup.py
+      * Include pytest in direct requirements for easy access
+      * Add extras_require['dev'] in setup.py for development dependencies
+      * Enables `pytest tests/` to run without manual installation
+    
+    ## Files Modified (8)
+    - noseeum/attacks/homoglyph.py - Bug fix, compatibility, deduplication
+    - noseeum/attacks/bidi.py - Code deduplication
+    - noseeum/utils/error_handlers.py - Shared utilities, improved validation
+    - noseeum/core/integration.py - Error handling, CLI consistency
+    - noseeum/config.py - CLI consistency
+    - noseeum/core/grammar_db.py - Complete language support
+    - requirements.txt - Testing dependency
+    - setup.py - Testing dependency
+    
+    ## Impact
+    - More reliable identifier replacement in homoglyph attacks
+    - Broader Python version compatibility (3.8+)
+    - Cleaner, more maintainable codebase
+    - Complete language support for all declared languages
+    - Better error handling and reporting
+    - Easier testing and development workflow
+
+[33mcommit 72b84896de1e2d54f10ec6c08f924c12deca8493[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Wed Dec 10 03:51:05 2025 -0800
+
+    README
+
+[33mcommit eaff9473588322f91d7b4887f11c85996d5396d7[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Tue Dec 9 23:49:59 2025 -0800
+
+    feat: Complete expansion of noseeum framework with advanced Unicode obfuscation techniques
+    
+    - Implement modular architecture core with engine, grammar database, stealth metrics, and evasion library
+    - Add normalization exploitation module to craft payloads that normalize differently across system components
+    - Enhance homoglyph module with support for unassigned planes and variation selectors
+    - Implement payload injection via identifier characters using visually distinct Unicode characters
+    - Add Hangul encoding module implementing JavaScript phishing kit technique using Hangul half-width/width characters
+    - Create language-specific modules for Go, Kotlin, JavaScript, and Swift exploitation
+    - Add linguistic noise generator for contextual camouflage that blends with target code
+    - Develop YARA-resilient payload generation to bypass pattern-matching detection tools
+    - Create integration engine to orchestrate all components in a unified pipeline
+    - Implement comprehensive testing framework with validation for all modules
+    - Add new CLI commands: info, techniques, vulnerabilities with enhanced organization
+    - Reorganize CLI into logical groups: basic attacks, advanced, language-specific
+    - Update documentation with comprehensive usage guide for all new features
+    - Add stealth metrics engine with entropy calculation and baseline comparisons
+    - Implement evasion tactics library with multiple strategies for bypassing analysis tools
+    - Enhance detector module with language-specific vulnerability information
+    - Add support for advanced techniques like Unicode normalization gaps and unassigned plane characters
+    - Implement Go-specific attacks leveraging configurable lexer and permissive Unicode handling
+    - Add Kotlin-specific attacks using permissive frontend with restrictive backend
+    - Create JavaScript-specific attacks targeting AST-based analysis tools
+    - Develop Swift-specific attacks using ambiguous identifier handling and unassigned planes
+    - Update README with comprehensive feature list and new attack vectors
+    - Enhance USAGE.md with detailed documentation for all commands and options
+    - Implement advanced language grammar database with detailed vulnerability information
+    - Add quantitative and qualitative stealth features including entropy optimization
+    - Create advanced evasion techniques to bypass modern detection tools like YARA
+    - Add advanced features for normalization exploitation, unassigned planes, and payload injection
+
+[33mcommit bedf0c10e807ec7b001681b7d20be7285804f09c[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 20:52:08 2025 -0800
+
+    DECLUTTER
+
+[33mcommit 00119628eec161a6404456be06eddceb9d0d8252[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 20:36:46 2025 -0800
+
+    UNLICENSE
+
+[33mcommit 5f025dc5ac055362131cfc15c30e8d6251ccc74d[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 20:34:09 2025 -0800
+
+    Cleanup 4
+
+[33mcommit e9996528ca0b68413230b2c2b0fdc789a101f6c2[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 20:31:35 2025 -0800
+
+    Cleanup 3
+
+[33mcommit d03e4a93a5eb375c0b7795fde1f510433a627f68[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 20:30:24 2025 -0800
+
+    Cleanup 2
+
+[33mcommit 6867495c94d775d6892365fd46a99d0e35d96699[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 19:39:22 2025 -0800
+
+    Cleanup
+
+[33mcommit 1c843132995cfc84ec0846950015a67b33299409[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 19:34:30 2025 -0800
+
+    README Update 7
+
+[33mcommit 6a16c48d068937fdf806b1a6bdb41168e9eb58d7[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 19:30:41 2025 -0800
+
+    README Update 6
+
+[33mcommit afa96084765ac75b095a7736fa3930bbd169eb61[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 19:21:30 2025 -0800
+
+    README Update 5
+
+[33mcommit d63f45b06c19c106de68daa46dc1a840882a7a4e[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 19:20:32 2025 -0800
+
+    README Update 4
+
+[33mcommit e4e85769e0cb71701478adf458b18cd8807bbf22[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 19:18:25 2025 -0800
+
+    README Update 3
+
+[33mcommit 0f9f7ac593c1742cdb8d2a70221e39746488f6c2[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 19:16:25 2025 -0800
+
+    README Update 2
+
+[33mcommit a5f524d320ae508fd5a531ffe051c4d0821d58b7[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 19:15:29 2025 -0800
+
+    README Update
+
+[33mcommit 6e063d6635562ab55695e4faf4fac32dc17c92df[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 18:12:34 2025 -0800
+
+    feat(steganography): Add file steganography functionality without carrier requirement
+    
+    - Add stego-file-encode command to encode entire input file as zero-width characters without requiring a carrier file
+    - Add stego-file-decode command to decode stego-encoded files back to original content
+    - Add stego-self-encode command to embed additional payload within input file without separate carrier
+    - Update README.md to document new file steganography feature
+    - Update USAGE.md with comprehensive documentation for new invisible attack commands
+    - All new commands are accessible through the existing invisible attack module
+    - Maintains backward compatibility with existing stego-encode functionality
+
+[33mcommit 9cdbcfd07cf2bf203db9d24d58b2d4e10a4a297a[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 04:58:24 2025 -0800
+
+    README.md Update
+
+[33mcommit c6978c8c1bee3c05441150a117853b859f326312[m
+Author: umpolungfish <umpolungfish@pm.me>
+Date:   Mon Dec 8 03:50:57 2025 -0800
+
+    Initial
