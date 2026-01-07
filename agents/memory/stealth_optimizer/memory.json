@@ -1,0 +1,1622 @@
+{
+  "agent_id": "stealth_optimizer",
+  "created_at": "2026-01-07T06:12:34.662054",
+  "entries": {},
+  "sessions": [
+    {
+      "session_id": "session_0",
+      "task": "Optimize payload 1 for maximum evasion",
+      "start_time": "2026-01-07T06:12:35.051931",
+      "events": [],
+      "end_time": "2026-01-07T06:12:35.052022",
+      "result": {
+        "original_payload": "admin = \"safe\"  # Using cyrillic \u0430",
+        "optimized_payload": {
+          "payload": "admin = \"safe\"  # Using cyrillic \u0430",
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "semgrep": {
+            "detected": false,
+            "score": 1.0
+          },
+          "bandit": {
+            "detected": false,
+            "score": 1.0
+          },
+          "pylint": {
+            "detected": false,
+            "score": 1.0
+          }
+        },
+        "evasion_score": 0.5
+      }
+    },
+    {
+      "session_id": "session_1",
+      "task": "Optimize payload 2 for maximum evasion",
+      "start_time": "2026-01-07T06:12:35.052379",
+      "events": [],
+      "end_time": "2026-01-07T06:12:35.052502",
+      "result": {
+        "original_payload": "let u\u0455er = \"data\";  # Cyrillic s",
+        "optimized_payload": {
+          "payload": "let u\u0455er = \"data\";  # Cyrillic s",
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "semgrep": {
+            "detected": false,
+            "score": 1.0
+          },
+          "bandit": {
+            "detected": false,
+            "score": 1.0
+          },
+          "pylint": {
+            "detected": false,
+            "score": 1.0
+          }
+        },
+        "evasion_score": 0.5
+      }
+    },
+    {
+      "session_id": "session_2",
+      "task": "Optimize payload 3 for maximum evasion",
+      "start_time": "2026-01-07T06:12:35.053145",
+      "events": [],
+      "end_time": "2026-01-07T06:12:35.053299",
+      "result": {
+        "original_payload": "const \u0430\u0440\u0456_k\u0435y = \"xxx\";  # Mixed Cyrillic",
+        "optimized_payload": {
+          "payload": "const \u0430\u0440\u0456_k\u0435y = \"xxx\";  # Mixed Cyrillic",
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "semgrep": {
+            "detected": false,
+            "score": 1.0
+          },
+          "bandit": {
+            "detected": false,
+            "score": 1.0
+          },
+          "pylint": {
+            "detected": false,
+            "score": 1.0
+          }
+        },
+        "evasion_score": 0.5
+      }
+    },
+    {
+      "session_id": "session_3",
+      "task": "Analyze Python Unicode security",
+      "start_time": "2026-01-07T06:28:32.267333",
+      "events": [],
+      "end_time": "2026-01-07T06:28:32.268582",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "semgrep": {
+            "detected": false,
+            "score": 1.0
+          },
+          "eslint": {
+            "detected": false,
+            "score": 1.0
+          },
+          "pylint": {
+            "detected": false,
+            "score": 1.0
+          },
+          "gosec": {
+            "detected": false,
+            "score": 1.0
+          }
+        },
+        "evasion_score": 0.5
+      }
+    },
+    {
+      "session_id": "session_4",
+      "task": "Analyze Python Unicode security",
+      "start_time": "2026-01-07T06:29:07.981055",
+      "events": [],
+      "end_time": "2026-01-07T06:29:07.984325",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "semgrep": {
+            "detected": false,
+            "score": 1.0
+          },
+          "eslint": {
+            "detected": false,
+            "score": 1.0
+          },
+          "pylint": {
+            "detected": false,
+            "score": 1.0
+          },
+          "gosec": {
+            "detected": false,
+            "score": 1.0
+          }
+        },
+        "evasion_score": 0.5
+      }
+    },
+    {
+      "session_id": "session_5",
+      "task": "Analyze Javascript Unicode security",
+      "start_time": "2026-01-07T06:46:59.198991",
+      "events": [],
+      "end_time": "2026-01-07T06:46:59.200064",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "semgrep": {
+            "detected": false,
+            "score": 1.0
+          },
+          "eslint": {
+            "detected": false,
+            "score": 1.0
+          },
+          "pylint": {
+            "detected": false,
+            "score": 1.0
+          },
+          "gosec": {
+            "detected": false,
+            "score": 1.0
+          }
+        },
+        "evasion_score": 0.5
+      }
+    },
+    {
+      "session_id": "session_6",
+      "task": "Analyze Javascript Unicode security",
+      "start_time": "2026-01-07T06:47:47.979522",
+      "events": [],
+      "end_time": "2026-01-07T06:47:47.980051",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "semgrep": {
+            "detected": false,
+            "score": 1.0
+          },
+          "eslint": {
+            "detected": false,
+            "score": 1.0
+          },
+          "pylint": {
+            "detected": false,
+            "score": 1.0
+          },
+          "gosec": {
+            "detected": false,
+            "score": 1.0
+          }
+        },
+        "evasion_score": 0.5
+      }
+    },
+    {
+      "session_id": "session_7",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:58:05.012057",
+      "events": [],
+      "end_time": "2026-01-07T07:58:05.013044",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_8",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:59:34.295354",
+      "events": [],
+      "end_time": "2026-01-07T07:59:34.297878",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_9",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T08:07:16.871987",
+      "events": [],
+      "end_time": "2026-01-07T08:07:16.873465",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_10",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T08:07:31.707862",
+      "events": [],
+      "end_time": "2026-01-07T08:07:31.713334",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_11",
+      "task": "Generate attack trees for JavaScript",
+      "start_time": "2026-01-07T09:10:16.067164",
+      "events": [],
+      "end_time": "2026-01-07T09:10:16.071123",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_12",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:10:50.598490",
+      "events": [],
+      "end_time": "2026-01-07T09:10:50.599812",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_13",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:11:38.173390",
+      "events": [],
+      "end_time": "2026-01-07T09:11:38.176909",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_14",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:15:00.002460",
+      "events": [],
+      "end_time": "2026-01-07T09:15:00.005121",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_15",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:15:43.318885",
+      "events": [],
+      "end_time": "2026-01-07T09:15:43.320378",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_16",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:17:48.818708",
+      "events": [],
+      "end_time": "2026-01-07T10:17:48.820273",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_17",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:21:13.752460",
+      "events": [],
+      "end_time": "2026-01-07T10:21:13.757232",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_18",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:22:09.431399",
+      "events": [],
+      "end_time": "2026-01-07T10:22:09.433630",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 4,
+            "bypassed": 4
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 4,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_19",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:28:07.614573",
+      "events": [],
+      "end_time": "2026-01-07T10:28:07.615828",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "codeql": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "sonarqube": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 6,
+            "bypassed": 6
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 6,
+        "tools_bypassed": 6
+      }
+    },
+    {
+      "session_id": "session_20",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:32:27.478043",
+      "events": [],
+      "end_time": "2026-01-07T10:32:27.479877",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "codeql": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "sonarqube": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 6,
+            "bypassed": 6
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 6,
+        "tools_bypassed": 6
+      }
+    },
+    {
+      "session_id": "session_21",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:38:15.645279",
+      "events": [],
+      "end_time": "2026-01-07T10:38:15.652685",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "codeql": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "sonarqube": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 6,
+            "bypassed": 6
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 6,
+        "tools_bypassed": 6
+      }
+    },
+    {
+      "session_id": "session_22",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:38:54.400190",
+      "events": [],
+      "end_time": "2026-01-07T10:38:54.406676",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "codeql": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "sonarqube": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 6,
+            "bypassed": 6
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 6,
+        "tools_bypassed": 6
+      }
+    },
+    {
+      "session_id": "session_23",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:40:17.085294",
+      "events": [],
+      "end_time": "2026-01-07T10:40:38.822642",
+      "result": {
+        "original_payload": "~/xbz/js/hotdamn.js",
+        "optimized_payload": {
+          "payload": "~/xbz/js/hotdamn.js",
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":3,\"level\":\"warn\",\"type\":[\"PartialParsing\",[{\"path\":\"/tmp/tmpoywg7qsi.py\",\"start\":{\"line\":1,\"col\":2,\"offset\":0},\"end\":{\"line\":1,\"col\":3,\"offset\":1}}]],\"message\":\"Syntax error at line /tmp/tmpoywg7qsi.py:1:\\n `/` was unexpected\",\"path\":\"/tmp/tmpoywg7qsi.py\",\"spans\":[{\"file\":\"/tmp/tmpoywg7qsi.py\",\"start\":{\"line\":1,\"col\":2,\"offset\":0},\"end\":{\"line\":1,\"col\":3,\"offset\":1}}]}],\"paths\":{\"scanned\":[\"/tmp/tmpoywg7qsi.py\"]},\"time\":{\"rules\":[],\"rules_parse_time\":1.4112529754638672,\"profiling_times\":{\"config_time\":5.131133556365967,\"core_time\":1.8707613945007324,\"ignores_time\":0.0014147758483886719,\"total_time\":7.050874471664429},\"parsing_time\":{\"total_time\":0.0,\"per_file_time\":{\"mean\":0.0,\"std_dev\":0.0},\"very_slow_stats\":{\"time_ratio\":0.0,\"count_ratio\":0.0},\"very_slow_files\":[]},\"scanning_time\":{\"total_time\":0.035240888595581055,\"per_file_time\":{\"mean\":0.011746962865193685,\"std_dev\":0.0002367081804221824},\"very_slow_stats\":{\"time_ratio\":0.0,\"coun"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 0,
+              "findings": [
+                {
+                  "ruleId": null,
+                  "fatal": false,
+                  "severity": 1,
+                  "message": "File ignored because outside of base path.",
+                  "nodeType": null
+                }
+              ],
+              "raw_output": "[{\"filePath\":\"/tmp/tmpoywg7qsi.py\",\"messages\":[{\"ruleId\":null,\"fatal\":false,\"severity\":1,\"message\":\"File ignored because outside of base path.\",\"nodeType\":null}],\"suppressedMessages\":[],\"errorCount\":0,\"warningCount\":1,\"fatalErrorCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]}]\n"
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 2,
+              "findings": [
+                {
+                  "type": "error",
+                  "module": "tmpoywg7qsi",
+                  "obj": "",
+                  "line": 1,
+                  "column": 2,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "/tmp/tmpoywg7qsi.py",
+                  "symbol": "syntax-error",
+                  "message": "Parsing failed: 'invalid syntax (tmpoywg7qsi, line 1)'",
+                  "message-id": "E0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"error\",\n        \"module\": \"tmpoywg7qsi\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 2,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"/tmp/tmpoywg7qsi.py\",\n        \"symbol\": \"syntax-error\",\n        \"message\": \"Parsing failed: 'invalid syntax (tmpoywg7qsi, line 1)'\",\n        \"message-id\": \"E0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {\n\t\t\"/tmp/tmpoywg7qsi.py\": [\n\t\t\t{\n\t\t\t\t\"line\": 0,\n\t\t\t\t\"column\": 0,\n\t\t\t\t\"error\": \"importing dir \\\"/tmp/tmpoywg7qsi.py\\\": cannot find package \\\".\\\" in:\\n\\t/tmp/tmpoywg7qsi.py\"\n\t\t\t}\n\t\t]\n\t},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse Adoptium (64-bit)\n[INFO]  ScannerEngine: Load global settings\n[INFO]  ScannerEngine: Load global settings (done) | time=726ms\n[INFO]  ScannerEngine: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu\n[INFO]  ScannerEngine: Loading required plugins\n[INFO]  ScannerEngine: Load plugins index\n[INFO]  ScannerEngine: Load plugins index (done) | time=234ms\n[INFO]  ScannerEngine: Load/download plugins\n[INFO]  ScannerEngine: Load/download plugins (done) | time=149ms\n[INFO]  ScannerEngine: Loaded core extensions: architecture, sca, a3s\n[INFO]  ScannerEngine: Process project properties\n[ERROR] ScannerEngine: You must define"
+            }
+          },
+          "summary": {
+            "total_tools": 6,
+            "detected": 2,
+            "bypassed": 4,
+            "evasion_rate": 0.6666666666666666
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 6,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_24",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:43:09.690725",
+      "events": [],
+      "end_time": "2026-01-07T10:43:26.952552",
+      "result": {
+        "original_payload": "./hotdamn.js",
+        "optimized_payload": {
+          "payload": "./hotdamn.js",
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":3,\"level\":\"warn\",\"type\":[\"PartialParsing\",[{\"path\":\"/tmp/tmp4muv1jus.py\",\"start\":{\"line\":1,\"col\":1,\"offset\":0},\"end\":{\"line\":1,\"col\":3,\"offset\":2}}]],\"message\":\"Syntax error at line /tmp/tmp4muv1jus.py:1:\\n `./` was unexpected\",\"path\":\"/tmp/tmp4muv1jus.py\",\"spans\":[{\"file\":\"/tmp/tmp4muv1jus.py\",\"start\":{\"line\":1,\"col\":1,\"offset\":0},\"end\":{\"line\":1,\"col\":3,\"offset\":2}}]}],\"paths\":{\"scanned\":[\"/tmp/tmp4muv1jus.py\"]},\"time\":{\"rules\":[],\"rules_parse_time\":1.3178329467773438,\"profiling_times\":{\"config_time\":2.414494276046753,\"core_time\":1.771205186843872,\"ignores_time\":0.0015666484832763672,\"total_time\":4.216601848602295},\"parsing_time\":{\"total_time\":0.0,\"per_file_time\":{\"mean\":0.0,\"std_dev\":0.0},\"very_slow_stats\":{\"time_ratio\":0.0,\"count_ratio\":0.0},\"very_slow_files\":[]},\"scanning_time\":{\"total_time\":0.036425113677978516,\"per_file_time\":{\"mean\":0.012141704559326172,\"std_dev\":0.0002575651507186194},\"very_slow_stats\":{\"time_ratio\":0.0,\"coun"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 0,
+              "findings": [
+                {
+                  "ruleId": null,
+                  "fatal": false,
+                  "severity": 1,
+                  "message": "File ignored because outside of base path.",
+                  "nodeType": null
+                }
+              ],
+              "raw_output": "[{\"filePath\":\"/tmp/tmp4muv1jus.py\",\"messages\":[{\"ruleId\":null,\"fatal\":false,\"severity\":1,\"message\":\"File ignored because outside of base path.\",\"nodeType\":null}],\"suppressedMessages\":[],\"errorCount\":0,\"warningCount\":1,\"fatalErrorCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]}]\n"
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 2,
+              "findings": [
+                {
+                  "type": "error",
+                  "module": "tmp4muv1jus",
+                  "obj": "",
+                  "line": 1,
+                  "column": 1,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "/tmp/tmp4muv1jus.py",
+                  "symbol": "syntax-error",
+                  "message": "Parsing failed: 'invalid syntax (tmp4muv1jus, line 1)'",
+                  "message-id": "E0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"error\",\n        \"module\": \"tmp4muv1jus\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 1,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"/tmp/tmp4muv1jus.py\",\n        \"symbol\": \"syntax-error\",\n        \"message\": \"Parsing failed: 'invalid syntax (tmp4muv1jus, line 1)'\",\n        \"message-id\": \"E0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {\n\t\t\"/tmp/tmp4muv1jus.py\": [\n\t\t\t{\n\t\t\t\t\"line\": 0,\n\t\t\t\t\"column\": 0,\n\t\t\t\t\"error\": \"importing dir \\\"/tmp/tmp4muv1jus.py\\\": cannot find package \\\".\\\" in:\\n\\t/tmp/tmp4muv1jus.py\"\n\t\t\t}\n\t\t]\n\t},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse Adoptium (64-bit)\n[INFO]  ScannerEngine: Load global settings\n[INFO]  ScannerEngine: Load global settings (done) | time=714ms\n[INFO]  ScannerEngine: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu\n[INFO]  ScannerEngine: Loading required plugins\n[INFO]  ScannerEngine: Load plugins index\n[INFO]  ScannerEngine: Load plugins index (done) | time=256ms\n[INFO]  ScannerEngine: Load/download plugins\n[INFO]  ScannerEngine: Load/download plugins (done) | time=147ms\n[INFO]  ScannerEngine: Loaded core extensions: architecture, sca, a3s\n[INFO]  ScannerEngine: Process project properties\n[ERROR] ScannerEngine: You must define"
+            }
+          },
+          "summary": {
+            "total_tools": 6,
+            "detected": 2,
+            "bypassed": 4,
+            "evasion_rate": 0.6666666666666666
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 6,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_25",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:44:05.933619",
+      "events": [],
+      "end_time": "2026-01-07T10:44:22.344069",
+      "result": {
+        "original_payload": "#Legitimate code\u202eevil = \"malicious\"\u202d",
+        "optimized_payload": {
+          "payload": "#Legitimate code\u202eevil = \"malicious\"\u202d",
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 0,
+              "findings": [
+                {
+                  "check_id": "generic.unicode.security.bidi.contains-bidirectional-characters",
+                  "path": "/tmp/tmpoaxui6wv.py",
+                  "start": {
+                    "line": 1,
+                    "col": 17,
+                    "offset": 16
+                  },
+                  "end": {
+                    "line": 1,
+                    "col": 20,
+                    "offset": 19
+                  },
+                  "extra": {
+                    "message": "This code contains bidirectional (bidi) characters. While this is useful for support of right-to-left languages such as Arabic or Hebrew, it can also be used to trick language parsers into executing code in a manner that is different from how it is displayed in code editing and review tools. If this is not what you were expecting, please review this code in an editor that can reveal hidden Unicode characters.",
+                    "metadata": {
+                      "cwe": [
+                        "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+                      ],
+                      "category": "security",
+                      "technology": [
+                        "unicode"
+                      ],
+                      "references": [
+                        "https://trojansource.codes/"
+                      ],
+                      "confidence": "LOW",
+                      "owasp": [
+                        "A03:2021 - Injection"
+                      ],
+                      "cwe2022-top25": true,
+                      "subcategory": [
+                        "audit"
+                      ],
+                      "likelihood": "LOW",
+                      "impact": "HIGH",
+                      "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+                      "vulnerability_class": [
+                        "Code Injection"
+                      ],
+                      "source": "https://semgrep.dev/r/generic.unicode.security.bidi.contains-bidirectional-characters",
+                      "shortlink": "https://sg.run/nK4r"
+                    },
+                    "severity": "WARNING",
+                    "fingerprint": "requires login",
+                    "lines": "requires login",
+                    "validation_state": "NO_VALIDATOR",
+                    "engine_kind": "OSS"
+                  }
+                },
+                {
+                  "check_id": "generic.unicode.security.bidi.contains-bidirectional-characters",
+                  "path": "/tmp/tmpoaxui6wv.py",
+                  "start": {
+                    "line": 1,
+                    "col": 38,
+                    "offset": 37
+                  },
+                  "end": {
+                    "line": 1,
+                    "col": 41,
+                    "offset": 40
+                  },
+                  "extra": {
+                    "message": "This code contains bidirectional (bidi) characters. While this is useful for support of right-to-left languages such as Arabic or Hebrew, it can also be used to trick language parsers into executing code in a manner that is different from how it is displayed in code editing and review tools. If this is not what you were expecting, please review this code in an editor that can reveal hidden Unicode characters.",
+                    "metadata": {
+                      "cwe": [
+                        "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+                      ],
+                      "category": "security",
+                      "technology": [
+                        "unicode"
+                      ],
+                      "references": [
+                        "https://trojansource.codes/"
+                      ],
+                      "confidence": "LOW",
+                      "owasp": [
+                        "A03:2021 - Injection"
+                      ],
+                      "cwe2022-top25": true,
+                      "subcategory": [
+                        "audit"
+                      ],
+                      "likelihood": "LOW",
+                      "impact": "HIGH",
+                      "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+                      "vulnerability_class": [
+                        "Code Injection"
+                      ],
+                      "source": "https://semgrep.dev/r/generic.unicode.security.bidi.contains-bidirectional-characters",
+                      "shortlink": "https://sg.run/nK4r"
+                    },
+                    "severity": "WARNING",
+                    "fingerprint": "requires login",
+                    "lines": "requires login",
+                    "validation_state": "NO_VALIDATOR",
+                    "engine_kind": "OSS"
+                  }
+                }
+              ],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[{\"check_id\":\"generic.unicode.security.bidi.contains-bidirectional-characters\",\"path\":\"/tmp/tmpoaxui6wv.py\",\"start\":{\"line\":1,\"col\":17,\"offset\":16},\"end\":{\"line\":1,\"col\":20,\"offset\":19},\"extra\":{\"message\":\"This code contains bidirectional (bidi) characters. While this is useful for support of right-to-left languages such as Arabic or Hebrew, it can also be used to trick language parsers into executing code in a manner that is different from how it is displayed in code editing and review tools. If this is not what you were expecting, please review this code in an editor that can reveal hidden Unicode characters.\",\"metadata\":{\"cwe\":[\"CWE-94: Improper Control of Generation of Code ('Code Injection')\"],\"category\":\"security\",\"technology\":[\"unicode\"],\"references\":[\"https://trojansource.codes/\"],\"confidence\":\"LOW\",\"owasp\":[\"A03:2021 - Injection\"],\"cwe2022-top25\":true,\"subcategory\":[\"audit\"],\"likelihood\":\"LOW\",\"impact\":\"HIGH\",\"license\":\"Semgrep Rules License v1.0"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 0,
+              "findings": [
+                {
+                  "ruleId": null,
+                  "fatal": false,
+                  "severity": 1,
+                  "message": "File ignored because outside of base path.",
+                  "nodeType": null
+                }
+              ],
+              "raw_output": "[{\"filePath\":\"/tmp/tmpoaxui6wv.py\",\"messages\":[{\"ruleId\":null,\"fatal\":false,\"severity\":1,\"message\":\"File ignored because outside of base path.\",\"nodeType\":null}],\"suppressedMessages\":[],\"errorCount\":0,\"warningCount\":1,\"fatalErrorCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]}]\n"
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 18,
+              "findings": [
+                {
+                  "type": "error",
+                  "module": "tmpoaxui6wv",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": 1,
+                  "endColumn": 36,
+                  "path": "/tmp/tmpoaxui6wv.py",
+                  "symbol": "bidirectional-unicode",
+                  "message": "Contains control characters that can permit obfuscated code executed differently than displayed",
+                  "message-id": "E2502"
+                },
+                {
+                  "type": "convention",
+                  "module": "tmpoaxui6wv",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "/tmp/tmpoaxui6wv.py",
+                  "symbol": "missing-final-newline",
+                  "message": "Final newline missing",
+                  "message-id": "C0304"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"error\",\n        \"module\": \"tmpoaxui6wv\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": 1,\n        \"endColumn\": 36,\n        \"path\": \"/tmp/tmpoaxui6wv.py\",\n        \"symbol\": \"bidirectional-unicode\",\n        \"message\": \"Contains control characters that can permit obfuscated code executed differently than displayed\",\n        \"message-id\": \"E2502\"\n    },\n    {\n        \"type\": \"convention\",\n        \"module\": \"tmpoaxui6wv\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"/tmp/tmpoaxui6wv.py\",\n        \"symbol\": \"missing-final-newline\",\n        \"message\": \"Final newline missing\",\n        \"message-id\": \"C0304\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {\n\t\t\"/tmp/tmpoaxui6wv.py\": [\n\t\t\t{\n\t\t\t\t\"line\": 0,\n\t\t\t\t\"column\": 0,\n\t\t\t\t\"error\": \"importing dir \\\"/tmp/tmpoaxui6wv.py\\\": cannot find package \\\".\\\" in:\\n\\t/tmp/tmpoaxui6wv.py\"\n\t\t\t}\n\t\t]\n\t},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[ERROR] Bootstrapper: An error occurred: Error: Client network socket disconnected before secure TLS connection was established\n"
+            }
+          },
+          "summary": {
+            "total_tools": 6,
+            "detected": 3,
+            "bypassed": 3,
+            "evasion_rate": 0.5
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 6,
+        "tools_bypassed": 3
+      }
+    },
+    {
+      "session_id": "session_26",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:45:12.681038",
+      "events": [],
+      "end_time": "2026-01-07T10:45:31.805310",
+      "result": {
+        "original_payload": "./hotdamn.js",
+        "optimized_payload": {
+          "payload": "./hotdamn.js",
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":3,\"level\":\"warn\",\"type\":[\"PartialParsing\",[{\"path\":\"/tmp/tmpqrxribzo.py\",\"start\":{\"line\":1,\"col\":1,\"offset\":0},\"end\":{\"line\":1,\"col\":3,\"offset\":2}}]],\"message\":\"Syntax error at line /tmp/tmpqrxribzo.py:1:\\n `./` was unexpected\",\"path\":\"/tmp/tmpqrxribzo.py\",\"spans\":[{\"file\":\"/tmp/tmpqrxribzo.py\",\"start\":{\"line\":1,\"col\":1,\"offset\":0},\"end\":{\"line\":1,\"col\":3,\"offset\":2}}]}],\"paths\":{\"scanned\":[\"/tmp/tmpqrxribzo.py\"]},\"time\":{\"rules\":[],\"rules_parse_time\":1.2965989112854004,\"profiling_times\":{\"config_time\":5.053931951522827,\"core_time\":1.7524921894073486,\"ignores_time\":0.0014541149139404297,\"total_time\":6.846854209899902},\"parsing_time\":{\"total_time\":0.0,\"per_file_time\":{\"mean\":0.0,\"std_dev\":0.0},\"very_slow_stats\":{\"time_ratio\":0.0,\"count_ratio\":0.0},\"very_slow_files\":[]},\"scanning_time\":{\"total_time\":0.033409833908081055,\"per_file_time\":{\"mean\":0.011136611302693685,\"std_dev\":0.0001919851469109643},\"very_slow_stats\":{\"time_ratio\":0.0,\"cou"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 0,
+              "findings": [
+                {
+                  "ruleId": null,
+                  "fatal": false,
+                  "severity": 1,
+                  "message": "File ignored because outside of base path.",
+                  "nodeType": null
+                }
+              ],
+              "raw_output": "[{\"filePath\":\"/tmp/tmpqrxribzo.py\",\"messages\":[{\"ruleId\":null,\"fatal\":false,\"severity\":1,\"message\":\"File ignored because outside of base path.\",\"nodeType\":null}],\"suppressedMessages\":[],\"errorCount\":0,\"warningCount\":1,\"fatalErrorCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]}]\n"
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 2,
+              "findings": [
+                {
+                  "type": "error",
+                  "module": "tmpqrxribzo",
+                  "obj": "",
+                  "line": 1,
+                  "column": 1,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "/tmp/tmpqrxribzo.py",
+                  "symbol": "syntax-error",
+                  "message": "Parsing failed: 'invalid syntax (tmpqrxribzo, line 1)'",
+                  "message-id": "E0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"error\",\n        \"module\": \"tmpqrxribzo\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 1,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"/tmp/tmpqrxribzo.py\",\n        \"symbol\": \"syntax-error\",\n        \"message\": \"Parsing failed: 'invalid syntax (tmpqrxribzo, line 1)'\",\n        \"message-id\": \"E0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {\n\t\t\"/tmp/tmpqrxribzo.py\": [\n\t\t\t{\n\t\t\t\t\"line\": 0,\n\t\t\t\t\"column\": 0,\n\t\t\t\t\"error\": \"importing dir \\\"/tmp/tmpqrxribzo.py\\\": cannot find package \\\".\\\" in:\\n\\t/tmp/tmpqrxribzo.py\"\n\t\t\t}\n\t\t]\n\t},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse Adoptium (64-bit)\n[INFO]  ScannerEngine: Load global settings\n[INFO]  ScannerEngine: Load global settings (done) | time=431ms\n[INFO]  ScannerEngine: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu\n[INFO]  ScannerEngine: Loading required plugins\n[INFO]  ScannerEngine: Load plugins index\n[INFO]  ScannerEngine: Load plugins index (done) | time=371ms\n[INFO]  ScannerEngine: Load/download plugins\n[INFO]  ScannerEngine: Load/download plugins (done) | time=47ms\n[INFO]  ScannerEngine: Loaded core extensions: architecture, sca, a3s\n[INFO]  ScannerEngine: Process project properties\n[ERROR] ScannerEngine: You must define "
+            }
+          },
+          "summary": {
+            "total_tools": 6,
+            "detected": 2,
+            "bypassed": 4,
+            "evasion_rate": 0.6666666666666666
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 6,
+        "tools_bypassed": 4
+      }
+    },
+    {
+      "session_id": "session_27",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T11:02:12.226221",
+      "events": [],
+      "end_time": "2026-01-07T11:03:14.870619",
+      "result": {
+        "original_payload": "./hotdamn.js",
+        "optimized_payload": {
+          "payload": "./hotdamn.js",
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":3,\"level\":\"warn\",\"type\":[\"PartialParsing\",[{\"path\":\"/tmp/tmp15knvguh.py\",\"start\":{\"line\":1,\"col\":1,\"offset\":0},\"end\":{\"line\":1,\"col\":3,\"offset\":2}}]],\"message\":\"Syntax error at line /tmp/tmp15knvguh.py:1:\\n `./` was unexpected\",\"path\":\"/tmp/tmp15knvguh.py\",\"spans\":[{\"file\":\"/tmp/tmp15knvguh.py\",\"start\":{\"line\":1,\"col\":1,\"offset\":0},\"end\":{\"line\":1,\"col\":3,\"offset\":2}}]}],\"paths\":{\"scanned\":[\"/tmp/tmp15knvguh.py\"]},\"time\":{\"rules\":[],\"rules_parse_time\":1.2593810558319092,\"profiling_times\":{\"config_time\":47.13990020751953,\"core_time\":1.7130560874938965,\"ignores_time\":0.0014796257019042969,\"total_time\":48.895323514938354},\"parsing_time\":{\"total_time\":0.0,\"per_file_time\":{\"mean\":0.0,\"std_dev\":0.0},\"very_slow_stats\":{\"time_ratio\":0.0,\"count_ratio\":0.0},\"very_slow_files\":[]},\"scanning_time\":{\"total_time\":0.03560805320739746,\"per_file_time\":{\"mean\":0.011869351069132486,\"std_dev\":0.00024679117163688917},\"very_slow_stats\":{\"time_ratio\":0.0,\"co"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 0,
+              "findings": [
+                {
+                  "ruleId": null,
+                  "fatal": false,
+                  "severity": 1,
+                  "message": "File ignored because outside of base path.",
+                  "nodeType": null
+                }
+              ],
+              "raw_output": "[{\"filePath\":\"/tmp/tmp15knvguh.py\",\"messages\":[{\"ruleId\":null,\"fatal\":false,\"severity\":1,\"message\":\"File ignored because outside of base path.\",\"nodeType\":null}],\"suppressedMessages\":[],\"errorCount\":0,\"warningCount\":1,\"fatalErrorCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]}]\n"
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 2,
+              "findings": [
+                {
+                  "type": "error",
+                  "module": "tmp15knvguh",
+                  "obj": "",
+                  "line": 1,
+                  "column": 1,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "/tmp/tmp15knvguh.py",
+                  "symbol": "syntax-error",
+                  "message": "Parsing failed: 'invalid syntax (tmp15knvguh, line 1)'",
+                  "message-id": "E0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"error\",\n        \"module\": \"tmp15knvguh\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 1,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"/tmp/tmp15knvguh.py\",\n        \"symbol\": \"syntax-error\",\n        \"message\": \"Parsing failed: 'invalid syntax (tmp15knvguh, line 1)'\",\n        \"message-id\": \"E0001\"\n    }\n]\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"/tmp/tmp15knvguh.py\",\n      \"reason\": \"syntax error while parsing AST from file\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T19:03:06Z\",\n  \"metrics\": {\n    \"/tmp/tmp15knvguh.py\": {\n      \"loc\": 1,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 1,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {\n\t\t\"/tmp/tmp15knvguh.py\": [\n\t\t\t{\n\t\t\t\t\"line\": 0,\n\t\t\t\t\"column\": 0,\n\t\t\t\t\"error\": \"importing dir \\\"/tmp/tmp15knvguh.py\\\": cannot find package \\\".\\\" in:\\n\\t/tmp/tmp15knvguh.py\"\n\t\t\t}\n\t\t]\n\t},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse Adoptium (64-bit)\n[INFO]  ScannerEngine: Load global settings\n[INFO]  ScannerEngine: Load global settings (done) | time=1016ms\n[INFO]  ScannerEngine: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu\n[INFO]  ScannerEngine: Loading required plugins\n[INFO]  ScannerEngine: Load plugins index\n[INFO]  ScannerEngine: Load plugins index (done) | time=311ms\n[INFO]  ScannerEngine: Load/download plugins\n[INFO]  ScannerEngine: Load/download plugins (done) | time=90ms\n[INFO]  ScannerEngine: Loaded core extensions: architecture, sca, a3s\n[INFO]  ScannerEngine: Process project properties\n[ERROR] ScannerEngine: You must define"
+            }
+          },
+          "summary": {
+            "total_tools": 7,
+            "detected": 2,
+            "bypassed": 5,
+            "evasion_rate": 0.7142857142857143
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 7,
+        "tools_bypassed": 5
+      }
+    }
+  ],
+  "updated_at": "2026-01-07T11:03:14.870631"
+}

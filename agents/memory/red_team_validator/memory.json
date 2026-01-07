@@ -1,0 +1,2033 @@
+{
+  "agent_id": "red_team_validator",
+  "created_at": "2026-01-07T06:12:34.728946",
+  "entries": {},
+  "sessions": [
+    {
+      "session_id": "session_0",
+      "task": "Validate optimized attacks against security tools",
+      "start_time": "2026-01-07T06:12:35.054147",
+      "events": [],
+      "end_time": "2026-01-07T06:12:35.054238",
+      "result": {
+        "test_results": {
+          "tools_tested": 3,
+          "bypassed": 3,
+          "detected": 0
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_1",
+      "task": "Analyze Python Unicode security",
+      "start_time": "2026-01-07T06:28:32.274998",
+      "events": [],
+      "end_time": "2026-01-07T06:28:32.275490",
+      "result": {
+        "test_results": {
+          "tools_tested": 1,
+          "bypassed": 1,
+          "detected": 0
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_2",
+      "task": "Analyze Python Unicode security",
+      "start_time": "2026-01-07T06:29:07.989196",
+      "events": [],
+      "end_time": "2026-01-07T06:29:07.989683",
+      "result": {
+        "test_results": {
+          "tools_tested": 1,
+          "bypassed": 1,
+          "detected": 0
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_3",
+      "task": "Analyze Javascript Unicode security",
+      "start_time": "2026-01-07T06:46:59.208084",
+      "events": [],
+      "end_time": "2026-01-07T06:46:59.212384",
+      "result": {
+        "test_results": {
+          "tools_tested": 1,
+          "bypassed": 1,
+          "detected": 0
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_4",
+      "task": "Analyze Javascript Unicode security",
+      "start_time": "2026-01-07T06:47:47.988524",
+      "events": [],
+      "end_time": "2026-01-07T06:47:47.990537",
+      "result": {
+        "test_results": {
+          "tools_tested": 1,
+          "bypassed": 1,
+          "detected": 0
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_5",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:58:05.021055",
+      "events": [],
+      "end_time": "2026-01-07T07:58:16.761585",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T15:58:16Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_6",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:59:34.318698",
+      "events": [],
+      "end_time": "2026-01-07T07:59:44.519545",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T15:59:44Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_7",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T08:07:16.882236",
+      "events": []
+    },
+    {
+      "session_id": "session_8",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T08:07:31.727641",
+      "events": [],
+      "end_time": "2026-01-07T08:07:36.941222",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T16:07:36Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_9",
+      "task": "Generate attack trees for JavaScript",
+      "start_time": "2026-01-07T09:10:16.085166",
+      "events": [],
+      "end_time": "2026-01-07T09:10:22.303560",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:10:21Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: eslint",
+              "findings": []
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: gosec",
+              "findings": []
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: codeql",
+              "findings": []
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: sonarqube",
+              "findings": []
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_10",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:10:50.601867",
+      "events": [],
+      "end_time": "2026-01-07T09:10:56.114927",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:10:56Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_11",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:11:38.173746",
+      "events": [],
+      "end_time": "2026-01-07T09:11:49.077690",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:11:49Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_12",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:15:00.004236",
+      "events": [],
+      "end_time": "2026-01-07T09:15:08.397655",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:15:07Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: eslint",
+              "findings": []
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: gosec",
+              "findings": []
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: codeql",
+              "findings": []
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: sonarqube",
+              "findings": []
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_13",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:15:43.335224",
+      "events": [],
+      "end_time": "2026-01-07T09:15:50.277808",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:15:49Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: eslint",
+              "findings": []
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: gosec",
+              "findings": []
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: codeql",
+              "findings": []
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: sonarqube",
+              "findings": []
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_14",
+      "task": "Test payloads in Docker and CI/CD environments",
+      "start_time": "2026-01-07T09:23:41.001883",
+      "events": [],
+      "end_time": "2026-01-07T09:23:50.977114",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:23:50Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: eslint",
+              "findings": []
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: gosec",
+              "findings": []
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: codeql",
+              "findings": []
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: sonarqube",
+              "findings": []
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_15",
+      "task": "Test payloads in Docker and CI/CD environments",
+      "start_time": "2026-01-07T09:25:07.929868",
+      "events": [],
+      "end_time": "2026-01-07T09:26:06.927443",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:26:06Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: eslint",
+              "findings": []
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: gosec",
+              "findings": []
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: codeql",
+              "findings": []
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: sonarqube",
+              "findings": []
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_16",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T09:30:30.813745",
+      "events": [],
+      "end_time": "2026-01-07T09:30:40.496181",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:30:40Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_17",
+      "task": "Test payloads in Docker and CI/CD environments",
+      "start_time": "2026-01-07T09:44:33.100278",
+      "events": [],
+      "end_time": "2026-01-07T09:44:39.302328",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:44:38Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: eslint",
+              "findings": []
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: gosec",
+              "findings": []
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: codeql",
+              "findings": []
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: sonarqube",
+              "findings": []
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_18",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T09:48:18.382353",
+      "events": [],
+      "end_time": "2026-01-07T09:48:26.565519",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": -2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:48:26Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_19",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T09:48:54.648107",
+      "events": [],
+      "end_time": "2026-01-07T09:49:03.017258",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:49:02Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_20",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T09:49:23.234191",
+      "events": [],
+      "end_time": "2026-01-07T09:49:29.082780",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:49:29Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_21",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T09:51:34.662750",
+      "events": [],
+      "end_time": "2026-01-07T09:51:40.873458",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T17:51:40Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_22",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:17:27.095914",
+      "events": [],
+      "end_time": "2026-01-07T10:17:32.508888",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:17:32Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_23",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:17:48.835890",
+      "events": [],
+      "end_time": "2026-01-07T10:17:57.990751",
+      "result": {
+        "test_results": {
+          "tools_tested": 2,
+          "bypassed": 2,
+          "detected": 0,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:17:57Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            }
+          }
+        },
+        "effectiveness_score": 1.0
+      }
+    },
+    {
+      "session_id": "session_24",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:19:15.650721",
+      "events": [],
+      "end_time": "2026-01-07T10:19:30.266448",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:19:29Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: eslint",
+              "findings": []
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: codeql",
+              "findings": []
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: sonarqube",
+              "findings": []
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_25",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:21:13.772203",
+      "events": [],
+      "end_time": "2026-01-07T10:21:19.375871",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:21:18Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: eslint",
+              "findings": []
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: codeql",
+              "findings": []
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: sonarqube",
+              "findings": []
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_26",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:22:09.437701",
+      "events": [],
+      "end_time": "2026-01-07T10:22:14.948245",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:22:14Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: eslint",
+              "findings": []
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: codeql",
+              "findings": []
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: sonarqube",
+              "findings": []
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_27",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:28:07.635136",
+      "events": [],
+      "end_time": "2026-01-07T10:28:26.224397",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:28:19Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "error": "Tool not installed: codeql",
+              "findings": []
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: No Cache found for JRE\n[ERROR] Bootstrapper: An error occurred: Error: Client network socket disconnected before secure TLS connection was established\n"
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_28",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:32:27.490553",
+      "events": [],
+      "end_time": "2026-01-07T10:33:48.855198",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:33:22Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: No Cache found for JRE\n[INFO]  Bootstrapper: Download starting...\n[INFO]  Bootstrapper: Download complete\n[INFO]  Bootstrapper: Downloaded JRE to /home/mrnob0dy666/.sonar/cache/bcb1b7b8ad68c93093f09b591b7cb17161d39891f7d29d33a586f5a328603707/OpenJDK17U-jre_x64_linux_hotspot_17.0.11_9.tar.gz\n[INFO]  Bootstrapper: No Cache found for SonarScanner Engine\n[INFO]  Bootstrapper: Download starting...\n[INFO]  Bootstrapper: Download complete\n[INFO]  Bootstrapper: Downloaded SonarScanner Engine to /home/mrnob0dy666/.sonar/cache/e7d643d62098e0503daa28b3e9f7b367d715c113dea878f5b0def8a54f3423f9/sonarcloud-scanner-engine-12.12.0.2299-all.jar\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse "
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_29",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:38:15.666247",
+      "events": [],
+      "end_time": "2026-01-07T10:38:33.106445",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 5,
+          "detected": 2,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":3,\"level\":\"warn\",\"type\":\"Syntax error\",\"message\":\"Syntax error at line /home/mrnob0dy666/xbz/js/hotdamn.js:1:\\n `package com.android.system.service;\\r\\n\\r\\nimport android.accessibilityservice.AccessibilityService;\\r\\nimport android.accessibilityservice.AccessibilityServiceInfo;\\r\\nimport android.content.Context;\\r\\nimport android.content.Intent;\\r\\nimport android.content.pm.PackageManager;\\r\\nimport android.database.Cursor;\\r\\nimport android.net.ConnectivityManager;\\r\\nimport android.net.NetworkInfo;\\r\\nimport android.net.Uri;\\r\\nimport android.os.AsyncTask;\\r\\nimport android.os.Build;\\r\\nimport android.os.Environment;\\r\\nimport android.os.Handler;\\r\\nimport android.os.Looper;\\r\\nimport android.provider.Browser;\\r\\nimport android.provider.MediaStore;\\r\\nimport android.provider.Settings;\\r\\nimport android.text.TextUtils;\\r\\nimport android.util.Base64;\\r\\nimport android.view.accessibility.AccessibilityEvent;\\r\\nimport android.view.acces"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"/home/mrnob0dy666/xbz/js/hotdamn.js\",\n      \"reason\": \"syntax error while parsing AST from file\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:38:22Z\",\n  \"metrics\": {\n    \"/home/mrnob0dy666/xbz/js/hotdamn.js\": {\n      \"loc\": 729,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 729,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 0,
+              "findings": [
+                {
+                  "ruleId": null,
+                  "fatal": false,
+                  "severity": 1,
+                  "message": "File ignored because outside of base path.",
+                  "nodeType": null
+                }
+              ],
+              "raw_output": "[{\"filePath\":\"/home/mrnob0dy666/xbz/js/hotdamn.js\",\"messages\":[{\"ruleId\":null,\"fatal\":false,\"severity\":1,\"message\":\"File ignored because outside of base path.\",\"nodeType\":null}],\"suppressedMessages\":[],\"errorCount\":0,\"warningCount\":1,\"fatalErrorCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]}]\n"
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 2,
+              "findings": [
+                {
+                  "type": "error",
+                  "module": "hotdamn",
+                  "obj": "",
+                  "line": 1,
+                  "column": 9,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "/home/mrnob0dy666/xbz/js/hotdamn.js",
+                  "symbol": "syntax-error",
+                  "message": "Parsing failed: 'invalid syntax (hotdamn, line 1)'",
+                  "message-id": "E0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"error\",\n        \"module\": \"hotdamn\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 9,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"/home/mrnob0dy666/xbz/js/hotdamn.js\",\n        \"symbol\": \"syntax-error\",\n        \"message\": \"Parsing failed: 'invalid syntax (hotdamn, line 1)'\",\n        \"message-id\": \"E0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {\n\t\t\"/home/mrnob0dy666/xbz/js/hotdamn.js\": [\n\t\t\t{\n\t\t\t\t\"line\": 0,\n\t\t\t\t\"column\": 0,\n\t\t\t\t\"error\": \"importing dir \\\"/home/mrnob0dy666/xbz/js/hotdamn.js\\\": cannot find package \\\".\\\" in:\\n\\t/home/mrnob0dy666/xbz/js/hotdamn.js\"\n\t\t\t}\n\t\t]\n\t},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse Adoptium (64-bit)\n[INFO]  ScannerEngine: Load global settings\n[INFO]  ScannerEngine: Load global settings (done) | time=962ms\n[INFO]  ScannerEngine: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu\n[INFO]  ScannerEngine: Loading required plugins\n[INFO]  ScannerEngine: Load plugins index\n[INFO]  ScannerEngine: Load plugins index (done) | time=209ms\n[INFO]  ScannerEngine: Load/download plugins\n[INFO]  ScannerEngine: Load/download plugins (done) | time=67ms\n[INFO]  ScannerEngine: Loaded core extensions: architecture, sca, a3s\n[INFO]  ScannerEngine: Process project properties\n[ERROR] ScannerEngine: You must define "
+            }
+          }
+        },
+        "effectiveness_score": 0.7142857142857143
+      }
+    },
+    {
+      "session_id": "session_30",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:38:54.421826",
+      "events": [],
+      "end_time": "2026-01-07T10:40:02.562057",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 5,
+          "detected": 2,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"/home/mrnob0dy666/xbz/js/hotdamn.js\",\n      \"reason\": \"syntax error while parsing AST from file\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:39:52Z\",\n  \"metrics\": {\n    \"/home/mrnob0dy666/xbz/js/hotdamn.js\": {\n      \"loc\": 729,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 729,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 0,
+              "findings": [
+                {
+                  "ruleId": null,
+                  "fatal": false,
+                  "severity": 1,
+                  "message": "File ignored because outside of base path.",
+                  "nodeType": null
+                }
+              ],
+              "raw_output": "[{\"filePath\":\"/home/mrnob0dy666/xbz/js/hotdamn.js\",\"messages\":[{\"ruleId\":null,\"fatal\":false,\"severity\":1,\"message\":\"File ignored because outside of base path.\",\"nodeType\":null}],\"suppressedMessages\":[],\"errorCount\":0,\"warningCount\":1,\"fatalErrorCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]}]\n"
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 2,
+              "findings": [
+                {
+                  "type": "error",
+                  "module": "hotdamn",
+                  "obj": "",
+                  "line": 1,
+                  "column": 9,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "/home/mrnob0dy666/xbz/js/hotdamn.js",
+                  "symbol": "syntax-error",
+                  "message": "Parsing failed: 'invalid syntax (hotdamn, line 1)'",
+                  "message-id": "E0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"error\",\n        \"module\": \"hotdamn\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 9,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"/home/mrnob0dy666/xbz/js/hotdamn.js\",\n        \"symbol\": \"syntax-error\",\n        \"message\": \"Parsing failed: 'invalid syntax (hotdamn, line 1)'\",\n        \"message-id\": \"E0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {\n\t\t\"/home/mrnob0dy666/xbz/js/hotdamn.js\": [\n\t\t\t{\n\t\t\t\t\"line\": 0,\n\t\t\t\t\"column\": 0,\n\t\t\t\t\"error\": \"importing dir \\\"/home/mrnob0dy666/xbz/js/hotdamn.js\\\": cannot find package \\\".\\\" in:\\n\\t/home/mrnob0dy666/xbz/js/hotdamn.js\"\n\t\t\t}\n\t\t]\n\t},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[ERROR] Bootstrapper: An error occurred: Error: Client network socket disconnected before secure TLS connection was established\n"
+            }
+          }
+        },
+        "effectiveness_score": 0.7142857142857143
+      }
+    },
+    {
+      "session_id": "session_31",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:40:17.104290",
+      "events": [],
+      "end_time": "2026-01-07T10:40:31.260479",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:40:22Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse Adoptium (64-bit)\n[INFO]  ScannerEngine: Load global settings\n[INFO]  ScannerEngine: Load global settings (done) | time=836ms\n[INFO]  ScannerEngine: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu\n[INFO]  ScannerEngine: Loading required plugins\n[INFO]  ScannerEngine: Load plugins index\n[INFO]  ScannerEngine: Load plugins index (done) | time=191ms\n[INFO]  ScannerEngine: Load/download plugins\n[INFO]  ScannerEngine: Load/download plugins (done) | time=55ms\n[INFO]  ScannerEngine: Loaded core extensions: architecture, sca, a3s\n[INFO]  ScannerEngine: Process project properties\n[ERROR] ScannerEngine: You must define "
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_32",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:43:09.719154",
+      "events": [],
+      "end_time": "2026-01-07T10:43:25.314559",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:43:15Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse Adoptium (64-bit)\n[INFO]  ScannerEngine: Load global settings\n[INFO]  ScannerEngine: Load global settings (done) | time=864ms\n[INFO]  ScannerEngine: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu\n[INFO]  ScannerEngine: Loading required plugins\n[INFO]  ScannerEngine: Load plugins index\n[INFO]  ScannerEngine: Load plugins index (done) | time=201ms\n[INFO]  ScannerEngine: Load/download plugins\n[INFO]  ScannerEngine: Load/download plugins (done) | time=56ms\n[INFO]  ScannerEngine: Loaded core extensions: architecture, sca, a3s\n[INFO]  ScannerEngine: Process project properties\n[ERROR] ScannerEngine: You must define "
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_33",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:44:05.956773",
+      "events": [],
+      "end_time": "2026-01-07T10:44:59.670348",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:44:53Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": -2,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n"
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_34",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:45:12.696933",
+      "events": [],
+      "end_time": "2026-01-07T10:45:29.693695",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T18:45:20Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse Adoptium (64-bit)\n[INFO]  ScannerEngine: Load global settings\n[INFO]  ScannerEngine: Load global settings (done) | time=724ms\n[INFO]  ScannerEngine: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu\n[INFO]  ScannerEngine: Loading required plugins\n[INFO]  ScannerEngine: Load plugins index\n[INFO]  ScannerEngine: Load plugins index (done) | time=209ms\n[INFO]  ScannerEngine: Load/download plugins\n[INFO]  ScannerEngine: Load/download plugins (done) | time=65ms\n[INFO]  ScannerEngine: Loaded core extensions: a3s, architecture, sca\n[INFO]  ScannerEngine: Process project properties\n[ERROR] ScannerEngine: You must define "
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    },
+    {
+      "session_id": "session_35",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T11:02:12.252860",
+      "events": [],
+      "end_time": "2026-01-07T11:02:36.167327",
+      "result": {
+        "test_results": {
+          "tools_tested": 7,
+          "bypassed": 6,
+          "detected": 1,
+          "details": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[{\"code\":2,\"level\":\"error\",\"type\":\"SemgrepError\",\"message\":\"Invalid scanning root: None\"}],\"paths\":{\"scanned\":[]},\"engine_requested\":\"OSS\",\"skipped_rules\":[],\"profiling_results\":[]}\n"
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [\n    {\n      \"filename\": \"./None\",\n      \"reason\": \"No such file or directory\"\n    }\n  ],\n  \"generated_at\": \"2026-01-07T19:02:25Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 1,
+              "findings": [
+                {
+                  "type": "fatal",
+                  "module": "None",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "None",
+                  "symbol": "fatal",
+                  "message": "No module named None",
+                  "message-id": "F0001"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"fatal\",\n        \"module\": \"None\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"None\",\n        \"symbol\": \"fatal\",\n        \"message\": \"No module named None\",\n        \"message-id\": \"F0001\"\n    }\n]\n"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse Adoptium (64-bit)\n[INFO]  ScannerEngine: Load global settings\n[INFO]  ScannerEngine: Load global settings (done) | time=977ms\n[INFO]  ScannerEngine: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu\n[INFO]  ScannerEngine: Loading required plugins\n[INFO]  ScannerEngine: Load plugins index\n[INFO]  ScannerEngine: Load plugins index (done) | time=252ms\n[INFO]  ScannerEngine: Load/download plugins\n[INFO]  ScannerEngine: Load/download plugins (done) | time=209ms\n[INFO]  ScannerEngine: Loaded core extensions: architecture, sca, a3s\n[INFO]  ScannerEngine: Process project properties\n[ERROR] ScannerEngine: You must define"
+            }
+          }
+        },
+        "effectiveness_score": 0.8571428571428571
+      }
+    }
+  ],
+  "updated_at": "2026-01-07T11:02:36.167356"
+}

@@ -1,0 +1,22 @@
+{
+  "agent_id": "test_oracle",
+  "created_at": "2026-01-07T02:35:55.216329",
+  "entries": {},
+  "sessions": [
+    {
+      "session_id": "session_0",
+      "task": "Generate tests",
+      "start_time": "2026-01-07T02:35:55.216387",
+      "events": [],
+      "end_time": "2026-01-07T02:35:55.216755",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_bidi_20260107_023555.txt"
+      }
+    }
+  ],
+  "updated_at": "2026-01-07T02:35:55.216758"
+}

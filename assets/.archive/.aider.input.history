@@ -1,0 +1,15 @@
+
+# 2025-12-19 07:58:48.675063
++/map
+
+# 2025-12-19 07:58:52.060460
++/add noseeum/attacks/normalization.py noseeum/attacks/homoglyph.py noseeum/attacks/payload_injection.py noseeum/attacks/kotlin_attack.py noseeum/attacks/javascript_attack.py noseeum/attacks/bidi.py noseeum/attacks/__init__.py noseeum/attacks/unassigned_planes.py noseeum/attacks/invisible.py noseeum/attacks/swift_attack.py noseeum/attacks/go_attack.py noseeum/attacks/hangul_encoding.py noseeum/attacks/language.py noseeum/core/integration.py noseeum/core/linguistic_generator.py noseeum/core/grammar_db.py noseeum/core/evasion_library.py noseeum/core/__init__.py noseeum/core/language_dispatcher.py noseeum/core/stealth_engine.py noseeum/core/yara_generator.py noseeum/core/engine.py noseeum/core/test_validator.py noseeum/utils/__init__.py noseeum/utils/error_handlers.py noseeum/detector/__init__.py noseeum/detector/scanner.py
+
+# 2025-12-19 07:59:22.386786
++/add README.md docs/USAGE.md 
+
+# 2025-12-19 07:59:50.475025
++review the repository, debug and optimize as you see fit
+
+# 2025-12-19 08:04:09.136010
++n

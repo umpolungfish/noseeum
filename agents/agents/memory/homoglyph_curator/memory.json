@@ -1,0 +1,55 @@
+{
+  "agent_id": "homoglyph_curator",
+  "created_at": "2026-01-07T02:35:55.220554",
+  "entries": {},
+  "sessions": [
+    {
+      "session_id": "session_0",
+      "task": "Discover homoglyphs",
+      "start_time": "2026-01-07T02:35:55.220613",
+      "events": [],
+      "end_time": "2026-01-07T02:35:55.220974",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260107_023555.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    }
+  ],
+  "updated_at": "2026-01-07T02:35:55.220977"
+}

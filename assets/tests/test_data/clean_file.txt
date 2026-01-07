@@ -1,0 +1,3 @@
+This is a clean file.
+There is nothing suspicious here.
+Just plain ASCII text.

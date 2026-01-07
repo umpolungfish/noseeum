@@ -1,0 +1,316 @@
+{
+  "agent_id": "test_oracle",
+  "created_at": "2026-01-07T06:28:32.124468",
+  "entries": {},
+  "sessions": [
+    {
+      "session_id": "session_0",
+      "task": "Analyze Python Unicode security",
+      "start_time": "2026-01-07T06:28:32.289577",
+      "events": [],
+      "end_time": "2026-01-07T06:28:32.291004",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_all_20260107_062832.txt"
+      }
+    },
+    {
+      "session_id": "session_1",
+      "task": "Analyze Python Unicode security",
+      "start_time": "2026-01-07T06:29:08.005020",
+      "events": [],
+      "end_time": "2026-01-07T06:29:08.006882",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_all_20260107_062908.txt"
+      }
+    },
+    {
+      "session_id": "session_2",
+      "task": "Analyze Javascript Unicode security",
+      "start_time": "2026-01-07T06:46:59.223589",
+      "events": [],
+      "end_time": "2026-01-07T06:46:59.226967",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_all_20260107_064659.txt"
+      }
+    },
+    {
+      "session_id": "session_3",
+      "task": "Analyze Javascript Unicode security",
+      "start_time": "2026-01-07T06:47:48.005190",
+      "events": [],
+      "end_time": "2026-01-07T06:47:48.006726",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_all_20260107_064748.txt"
+      }
+    },
+    {
+      "session_id": "session_4",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:58:05.040373",
+      "events": [],
+      "end_time": "2026-01-07T07:58:05.045293",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_all_20260107_075805.txt"
+      }
+    },
+    {
+      "session_id": "session_5",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:59:34.330733",
+      "events": [],
+      "end_time": "2026-01-07T07:59:34.332127",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_all_20260107_075934.txt"
+      }
+    },
+    {
+      "session_id": "session_6",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T08:07:16.902861",
+      "events": [],
+      "end_time": "2026-01-07T08:07:16.906416",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_all_20260107_080716.txt"
+      }
+    },
+    {
+      "session_id": "session_7",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T08:07:31.753361",
+      "events": [],
+      "end_time": "2026-01-07T08:07:31.755126",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_all_20260107_080731.txt"
+      }
+    },
+    {
+      "session_id": "session_8",
+      "task": "Generate attack trees for JavaScript",
+      "start_time": "2026-01-07T09:10:16.115375",
+      "events": [],
+      "end_time": "2026-01-07T09:10:16.120739",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_091016.txt"
+      }
+    },
+    {
+      "session_id": "session_9",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:15:43.362003",
+      "events": [],
+      "end_time": "2026-01-07T09:15:43.366722",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_091543.txt"
+      }
+    },
+    {
+      "session_id": "session_10",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:17:48.849962",
+      "events": [],
+      "end_time": "2026-01-07T10:17:48.857747",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_all_20260107_101748.txt"
+      }
+    },
+    {
+      "session_id": "session_11",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:21:13.788476",
+      "events": [],
+      "end_time": "2026-01-07T10:21:13.796967",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_102113.txt"
+      }
+    },
+    {
+      "session_id": "session_12",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:22:09.462369",
+      "events": [],
+      "end_time": "2026-01-07T10:22:09.468859",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_102209.txt"
+      }
+    },
+    {
+      "session_id": "session_13",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:28:07.654104",
+      "events": [],
+      "end_time": "2026-01-07T10:28:07.656204",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_102807.txt"
+      }
+    },
+    {
+      "session_id": "session_14",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:32:27.518477",
+      "events": [],
+      "end_time": "2026-01-07T10:32:27.520171",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_103227.txt"
+      }
+    },
+    {
+      "session_id": "session_15",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:38:15.691175",
+      "events": [],
+      "end_time": "2026-01-07T10:38:15.695941",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_103815.txt"
+      }
+    },
+    {
+      "session_id": "session_16",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:38:54.446095",
+      "events": [],
+      "end_time": "2026-01-07T10:38:54.447860",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_103854.txt"
+      }
+    },
+    {
+      "session_id": "session_17",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:40:17.128953",
+      "events": [],
+      "end_time": "2026-01-07T10:40:17.132608",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_104017.txt"
+      }
+    },
+    {
+      "session_id": "session_18",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:43:09.738041",
+      "events": [],
+      "end_time": "2026-01-07T10:43:09.741200",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_104309.txt"
+      }
+    },
+    {
+      "session_id": "session_19",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:44:05.977394",
+      "events": [],
+      "end_time": "2026-01-07T10:44:05.979222",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_104405.txt"
+      }
+    },
+    {
+      "session_id": "session_20",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:45:12.725372",
+      "events": [],
+      "end_time": "2026-01-07T10:45:12.732986",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_104512.txt"
+      }
+    },
+    {
+      "session_id": "session_21",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T11:02:12.275414",
+      "events": [],
+      "end_time": "2026-01-07T11:02:12.278578",
+      "result": {
+        "current_coverage": 0.75,
+        "generated_tests": 3,
+        "fuzz_inputs": 4,
+        "target_coverage": 90,
+        "test_file": "agents/artifacts/test_oracle_tests_None_20260107_110212.txt"
+      }
+    }
+  ],
+  "updated_at": "2026-01-07T11:02:12.278585"
+}

@@ -1,0 +1,17 @@
+# Configuration files containing sensitive information
+config.yaml
+.env
+*.env
+
+# Logs
+logs/
+*.log
+
+# Results and artifacts
+results/
+artifacts/
+
+# Virtual environments (if any)
+venv/
+env/
+.venv/

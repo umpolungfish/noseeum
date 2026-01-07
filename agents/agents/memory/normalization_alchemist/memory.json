@@ -1,0 +1,59 @@
+{
+  "agent_id": "normalization_alchemist",
+  "created_at": "2026-01-07T02:35:55.222186",
+  "entries": {},
+  "sessions": [
+    {
+      "session_id": "session_0",
+      "task": "Find collisions",
+      "start_time": "2026-01-07T02:35:55.222242",
+      "events": [],
+      "end_time": "2026-01-07T02:35:55.223116",
+      "result": {
+        "collisions_found": 3,
+        "parsers_tested": 3,
+        "exploits_generated": 3,
+        "examples": [
+          {
+            "original": {
+              "char": "\u2100",
+              "codepoint": "U+2100",
+              "name": "ACCOUNT OF"
+            },
+            "NFC": "\u2100",
+            "NFD": "\u2100",
+            "NFKC": "a/c",
+            "NFKD": "a/c",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u2101",
+              "codepoint": "U+2101",
+              "name": "ADDRESSED TO THE SUBJECT"
+            },
+            "NFC": "\u2101",
+            "NFD": "\u2101",
+            "NFKC": "a/s",
+            "NFKD": "a/s",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u338f",
+              "codepoint": "U+338F",
+              "name": "KILOGRAM"
+            },
+            "NFC": "\u338f",
+            "NFD": "\u338f",
+            "NFKC": "kg",
+            "NFKD": "kg",
+            "exploitable": true
+          }
+        ],
+        "artifact_path": "agents/artifacts/normalization_alchemist_normalization_exploits_20260107_023555.json"
+      }
+    }
+  ],
+  "updated_at": "2026-01-07T02:35:55.223120"
+}

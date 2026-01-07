@@ -1,0 +1,5 @@
+# This python code has a mixed-script identifier
+def check_аccess(user): # The 'a' in access is Cyrillic
+    if user == "admin":
+        return True
+    return False

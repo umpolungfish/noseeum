@@ -1,0 +1,104 @@
+{
+  "agent_id": "unicode_archaeologist",
+  "created_at": "2026-01-07T02:34:56.585339",
+  "entries": {},
+  "sessions": [
+    {
+      "session_id": "session_0",
+      "task": "Test task",
+      "start_time": "2026-01-07T02:34:56.585490",
+      "events": [],
+      "end_time": "2026-01-07T02:34:56.586435",
+      "result": {
+        "findings": [
+          {
+            "type": "unicode_block_analysis",
+            "description": "Analyzed Unicode block for exploitable characters",
+            "block": "Miscellaneous Technical",
+            "range": "U+2300-U+23FF",
+            "suspicious_chars": [
+              {
+                "codepoint": "U+2060",
+                "name": "WORD JOINER",
+                "category": "Cf"
+              },
+              {
+                "codepoint": "U+2061",
+                "name": "FUNCTION APPLICATION",
+                "category": "Cf"
+              }
+            ]
+          },
+          {
+            "type": "cve_research",
+            "description": "Recent Unicode-related CVEs",
+            "cves": [
+              {
+                "id": "CVE-2021-42574",
+                "title": "Trojan Source Attack",
+                "description": "Bidirectional Unicode control characters in source code"
+              }
+            ]
+          }
+        ],
+        "artifacts": [
+          "agents/artifacts/unicode_archaeologist_unicode_findings_20260107_023456.json"
+        ],
+        "recommendations": [
+          "Add detection for U+2060-U+2064 format characters",
+          "Update BIDI attack module with latest UAX#9 findings",
+          "Test Trojan Source patterns against noseeum detector"
+        ]
+      }
+    },
+    {
+      "session_id": "session_1",
+      "task": "Test task",
+      "start_time": "2026-01-07T02:35:55.196687",
+      "events": [],
+      "end_time": "2026-01-07T02:35:55.197147",
+      "result": {
+        "findings": [
+          {
+            "type": "unicode_block_analysis",
+            "description": "Analyzed Unicode block for exploitable characters",
+            "block": "Miscellaneous Technical",
+            "range": "U+2300-U+23FF",
+            "suspicious_chars": [
+              {
+                "codepoint": "U+2060",
+                "name": "WORD JOINER",
+                "category": "Cf"
+              },
+              {
+                "codepoint": "U+2061",
+                "name": "FUNCTION APPLICATION",
+                "category": "Cf"
+              }
+            ]
+          },
+          {
+            "type": "cve_research",
+            "description": "Recent Unicode-related CVEs",
+            "cves": [
+              {
+                "id": "CVE-2021-42574",
+                "title": "Trojan Source Attack",
+                "description": "Bidirectional Unicode control characters in source code"
+              }
+            ]
+          }
+        ],
+        "artifacts": [
+          "agents/artifacts/unicode_archaeologist_unicode_findings_20260107_023555.json"
+        ],
+        "recommendations": [
+          "Add detection for U+2060-U+2064 format characters",
+          "Update BIDI attack module with latest UAX#9 findings",
+          "Test Trojan Source patterns against noseeum detector"
+        ]
+      }
+    }
+  ],
+  "updated_at": "2026-01-07T02:35:55.197151"
+}

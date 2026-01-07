@@ -1,0 +1,3297 @@
+{
+  "agent_id": "language_grammar_hunter",
+  "created_at": "2026-01-07T06:16:57.040402",
+  "entries": {
+    "language_quirks": {
+      "python_quirks": {
+        "value": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          }
+        ],
+        "timestamp": "2026-01-07T11:02:12.227871"
+      },
+      "javascript_quirks": {
+        "value": [
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          }
+        ],
+        "timestamp": "2026-01-07T11:02:12.241113"
+      },
+      "java_quirks": {
+        "value": [
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "timestamp": "2026-01-07T11:02:12.247672"
+      },
+      "go_quirks": {
+        "value": [
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          }
+        ],
+        "timestamp": "2026-01-07T10:22:09.469627"
+      },
+      "kotlin_quirks": {
+        "value": [
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          }
+        ],
+        "timestamp": "2026-01-07T10:22:09.474629"
+      },
+      "swift_quirks": {
+        "value": [
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "timestamp": "2026-01-07T10:22:09.497151"
+      },
+      "rust_quirks": {
+        "value": [
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "timestamp": "2026-01-07T10:22:09.502126"
+      },
+      "c_quirks": {
+        "value": [
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "timestamp": "2026-01-07T10:22:09.508193"
+      },
+      "cpp_quirks": {
+        "value": [
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "timestamp": "2026-01-07T10:22:09.512978"
+      }
+    }
+  },
+  "sessions": [
+    {
+      "session_id": "session_0",
+      "task": "Perform comprehensive Unicode security analysis for Go language",
+      "start_time": "2026-01-07T06:16:57.490397",
+      "events": [],
+      "end_time": "2026-01-07T06:16:57.501324",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_061657.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_1",
+      "task": "Analyze Python Unicode security",
+      "start_time": "2026-01-07T06:28:32.262764",
+      "events": [],
+      "end_time": "2026-01-07T06:28:32.288178",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_062832.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_2",
+      "task": "Analyze Python Unicode security",
+      "start_time": "2026-01-07T06:29:07.978233",
+      "events": [],
+      "end_time": "2026-01-07T06:29:08.004707",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_062908.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_3",
+      "task": "Analyze Javascript Unicode security",
+      "start_time": "2026-01-07T06:46:59.195796",
+      "events": [],
+      "end_time": "2026-01-07T06:46:59.223546",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_064659.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_4",
+      "task": "Analyze Javascript Unicode security",
+      "start_time": "2026-01-07T06:47:47.976359",
+      "events": [],
+      "end_time": "2026-01-07T06:47:48.028281",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_064748.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_5",
+      "task": "Perform comprehensive Unicode security analysis for Go language",
+      "start_time": "2026-01-07T07:43:43.970776",
+      "events": [],
+      "end_time": "2026-01-07T07:43:43.990145",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_074343.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_6",
+      "task": "Perform comprehensive Unicode security analysis for Go language",
+      "start_time": "2026-01-07T07:45:11.746411",
+      "events": [],
+      "end_time": "2026-01-07T07:45:11.768315",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_074511.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_7",
+      "task": "Perform comprehensive Unicode security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:56:45.827398",
+      "events": [],
+      "end_time": "2026-01-07T07:56:45.849742",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_075645.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_8",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:57:49.575496",
+      "events": [],
+      "end_time": "2026-01-07T07:57:49.600033",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_075749.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_9",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:58:05.004833",
+      "events": [],
+      "end_time": "2026-01-07T07:58:05.060117",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_075805.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_10",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:59:34.284305",
+      "events": [],
+      "end_time": "2026-01-07T07:59:34.324022",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_075934.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_11",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T08:07:16.867281",
+      "events": [],
+      "end_time": "2026-01-07T08:07:16.916690",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_080716.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_12",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T08:07:31.702987",
+      "events": [],
+      "end_time": "2026-01-07T08:07:31.749567",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_080731.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_13",
+      "task": "Generate attack trees for JavaScript",
+      "start_time": "2026-01-07T09:10:16.066334",
+      "events": [],
+      "end_time": "2026-01-07T09:10:16.115202",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_091016.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_14",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:15:43.307728",
+      "events": [],
+      "end_time": "2026-01-07T09:15:43.361173",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_091543.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_15",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:17:48.810907",
+      "events": [],
+      "end_time": "2026-01-07T10:17:48.895336",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_101748.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_16",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:21:13.750084",
+      "events": [],
+      "end_time": "2026-01-07T10:21:13.790544",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "report": {
+          "total_findings": 3,
+          "high_severity": 2,
+          "exploitable": 3,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_102113.json"
+        ],
+        "languages_analyzed": 3
+      }
+    },
+    {
+      "session_id": "session_17",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:22:09.424230",
+      "events": [],
+      "end_time": "2026-01-07T10:22:09.521002",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          },
+          {
+            "type": "utf8_validation",
+            "description": "Go compiler strictly validates UTF-8 encoding",
+            "exploitable": true,
+            "example": "// Invalid UTF-8 can bypass source code scanners",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_identifiers",
+            "description": "Kotlin allows wide range of Unicode in identifiers",
+            "exploitable": true,
+            "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+            "severity": "low"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for swift",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for rust",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for c",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          },
+          {
+            "type": "research_needed",
+            "description": "No known quirks documented for cpp",
+            "exploitable": false,
+            "action": "Requires manual research and testing"
+          }
+        ],
+        "report": {
+          "total_findings": 9,
+          "high_severity": 2,
+          "exploitable": 5,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            },
+            {
+              "type": "utf8_validation",
+              "description": "Go compiler strictly validates UTF-8 encoding",
+              "exploitable": true,
+              "example": "// Invalid UTF-8 can bypass source code scanners",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_identifiers",
+              "description": "Kotlin allows wide range of Unicode in identifiers",
+              "exploitable": true,
+              "example": "val \u8b8a\u6578 = 1  # Chinese characters in identifiers",
+              "severity": "low"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for swift",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for rust",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for c",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            },
+            {
+              "type": "research_needed",
+              "description": "No known quirks documented for cpp",
+              "exploitable": false,
+              "action": "Requires manual research and testing"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_102209.json"
+        ],
+        "languages_analyzed": 9
+      }
+    },
+    {
+      "session_id": "session_18",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:28:07.604857",
+      "events": [],
+      "end_time": "2026-01-07T10:28:07.635857",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "report": {
+          "total_findings": 3,
+          "high_severity": 2,
+          "exploitable": 3,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_102807.json"
+        ],
+        "languages_analyzed": 3
+      }
+    },
+    {
+      "session_id": "session_19",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:32:27.471938",
+      "events": [],
+      "end_time": "2026-01-07T10:32:27.510707",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "report": {
+          "total_findings": 3,
+          "high_severity": 2,
+          "exploitable": 3,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_103227.json"
+        ],
+        "languages_analyzed": 3
+      }
+    },
+    {
+      "session_id": "session_20",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:38:15.644425",
+      "events": [],
+      "end_time": "2026-01-07T10:38:15.680667",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "report": {
+          "total_findings": 3,
+          "high_severity": 2,
+          "exploitable": 3,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_103815.json"
+        ],
+        "languages_analyzed": 3
+      }
+    },
+    {
+      "session_id": "session_21",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:38:54.395039",
+      "events": [],
+      "end_time": "2026-01-07T10:38:54.434287",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "report": {
+          "total_findings": 3,
+          "high_severity": 2,
+          "exploitable": 3,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_103854.json"
+        ],
+        "languages_analyzed": 3
+      }
+    },
+    {
+      "session_id": "session_22",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:40:17.078731",
+      "events": [],
+      "end_time": "2026-01-07T10:40:17.120728",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "report": {
+          "total_findings": 3,
+          "high_severity": 2,
+          "exploitable": 3,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_104017.json"
+        ],
+        "languages_analyzed": 3
+      }
+    },
+    {
+      "session_id": "session_23",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:43:09.685073",
+      "events": [],
+      "end_time": "2026-01-07T10:43:09.725896",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "report": {
+          "total_findings": 3,
+          "high_severity": 2,
+          "exploitable": 3,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_104309.json"
+        ],
+        "languages_analyzed": 3
+      }
+    },
+    {
+      "session_id": "session_24",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:44:05.929004",
+      "events": [],
+      "end_time": "2026-01-07T10:44:05.965886",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "report": {
+          "total_findings": 3,
+          "high_severity": 2,
+          "exploitable": 3,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_104405.json"
+        ],
+        "languages_analyzed": 3
+      }
+    },
+    {
+      "session_id": "session_25",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:45:12.674435",
+      "events": [],
+      "end_time": "2026-01-07T10:45:12.725891",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "report": {
+          "total_findings": 3,
+          "high_severity": 2,
+          "exploitable": 3,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_104512.json"
+        ],
+        "languages_analyzed": 3
+      }
+    },
+    {
+      "session_id": "session_26",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T11:02:12.215580",
+      "events": [],
+      "end_time": "2026-01-07T11:02:12.258608",
+      "result": {
+        "findings": [
+          {
+            "type": "identifier_normalization",
+            "description": "Python normalizes identifiers using NFKC",
+            "exploitable": true,
+            "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+            "severity": "high"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "JavaScript allows Unicode escapes in identifiers",
+            "exploitable": true,
+            "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+            "severity": "medium"
+          },
+          {
+            "type": "unicode_escapes",
+            "description": "Java processes Unicode escapes before parsing",
+            "exploitable": true,
+            "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+            "severity": "high"
+          }
+        ],
+        "report": {
+          "total_findings": 3,
+          "high_severity": 2,
+          "exploitable": 3,
+          "findings": [
+            {
+              "type": "identifier_normalization",
+              "description": "Python normalizes identifiers using NFKC",
+              "exploitable": true,
+              "example": "\ud835\udcea\ud835\udceb\ud835\udcec = 1; print(abc)  # Different variable names that normalize to same",
+              "severity": "high"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "JavaScript allows Unicode escapes in identifiers",
+              "exploitable": true,
+              "example": "var \\u0061bc = 1; console.log(abc);  # Same variable",
+              "severity": "medium"
+            },
+            {
+              "type": "unicode_escapes",
+              "description": "Java processes Unicode escapes before parsing",
+              "exploitable": true,
+              "example": "String s = \"\\u002f\\u002f not a comment\";  # Becomes //",
+              "severity": "high"
+            }
+          ],
+          "recommendations": [
+            "Implement language-specific modules for high-severity findings",
+            "Create test cases for each exploitable quirk",
+            "Update grammar database with documented behaviors",
+            "Generate YARA rules for detection"
+          ]
+        },
+        "artifacts": [
+          "agents/artifacts/language_grammar_hunter_language_analysis_20260107_110212.json"
+        ],
+        "languages_analyzed": 3
+      }
+    }
+  ],
+  "updated_at": "2026-01-07T11:02:12.258615"
+}

@@ -1,0 +1,53 @@
+---
+# Sample Noseeum Agent Configuration
+# Copy this file to config.yaml and update with your settings
+
+# API Configuration
+api:
+  anthropic_api_key: "your-anthropic-api-key-here"  # Replace with your actual API key
+  model: claude-sonnet-4-5-20250929
+  max_tokens: 8000
+  temperature: 0.7
+
+# Agent Settings - Enable/disable specific agents as needed
+agents:
+  unicode_archaeologist:
+    enabled: true
+    research_depth: deep
+    update_frequency: daily
+
+  language_grammar_hunter:
+    enabled: true
+    target_languages:
+      - python
+      - javascript
+      - java
+
+  payload_artisan:
+    enabled: true
+    creativity: high
+    context_awareness: true
+
+  stealth_optimizer:
+    enabled: true
+    evasion_focus: maximum
+
+# Swarm Configuration
+swarm:
+  max_concurrent_agents: 3
+  task_distribution: intelligent
+  coordination: enabled
+
+# Output Configuration
+output:
+  log_level: INFO
+  log_file: agents/logs/agent.log
+  results_dir: agents/results
+  artifacts_dir: agents/artifacts
+
+# Integration
+integration:
+  noseeum_root: /home/mrnob0dy666/noseeum
+  auto_update_framework: false
+  git_integration: true
+  commit_changes: false  # Manual approval required

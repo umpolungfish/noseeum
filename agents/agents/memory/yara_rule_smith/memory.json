@@ -1,0 +1,22 @@
+{
+  "agent_id": "yara_rule_smith",
+  "created_at": "2026-01-07T02:35:55.209987",
+  "entries": {},
+  "sessions": [
+    {
+      "session_id": "session_0",
+      "task": "Generate YARA rules",
+      "start_time": "2026-01-07T02:35:55.210048",
+      "events": [],
+      "end_time": "2026-01-07T02:35:55.210283",
+      "result": {
+        "rules": "rule unicode_bidi_attack {\n    meta:\n        description = \"Detects bidirectional Unicode control characters\"\n        author = \"YARA Rule Smith\"\n    strings:\n        $bidi1 = { E2 80 8E }  // LEFT-TO-RIGHT MARK\n        $bidi2 = { E2 80 8F }  // RIGHT-TO-LEFT MARK\n        $bidi3 = { E2 80 AA }  // LEFT-TO-RIGHT EMBEDDING\n    condition:\n        any of them\n}",
+        "attack_type": "bidi",
+        "artifacts": [
+          "agents/artifacts/yara_rule_smith_yara_rules_bidi_20260107_023555.txt"
+        ]
+      }
+    }
+  ],
+  "updated_at": "2026-01-07T02:35:55.210286"
+}

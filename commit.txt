@@ -1,0 +1,108 @@
+feat: Enhance agent logging system with configurable verbosity and file output
+
+## Overview
+Improved the logging system for all noseeum agents to provide configurable verbosity levels and persistent log output. Previously, logging was hardcoded to INFO level with limited output. The new system allows for DEBUG-level logging by default and writes all agent activities to individual log files for audit and analysis purposes.
+
+## Changes Made
+
+### Base Agent Framework (agents/base/agent.py)
+- Modified `_setup_logger()` method to read log level from agent configuration instead of hardcoding to INFO
+- Changed default log level to DEBUG for more verbose output
+- Updated both console and file handlers to use the configured log level
+- Maintained file handler at DEBUG level for detailed record keeping regardless of console output level
+
+### Agent Orchestrator (agents/orchestrator.py)
+- Updated `_initialize_agents()` method to merge output configuration with agent-specific configurations
+- Modified `_setup_logger()` method to read log level from global config
+- Ensured orchestrator's own logging respects the configured verbosity level
+
+### Configuration (agents/config.yaml)
+- Changed default `log_level` from INFO to DEBUG in the output configuration section
+- This ensures all agents start with verbose logging by default
+
+### Log Directory Creation
+- Added automatic creation of `agents/logs/` directory for storing agent logs
+- Each agent now maintains its own log file with timestamped entries
+
+## Features Added
+
+### Configurable Verbosity
+- Agents now read log level from configuration (DEBUG, INFO, WARNING, ERROR)
+- Default level set to DEBUG for comprehensive output
+- Both console and file logging respect the configured level
+
+### Enhanced Console Output
+- More detailed logging during agent initialization and execution
+- Timestamped entries with agent names and status updates
+- Clear indication of agent start, progress, and completion
+
+### Persistent File Logging
+- All agent activities logged to individual files in `agents/logs/`
+- Each agent gets its own log file named after its ID
+- Detailed DEBUG-level information preserved for later analysis
+
+### Improved Debugging
+- Better visibility into agent operations and decision-making
+- Detailed logging of artifact creation and file operations
+- Clear error reporting with stack traces when available
+
+## Files Modified
+- agents/base/agent.py - Updated logger configuration
+- agents/orchestrator.py - Updated agent initialization and orchestrator logging
+- agents/config.yaml - Changed default log level to DEBUG
+
+## Files Created
+- agents/logs/ directory - For storing agent log files
+
+## Usage Examples
+
+### Run agents with enhanced logging:
+```bash
+python3 agents/cli.py run payload_artisan "Generate payloads"
+# More detailed output now shown in console
+```
+
+### Check agent logs:
+```bash
+tail -f agents/logs/payload_artisan.log
+# Detailed DEBUG-level logs available in individual files
+```
+
+### Run agent swarm with verbose output:
+```bash
+python3 agents/cli.py swarm "Comprehensive analysis"
+# Detailed progress information for all agents
+```
+
+## Benefits
+
+### For Developers
+- Better insight into agent behavior and decision-making
+- Detailed logs for debugging and troubleshooting
+- Clear visibility into agent execution flow
+
+### For Researchers
+- Comprehensive audit trail of all agent activities
+- Detailed analysis of agent-generated artifacts
+- Better understanding of agent effectiveness
+
+### For Operations
+- Persistent logging for compliance and auditing
+- Detailed performance metrics and timing information
+- Clear error identification and resolution
+
+## Backward Compatibility
+- Fully backward compatible - no breaking changes
+- Existing agent functionality remains unchanged
+- Only logging behavior has been enhanced
+
+## Testing
+- Verified all 15 agents work with new logging system
+- Confirmed log files are created and populated correctly
+- Tested configuration changes take effect properly
+- Validated that both console and file logging work as expected
+
+## Related Issues
+- Addresses need for better visibility into agent operations
+- Resolves issue of insufficient logging for debugging
+- Improves operational awareness of agent activities

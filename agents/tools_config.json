@@ -1,0 +1,46 @@
+{
+  "tools": {
+    "semgrep": {
+      "command": "semgrep",
+      "available": true,
+      "version_check": "semgrep --version"
+    },
+    "bandit": {
+      "command": "bandit",
+      "available": true,
+      "version_check": "bandit --version"
+    },
+    "eslint": {
+      "command": "eslint",
+      "available": true,
+      "version_check": "eslint --version"
+    },
+    "pylint": {
+      "command": "pylint",
+      "available": true,
+      "version_check": "pylint --version"
+    },
+    "gosec": {
+      "command": "gosec",
+      "available": true,
+      "version_check": "gosec --version"
+    },
+    "codeql": {
+      "command": "gh codeql",
+      "available": true,
+      "version_check": "gh codeql --version",
+      "alternative_commands": ["codeql"]
+    },
+    "sonarqube": {
+      "command": "npx sonarqube-scanner",
+      "available": true,
+      "version_check": "npx sonarqube-scanner --version",
+      "alternative_commands": ["sonar-scanner", "sonarqube-scanner"]
+    },
+    "shellcheck": {
+      "command": "shellcheck",
+      "available": true,
+      "version_check": "shellcheck --version"
+    }
+  }
+}

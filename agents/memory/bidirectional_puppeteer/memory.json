@@ -1,0 +1,734 @@
+{
+  "agent_id": "bidirectional_puppeteer",
+  "created_at": "2026-01-07T06:28:32.259593",
+  "entries": {},
+  "sessions": [
+    {
+      "session_id": "session_0",
+      "task": "Analyze Python Unicode security",
+      "start_time": "2026-01-07T06:28:32.298499",
+      "events": [],
+      "end_time": "2026-01-07T06:28:32.306671",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_062832.json"
+      }
+    },
+    {
+      "session_id": "session_1",
+      "task": "Analyze Python Unicode security",
+      "start_time": "2026-01-07T06:29:08.030537",
+      "events": [],
+      "end_time": "2026-01-07T06:29:08.033121",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_062908.json"
+      }
+    },
+    {
+      "session_id": "session_2",
+      "task": "Analyze Javascript Unicode security",
+      "start_time": "2026-01-07T06:46:59.251898",
+      "events": [],
+      "end_time": "2026-01-07T06:46:59.254171",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_064659.json"
+      }
+    },
+    {
+      "session_id": "session_3",
+      "task": "Analyze Javascript Unicode security",
+      "start_time": "2026-01-07T06:47:48.033940",
+      "events": [],
+      "end_time": "2026-01-07T06:47:48.035913",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_064748.json"
+      }
+    },
+    {
+      "session_id": "session_4",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:58:05.067532",
+      "events": [],
+      "end_time": "2026-01-07T07:58:05.081456",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_075805.json"
+      }
+    },
+    {
+      "session_id": "session_5",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T07:59:34.353924",
+      "events": [],
+      "end_time": "2026-01-07T07:59:34.357798",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_075934.json"
+      }
+    },
+    {
+      "session_id": "session_6",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T08:07:16.928266",
+      "events": [],
+      "end_time": "2026-01-07T08:07:16.944894",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_080716.json"
+      }
+    },
+    {
+      "session_id": "session_7",
+      "task": "Perform comprehensive Encoded-character security analysis for Kotlin language",
+      "start_time": "2026-01-07T08:07:31.758044",
+      "events": [],
+      "end_time": "2026-01-07T08:07:31.781778",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_080731.json"
+      }
+    },
+    {
+      "session_id": "session_8",
+      "task": "Generate attack trees for JavaScript",
+      "start_time": "2026-01-07T09:10:16.129726",
+      "events": [],
+      "end_time": "2026-01-07T09:10:16.143375",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_091016.json"
+      }
+    },
+    {
+      "session_id": "session_9",
+      "task": "Develop and validate new java attack payloads",
+      "start_time": "2026-01-07T09:15:43.378473",
+      "events": [],
+      "end_time": "2026-01-07T09:15:43.393302",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_091543.json"
+      }
+    },
+    {
+      "session_id": "session_10",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:17:48.890337",
+      "events": [],
+      "end_time": "2026-01-07T10:17:48.900814",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_101748.json"
+      }
+    },
+    {
+      "session_id": "session_11",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:21:13.805260",
+      "events": [],
+      "end_time": "2026-01-07T10:21:13.821432",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_102113.json"
+      }
+    },
+    {
+      "session_id": "session_12",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:22:09.511458",
+      "events": [],
+      "end_time": "2026-01-07T10:22:09.516957",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_102209.json"
+      }
+    },
+    {
+      "session_id": "session_13",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:28:07.659976",
+      "events": [],
+      "end_time": "2026-01-07T10:28:07.669844",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_102807.json"
+      }
+    },
+    {
+      "session_id": "session_14",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:32:27.530936",
+      "events": [],
+      "end_time": "2026-01-07T10:32:27.551073",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_103227.json"
+      }
+    },
+    {
+      "session_id": "session_15",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:38:15.720884",
+      "events": [],
+      "end_time": "2026-01-07T10:38:15.722668",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_103815.json"
+      }
+    },
+    {
+      "session_id": "session_16",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:38:54.458808",
+      "events": [],
+      "end_time": "2026-01-07T10:38:54.477354",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_103854.json"
+      }
+    },
+    {
+      "session_id": "session_17",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:40:17.160704",
+      "events": [],
+      "end_time": "2026-01-07T10:40:17.163667",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_104017.json"
+      }
+    },
+    {
+      "session_id": "session_18",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:43:09.753805",
+      "events": [],
+      "end_time": "2026-01-07T10:43:09.757884",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_104309.json"
+      }
+    },
+    {
+      "session_id": "session_19",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:44:06.011865",
+      "events": [],
+      "end_time": "2026-01-07T10:44:06.013768",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_104406.json"
+      }
+    },
+    {
+      "session_id": "session_20",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T10:45:12.756316",
+      "events": [],
+      "end_time": "2026-01-07T10:45:12.764833",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 15,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_104512.json"
+      }
+    },
+    {
+      "session_id": "session_21",
+      "task": "Complete research cycle: discover, develop, validate, document",
+      "start_time": "2026-01-07T11:02:12.308693",
+      "events": [],
+      "end_time": "2026-01-07T11:02:12.313997",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 9,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_110212.json"
+      }
+    }
+  ],
+  "updated_at": "2026-01-07T11:02:12.314001"
+}
