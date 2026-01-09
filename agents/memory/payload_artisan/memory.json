@@ -1519,7 +1519,377 @@
         ],
         "style_analysis": null
       }
+    },
+    {
+      "session_id": "session_41",
+      "task": "Generate test payload",
+      "start_time": "2026-01-08T00:20:23.045998",
+      "events": [],
+      "end_time": "2026-01-08T00:20:23.049318",
+      "result": {
+        "payloads": [
+          {
+            "id": 0,
+            "payload": "# Legitimate code\u202eevil = \"malicious\"\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 1,
+            "payload": "safe = \"ok\"  # Comment\u202eevil()\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 2,
+            "payload": "def test(): # \u202eevil_code()\u202d\n    pass",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          }
+        ],
+        "total_generated": 3,
+        "artifacts": [
+          "agents/artifacts/payload_artisan_generated_payloads_20260108_002023.json"
+        ],
+        "style_analysis": null
+      }
+    },
+    {
+      "session_id": "session_42",
+      "task": "Test payload generation",
+      "start_time": "2026-01-08T00:23:16.460053",
+      "events": [],
+      "end_time": "2026-01-08T00:23:16.462461",
+      "result": {
+        "payloads": [
+          {
+            "id": 0,
+            "payload": "# Legitimate code\u202eevil = \"malicious\"\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 1,
+            "payload": "safe = \"ok\"  # Comment\u202eevil()\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 2,
+            "payload": "def test(): # \u202eevil_code()\u202d\n    pass",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          }
+        ],
+        "total_generated": 3,
+        "artifacts": [
+          "agents/artifacts/payload_artisan_generated_payloads_20260108_002316.json"
+        ],
+        "style_analysis": null
+      }
+    },
+    {
+      "session_id": "session_43",
+      "task": "Generate",
+      "start_time": "2026-01-08T00:41:03.837509",
+      "events": [],
+      "end_time": "2026-01-08T00:41:03.841006",
+      "result": {
+        "payloads": [
+          {
+            "id": 0,
+            "payload": "# Legitimate code\u202eevil = \"malicious\"\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 1,
+            "payload": "safe = \"ok\"  # Comment\u202eevil()\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 2,
+            "payload": "def test(): # \u202eevil_code()\u202d\n    pass",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          }
+        ],
+        "total_generated": 3,
+        "artifacts": [
+          "agents/artifacts/payload_artisan_generated_payloads_20260108_004103.json"
+        ],
+        "style_analysis": null
+      }
+    },
+    {
+      "session_id": "session_44",
+      "task": "Develop and validate new attack payloads",
+      "start_time": "2026-01-08T00:49:28.211992",
+      "events": [],
+      "end_time": "2026-01-08T00:49:28.220933",
+      "result": {
+        "payloads": [
+          {
+            "id": 0,
+            "payload": "# Legitimate code\u202eevil = \"malicious\"\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 1,
+            "payload": "safe = \"ok\"  # Comment\u202eevil()\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 2,
+            "payload": "def test(): # \u202eevil_code()\u202d\n    pass",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          }
+        ],
+        "total_generated": 3,
+        "artifacts": [
+          "agents/artifacts/payload_artisan_generated_payloads_20260108_004928.json"
+        ],
+        "style_analysis": null
+      }
+    },
+    {
+      "session_id": "session_45",
+      "task": "Automate framework improvements",
+      "start_time": "2026-01-08T01:29:58.275575",
+      "events": [],
+      "end_time": "2026-01-08T01:29:58.285843",
+      "result": {
+        "payloads": [
+          {
+            "id": 0,
+            "payload": "# Legitimate code\u202eevil = \"malicious\"\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 1,
+            "payload": "safe = \"ok\"  # Comment\u202eevil()\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 2,
+            "payload": "def test(): # \u202eevil_code()\u202d\n    pass",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          }
+        ],
+        "total_generated": 3,
+        "artifacts": [
+          "agents/artifacts/payload_artisan_generated_payloads_20260108_012958.json"
+        ],
+        "style_analysis": null
+      }
+    },
+    {
+      "session_id": "session_46",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:24.868798",
+      "events": [],
+      "end_time": "2026-01-08T01:53:24.885101",
+      "result": {
+        "payloads": [
+          {
+            "id": 0,
+            "payload": "# Legitimate code\u202eevil = \"malicious\"\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 1,
+            "payload": "safe = \"ok\"  # Comment\u202eevil()\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 2,
+            "payload": "def test(): # \u202eevil_code()\u202d\n    pass",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          }
+        ],
+        "total_generated": 3,
+        "artifacts": [
+          "agents/artifacts/payload_artisan_generated_payloads_20260108_015324.json"
+        ],
+        "style_analysis": null
+      }
+    },
+    {
+      "session_id": "session_47",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:48.374243",
+      "events": [],
+      "end_time": "2026-01-08T01:53:48.386278",
+      "result": {
+        "payloads": [
+          {
+            "id": 0,
+            "payload": "# Legitimate code\u202eevil = \"malicious\"\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 1,
+            "payload": "safe = \"ok\"  # Comment\u202eevil()\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 2,
+            "payload": "def test(): # \u202eevil_code()\u202d\n    pass",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          }
+        ],
+        "total_generated": 3,
+        "artifacts": [
+          "agents/artifacts/payload_artisan_generated_payloads_20260108_015348.json"
+        ],
+        "style_analysis": null
+      }
+    },
+    {
+      "session_id": "session_48",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:02:20.770410",
+      "events": [],
+      "end_time": "2026-01-08T02:02:20.787027",
+      "result": {
+        "payloads": [
+          {
+            "id": 0,
+            "payload": "# Legitimate code\u202eevil = \"malicious\"\u202d",
+            "attack_type": "clean",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 1,
+            "payload": "safe = \"ok\"  # Comment\u202eevil()\u202d",
+            "attack_type": "clean",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 2,
+            "payload": "def test(): # \u202eevil_code()\u202d\n    pass",
+            "attack_type": "clean",
+            "language": "python",
+            "naturalness_score": 0.5
+          }
+        ],
+        "total_generated": 3,
+        "artifacts": [
+          "agents/artifacts/payload_artisan_generated_payloads_20260108_020220.json"
+        ],
+        "style_analysis": null
+      }
+    },
+    {
+      "session_id": "session_49",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:03:04.599113",
+      "events": [],
+      "end_time": "2026-01-08T02:03:04.610354",
+      "result": {
+        "payloads": [
+          {
+            "id": 0,
+            "payload": "admin = \"safe\"  # Using cyrillic \u0430",
+            "attack_type": "homoglyph",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 1,
+            "payload": "u\u0455er = \"data\"  # Cyrillic s",
+            "attack_type": "homoglyph",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 2,
+            "payload": "\u0430\u0440\u0456_k\u0435y = \"xxx\"  # Mixed Cyrillic",
+            "attack_type": "homoglyph",
+            "language": "python",
+            "naturalness_score": 0.5
+          }
+        ],
+        "total_generated": 3,
+        "artifacts": [
+          "agents/artifacts/payload_artisan_generated_payloads_20260108_020304.json"
+        ],
+        "style_analysis": null
+      }
+    },
+    {
+      "session_id": "session_50",
+      "task": "Generate attacks",
+      "start_time": "2026-01-08T02:07:25.753519",
+      "events": [],
+      "end_time": "2026-01-08T02:07:25.755876",
+      "result": {
+        "payloads": [
+          {
+            "id": 0,
+            "payload": "# Legitimate code\u202eevil = \"malicious\"\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 1,
+            "payload": "safe = \"ok\"  # Comment\u202eevil()\u202d",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          },
+          {
+            "id": 2,
+            "payload": "def test(): # \u202eevil_code()\u202d\n    pass",
+            "attack_type": "bidi",
+            "language": "python",
+            "naturalness_score": 0.5
+          }
+        ],
+        "total_generated": 3,
+        "artifacts": [
+          "agents/artifacts/payload_artisan_generated_payloads_20260108_020725.json"
+        ],
+        "style_analysis": null
+      }
     }
   ],
-  "updated_at": "2026-01-07T11:02:12.229371"
+  "updated_at": "2026-01-08T02:07:25.755880"
 }

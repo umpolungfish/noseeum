@@ -1175,7 +1175,313 @@
         ],
         "artifact_path": "agents/artifacts/normalization_alchemist_normalization_exploits_20260107_110212.json"
       }
+    },
+    {
+      "session_id": "session_23",
+      "task": "Automate framework improvements",
+      "start_time": "2026-01-08T01:26:56.962798",
+      "events": [],
+      "end_time": "2026-01-08T01:26:56.966555",
+      "result": {
+        "collisions_found": 3,
+        "parsers_tested": 3,
+        "exploits_generated": 3,
+        "examples": [
+          {
+            "original": {
+              "char": "\u2100",
+              "codepoint": "U+2100",
+              "name": "ACCOUNT OF"
+            },
+            "NFC": "\u2100",
+            "NFD": "\u2100",
+            "NFKC": "a/c",
+            "NFKD": "a/c",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u2101",
+              "codepoint": "U+2101",
+              "name": "ADDRESSED TO THE SUBJECT"
+            },
+            "NFC": "\u2101",
+            "NFD": "\u2101",
+            "NFKC": "a/s",
+            "NFKD": "a/s",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u338f",
+              "codepoint": "U+338F",
+              "name": "KILOGRAM"
+            },
+            "NFC": "\u338f",
+            "NFD": "\u338f",
+            "NFKC": "kg",
+            "NFKD": "kg",
+            "exploitable": true
+          }
+        ],
+        "artifact_path": "agents/artifacts/normalization_alchemist_normalization_exploits_20260108_012656.json"
+      }
+    },
+    {
+      "session_id": "session_24",
+      "task": "Automate framework improvements",
+      "start_time": "2026-01-08T01:29:58.371940",
+      "events": [],
+      "end_time": "2026-01-08T01:29:58.375176",
+      "result": {
+        "collisions_found": 3,
+        "parsers_tested": 3,
+        "exploits_generated": 3,
+        "examples": [
+          {
+            "original": {
+              "char": "\u2100",
+              "codepoint": "U+2100",
+              "name": "ACCOUNT OF"
+            },
+            "NFC": "\u2100",
+            "NFD": "\u2100",
+            "NFKC": "a/c",
+            "NFKD": "a/c",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u2101",
+              "codepoint": "U+2101",
+              "name": "ADDRESSED TO THE SUBJECT"
+            },
+            "NFC": "\u2101",
+            "NFD": "\u2101",
+            "NFKC": "a/s",
+            "NFKD": "a/s",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u338f",
+              "codepoint": "U+338F",
+              "name": "KILOGRAM"
+            },
+            "NFC": "\u338f",
+            "NFD": "\u338f",
+            "NFKC": "kg",
+            "NFKD": "kg",
+            "exploitable": true
+          }
+        ],
+        "artifact_path": "agents/artifacts/normalization_alchemist_normalization_exploits_20260108_012958.json"
+      }
+    },
+    {
+      "session_id": "session_25",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:24.955132",
+      "events": [],
+      "end_time": "2026-01-08T01:53:24.968741",
+      "result": {
+        "collisions_found": 3,
+        "parsers_tested": 3,
+        "exploits_generated": 3,
+        "examples": [
+          {
+            "original": {
+              "char": "\u2100",
+              "codepoint": "U+2100",
+              "name": "ACCOUNT OF"
+            },
+            "NFC": "\u2100",
+            "NFD": "\u2100",
+            "NFKC": "a/c",
+            "NFKD": "a/c",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u2101",
+              "codepoint": "U+2101",
+              "name": "ADDRESSED TO THE SUBJECT"
+            },
+            "NFC": "\u2101",
+            "NFD": "\u2101",
+            "NFKC": "a/s",
+            "NFKD": "a/s",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u338f",
+              "codepoint": "U+338F",
+              "name": "KILOGRAM"
+            },
+            "NFC": "\u338f",
+            "NFD": "\u338f",
+            "NFKC": "kg",
+            "NFKD": "kg",
+            "exploitable": true
+          }
+        ],
+        "artifact_path": "agents/artifacts/normalization_alchemist_normalization_exploits_20260108_015324.json"
+      }
+    },
+    {
+      "session_id": "session_26",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:48.466055",
+      "events": [],
+      "end_time": "2026-01-08T01:53:48.467975",
+      "result": {
+        "collisions_found": 3,
+        "parsers_tested": 3,
+        "exploits_generated": 3,
+        "examples": [
+          {
+            "original": {
+              "char": "\u2100",
+              "codepoint": "U+2100",
+              "name": "ACCOUNT OF"
+            },
+            "NFC": "\u2100",
+            "NFD": "\u2100",
+            "NFKC": "a/c",
+            "NFKD": "a/c",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u2101",
+              "codepoint": "U+2101",
+              "name": "ADDRESSED TO THE SUBJECT"
+            },
+            "NFC": "\u2101",
+            "NFD": "\u2101",
+            "NFKC": "a/s",
+            "NFKD": "a/s",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u338f",
+              "codepoint": "U+338F",
+              "name": "KILOGRAM"
+            },
+            "NFC": "\u338f",
+            "NFD": "\u338f",
+            "NFKC": "kg",
+            "NFKD": "kg",
+            "exploitable": true
+          }
+        ],
+        "artifact_path": "agents/artifacts/normalization_alchemist_normalization_exploits_20260108_015348.json"
+      }
+    },
+    {
+      "session_id": "session_27",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:02:20.854000",
+      "events": [],
+      "end_time": "2026-01-08T02:02:20.858817",
+      "result": {
+        "collisions_found": 3,
+        "parsers_tested": 3,
+        "exploits_generated": 3,
+        "examples": [
+          {
+            "original": {
+              "char": "\u2100",
+              "codepoint": "U+2100",
+              "name": "ACCOUNT OF"
+            },
+            "NFC": "\u2100",
+            "NFD": "\u2100",
+            "NFKC": "a/c",
+            "NFKD": "a/c",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u2101",
+              "codepoint": "U+2101",
+              "name": "ADDRESSED TO THE SUBJECT"
+            },
+            "NFC": "\u2101",
+            "NFD": "\u2101",
+            "NFKC": "a/s",
+            "NFKD": "a/s",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u338f",
+              "codepoint": "U+338F",
+              "name": "KILOGRAM"
+            },
+            "NFC": "\u338f",
+            "NFD": "\u338f",
+            "NFKC": "kg",
+            "NFKD": "kg",
+            "exploitable": true
+          }
+        ],
+        "artifact_path": "agents/artifacts/normalization_alchemist_normalization_exploits_20260108_020220.json"
+      }
+    },
+    {
+      "session_id": "session_28",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:03:04.694062",
+      "events": [],
+      "end_time": "2026-01-08T02:03:04.697514",
+      "result": {
+        "collisions_found": 3,
+        "parsers_tested": 3,
+        "exploits_generated": 3,
+        "examples": [
+          {
+            "original": {
+              "char": "\u2100",
+              "codepoint": "U+2100",
+              "name": "ACCOUNT OF"
+            },
+            "NFC": "\u2100",
+            "NFD": "\u2100",
+            "NFKC": "a/c",
+            "NFKD": "a/c",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u2101",
+              "codepoint": "U+2101",
+              "name": "ADDRESSED TO THE SUBJECT"
+            },
+            "NFC": "\u2101",
+            "NFD": "\u2101",
+            "NFKC": "a/s",
+            "NFKD": "a/s",
+            "exploitable": true
+          },
+          {
+            "original": {
+              "char": "\u338f",
+              "codepoint": "U+338F",
+              "name": "KILOGRAM"
+            },
+            "NFC": "\u338f",
+            "NFD": "\u338f",
+            "NFKC": "kg",
+            "NFKD": "kg",
+            "exploitable": true
+          }
+        ],
+        "artifact_path": "agents/artifacts/normalization_alchemist_normalization_exploits_20260108_020304.json"
+      }
     }
   ],
-  "updated_at": "2026-01-07T11:02:12.291808"
+  "updated_at": "2026-01-08T02:03:04.697520"
 }

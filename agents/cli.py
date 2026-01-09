@@ -80,15 +80,23 @@ def list_agents(ctx):
 @click.argument('agent_id')
 @click.argument('task')
 @click.option('--context', help='JSON context for the task')
+@click.option('--context-file', type=click.Path(exists=True), help='JSON file containing context')
 @click.option('--output', '-o', help='Output file for results')
 @click.pass_context
-def run(ctx, agent_id, task, context, output):
+def run(ctx, agent_id, task, context, context_file, output):
     """Run a single agent."""
     orchestrator = ctx.obj['orchestrator']
 
     # Parse context if provided
     context_dict = None
-    if context:
+    if context_file:
+        try:
+            with open(context_file, 'r') as f:
+                context_dict = json.load(f)
+        except (json.JSONDecodeError, IOError) as e:
+            click.echo(f"Error: Failed to load context file: {e}", err=True)
+            sys.exit(1)
+    elif context:
         try:
             context_dict = json.loads(context)
         except json.JSONDecodeError:
@@ -127,9 +135,10 @@ def run(ctx, agent_id, task, context, output):
 @click.argument('task')
 @click.option('--agents', help='Comma-separated agent IDs')
 @click.option('--context', help='JSON context for the task')
+@click.option('--context-file', type=click.Path(exists=True), help='JSON file containing context')
 @click.option('--output', '-o', help='Output file for results')
 @click.pass_context
-def swarm(ctx, task, agents, context, output):
+def swarm(ctx, task, agents, context, context_file, output):
     """Run multiple agents as a coordinated swarm."""
     orchestrator = ctx.obj['orchestrator']
 
@@ -138,7 +147,14 @@ def swarm(ctx, task, agents, context, output):
 
     # Parse context
     context_dict = None
-    if context:
+    if context_file:
+        try:
+            with open(context_file, 'r') as f:
+                context_dict = json.load(f)
+        except (json.JSONDecodeError, IOError) as e:
+            click.echo(f"Error: Failed to load context file: {e}", err=True)
+            sys.exit(1)
+    elif context:
         try:
             context_dict = json.loads(context)
         except json.JSONDecodeError:

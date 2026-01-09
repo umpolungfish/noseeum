@@ -1,6 +1,6 @@
 # BYVALVER - Null-Byte Elimination Framework .gitignore
 # Generated based on project structure and build process
-
+./.archive
 ./agents/config.yaml
 # Build artifacts and executables
 /bin/

@@ -1,7 +1,12 @@
 # Noseeum Agent Requirements
 
+# Core LLM Providers
+anthropic>=0.40.0          # Anthropic Claude API
+mistralai>=1.0.0           # Mistral AI API (for Mistral provider)
+
+# Note: DeepSeek uses OpenAI-compatible HTTP API, no special package needed
+
 # Core dependencies
-anthropic>=0.40.0
 pyyaml>=6.0
 requests>=2.31.0
 

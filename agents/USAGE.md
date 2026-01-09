@@ -278,6 +278,24 @@ python cli.py run bidirectional_puppeteer "Generate advanced Bidi attacks" \
 - Testing rendering engines
 - Trojan Source research
 
+### Testing & Runtime Analysis
+
+#### Runtime Analyzer
+Analyzes code at runtime for security vulnerabilities and execution patterns.
+
+**Example:**
+```bash
+python cli.py run runtime_analyzer "Monitor Python script for suspicious behavior" \
+  --context '{"script": "suspicious.py", "monitor": ["network", "filesystem", "processes"]}'
+```
+
+**Use Cases:**
+- Runtime vulnerability detection
+- Execution pattern analysis
+- Dynamic security testing
+- Behavioral analysis
+- Anomaly detection during code execution
+
 ## Programmatic Usage
 
 ### Python API

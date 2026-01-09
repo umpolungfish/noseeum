@@ -1,3 +1,54 @@
-click
-requests
-pytest
+# ============================================================================
+# Noseeum Requirements
+# ============================================================================
+# Main dependencies for the noseeum framework and agent system
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Core CLI & Framework
+# ----------------------------------------------------------------------------
+click>=8.0.0              # CLI framework for noseeum commands
+requests>=2.31.0          # HTTP requests for API calls
+
+# ----------------------------------------------------------------------------
+# LLM Provider SDKs
+# ----------------------------------------------------------------------------
+anthropic>=0.40.0         # Anthropic Claude API
+mistralai>=1.0.0          # Mistral AI API
+# Note: DeepSeek uses OpenAI-compatible HTTP API via requests
+
+# ----------------------------------------------------------------------------
+# Agent System Dependencies
+# ----------------------------------------------------------------------------
+pyyaml>=6.0               # YAML config file parsing
+
+# ----------------------------------------------------------------------------
+# Testing
+# ----------------------------------------------------------------------------
+pytest>=7.4.0             # Testing framework
+pytest-asyncio>=0.21.0    # Async support for pytest
+
+# ----------------------------------------------------------------------------
+# Security Scanning & Code Quality (Optional but Recommended)
+# ----------------------------------------------------------------------------
+# Uncomment these if you want development/security tools
+# semgrep>=1.45.0         # Static analysis security tool
+# bandit>=1.7.0           # Security linter for Python
+# pylint>=3.0.0           # Python code linter
+# mypy>=1.7.0             # Static type checker
+
+# ============================================================================
+# Installation Instructions
+# ============================================================================
+# Basic install:
+#   pip install -r requirements.txt
+#
+# Development install (with linting/security tools):
+#   pip install -r requirements.txt
+#   pip install semgrep bandit pylint mypy
+#
+# Virtual environment recommended:
+#   python -m venv venv
+#   source venv/bin/activate  # On Windows: venv\Scripts\activate
+#   pip install -r requirements.txt
+# ============================================================================

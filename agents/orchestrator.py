@@ -100,14 +100,48 @@ class AgentOrchestrator:
         agent_configs = self.config.get("agents", {})
         api_config = self.config.get("api", {})
         output_config = self.config.get("output", {})
+        llm_provider_config = self.config.get("llm_provider", {})
 
         for agent_id, agent_class in self.agent_classes.items():
             agent_config = agent_configs.get(agent_id, {})
 
             if agent_config.get("enabled", True):
                 try:
-                    # Merge API config with output config and agent-specific config
-                    full_config = {**api_config, **output_config, **agent_config}
+                    # Start with base config
+                    full_config = {**api_config, **output_config}
+
+                    # Determine which provider to use
+                    # Agent-specific overrides global default
+                    if 'llm_provider' in agent_config:
+                        provider_name = agent_config['llm_provider']
+                    elif 'provider' in llm_provider_config:
+                        provider_name = llm_provider_config.get('provider', 'anthropic')
+                    else:
+                        provider_name = 'anthropic'
+
+                    # Set the provider name in config
+                    full_config['llm_provider'] = provider_name
+
+                    # Copy provider-specific configs to top level
+                    # This allows BaseAgent to access api_key, model, etc. directly
+                    if provider_name in llm_provider_config:
+                        provider_specific = llm_provider_config.get(provider_name, {})
+                        for key, value in provider_specific.items():
+                            if key not in full_config:
+                                full_config[key] = value
+
+                    # For MoE provider, add MoE-specific configs
+                    if provider_name == 'moe' and 'moe' in llm_provider_config:
+                        moe_config = llm_provider_config.get('moe', {})
+                        for key, value in moe_config.items():
+                            if key not in full_config:
+                                full_config[key] = value
+                        # Pass the full llm_provider config so MoE can access sub-provider API keys
+                        full_config['llm_provider_config'] = llm_provider_config
+
+                    # Finally, merge agent-specific config (highest priority)
+                    full_config.update(agent_config)
+
                     self.agents[agent_id] = agent_class(full_config)
                     self.logger.info(f"Initialized agent: {agent_id}")
                 except Exception as e:

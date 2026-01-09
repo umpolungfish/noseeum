@@ -12,14 +12,30 @@ setup(
             'nfkc_map.json',
             'config.json',
         ],
+        'agents': [
+            'config.yaml',
+            'config_sample.yaml',
+        ],
     },
     install_requires=[
-        'click',
-        'requests',
+        'click>=8.0.0',
+        'requests>=2.31.0',
+        'anthropic>=0.40.0',
+        'mistralai>=1.0.0',
+        'pyyaml>=6.0',
+        'pytest>=7.4.0',
+        'pytest-asyncio>=0.21.0',
         'importlib-resources; python_version<"3.9"',
     ],
     extras_require={
-        'dev': ['pytest'],
+        'dev': [
+            'pytest>=7.4.0',
+            'pytest-asyncio>=0.21.0',
+            'semgrep>=1.45.0',
+            'bandit>=1.7.0',
+            'pylint>=3.0.0',
+            'mypy>=1.7.0',
+        ],
     },
     entry_points={
         'console_scripts': [

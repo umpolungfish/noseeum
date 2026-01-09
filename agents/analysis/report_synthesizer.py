@@ -33,8 +33,34 @@ class ReportSynthesizer(BaseAgent):
         session_id = self.memory.start_session(task)
 
         try:
-            report_type = context.get("report_type", "technical") if context else "technical"
-            findings = context.get("findings", []) if context else []
+            # Use intelligent context extraction
+            report_type = self._extract_from_context(context, "report_type", "technical")
+            findings = self._extract_from_context(context, "findings", [])
+
+            # Log received context for debugging
+            if context:
+                self.logger.info(f"Context keys: {list(context.keys())}")
+
+                # Try to collect findings from various agent outputs
+                all_findings = []
+
+                # From unicode_archaeologist
+                if "findings" in context and isinstance(context["findings"], list):
+                    all_findings.extend([f"Unicode finding: {f.get('description', str(f))}" for f in context["findings"][:5]])
+
+                # From payload_artisan
+                if "payloads" in context and isinstance(context["payloads"], list):
+                    all_findings.extend([f"Generated payload: {p.get('payload', str(p))[:100]}" for p in context["payloads"][:5]])
+
+                # From red_team_validator
+                if "test_results" in context:
+                    tr = context["test_results"]
+                    all_findings.append(f"Validation: {tr.get('bypassed', 0)}/{tr.get('tools_tested', 0)} tools bypassed")
+
+                # Use collected findings if we didn't have explicit findings
+                if not findings and all_findings:
+                    findings = all_findings
+                    self.logger.info(f"Collected {len(findings)} findings from context")
 
             report = self._generate_report(report_type, findings)
 

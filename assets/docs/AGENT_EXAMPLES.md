@@ -1,6 +1,6 @@
 # AGENT_EXAMPLES.md: Comprehensive Guide to Noseeum Agent Commands and Inquiries
 
-This document provides a comprehensive collection of commands, inquiries, and combinations for the noseeum autonomous agent system. Each example demonstrates practical use cases for the 15 specialized Claude-powered agents.
+This document provides a comprehensive collection of commands, inquiries, and combinations for the noseeum autonomous agent system. Each example demonstrates practical use cases for the 16 specialized Claude-powered agents.
 
 ## Table of Contents
 1. [Basic Agent Commands](#basic-agent-commands)
@@ -10,10 +10,11 @@ This document provides a comprehensive collection of commands, inquiries, and co
 5. [Analysis & Documentation Agents](#analysis--documentation-agents)
 6. [Infrastructure Agents](#infrastructure-agents)
 7. [Specialized Research Agents](#specialized-research-agents)
-8. [Agent Swarms](#agent-swarms)
-9. [Multi-Stage Pipelines](#multi-stage-pipelines)
-10. [Context-Based Commands](#context-based-commands)
-11. [Advanced Combinations](#advanced-combinations)
+8. [Testing & Runtime Analysis Agents](#testing--runtime-analysis-agents)
+9. [Agent Swarms](#agent-swarms)
+10. [Multi-Stage Pipelines](#multi-stage-pipelines)
+11. [Context-Based Commands](#context-based-commands)
+12. [Advanced Combinations](#advanced-combinations)
 
 ## Basic Agent Commands
 
@@ -394,6 +395,34 @@ python3 agents/cli.py run bidirectional_puppeteer "Validate BIDI rendering acros
 python3 agents/cli.py run bidirectional_puppeteer "Develop advanced BIDI obfuscation techniques" --context '{"techniques":["nested","overlapping","sequential"],"languages":["python","javascript","java"]}'
 ```
 
+## Testing & Runtime Analysis Agents
+
+### Runtime Analyzer
+
+#### Monitor Script Execution
+```bash
+python3 agents/cli.py run runtime_analyzer "Monitor Python script for suspicious behavior" \
+  --context '{"script":"malicious.py","monitor":["network","filesystem","processes"]}'
+```
+
+#### Dynamic Security Analysis
+```bash
+python3 agents/cli.py run runtime_analyzer "Perform dynamic security analysis on JavaScript" \
+  --context '{"target":"app.js","analysis_type":"behavioral","timeout":"30","trace_calls":true}'
+```
+
+#### Behavioral Pattern Detection
+```bash
+python3 agents/cli.py run runtime_analyzer "Detect anomalous execution patterns" \
+  --context '{"pattern_types":["network_io","file_access","registry_changes"],"threshold":"high"}'
+```
+
+#### Runtime Vulnerability Detection
+```bash
+python3 agents/cli.py run runtime_analyzer "Analyze runtime vulnerabilities in code" \
+  --context '{"script":"target.py","vuln_types":["injection","overflow","race_condition"]}'
+```
+
 ## Agent Swarms
 
 ### Comprehensive Security Analysis
@@ -600,4 +629,4 @@ python3 agents/cli.py info
 
 ---
 
-This comprehensive guide provides examples for all 15 noseeum agents, demonstrating their individual capabilities as well as their combined power when used in swarms and multi-stage pipelines. Each example is designed to showcase practical applications of the agent system for Unicode security research, attack development, and defense enhancement.
+This comprehensive guide provides examples for all 16 noseeum agents, demonstrating their individual capabilities as well as their combined power when used in swarms and multi-stage pipelines. Each example is designed to showcase practical applications of the agent system for Unicode security research, attack development, and defense enhancement.

@@ -85,9 +85,16 @@ class PayloadArtisan(BaseAgent):
         try:
             self.logger.info(f"Starting payload generation: {task}")
 
-            target_language = context.get("language", "python") if context else "python"
-            attack_type = context.get("attack_type", "bidi") if context else "bidi"
-            target_file = context.get("target_file") if context else None
+            # Use intelligent context extraction
+            target_language = self._extract_from_context(context, "language", "python")
+            attack_type = self._extract_from_context(context, "attack_type", "bidi")
+            target_file = self._extract_from_context(context, "target_file", None)
+
+            # Log received context for debugging
+            if context:
+                self.logger.info(f"Context keys: {list(context.keys())}")
+                if "findings" in context:
+                    self.logger.info(f"Received {len(context['findings'])} findings from previous agent")
 
             # Analyze target if provided
             style_analysis = None

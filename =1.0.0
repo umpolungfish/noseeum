@@ -1,0 +1,106 @@
+Collecting mistralai
+  Downloading mistralai-1.10.0-py3-none-any.whl.metadata (40 kB)
+Collecting eval-type-backport>=0.2.0 (from mistralai)
+  Downloading eval_type_backport-0.3.1-py3-none-any.whl.metadata (2.4 kB)
+Requirement already satisfied: httpx>=0.28.1 in ./venv/lib/python3.10/site-packages (from mistralai) (0.28.1)
+Collecting invoke<3.0.0,>=2.2.0 (from mistralai)
+  Downloading invoke-2.2.1-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: opentelemetry-api<2.0.0,>=1.33.1 in ./venv/lib/python3.10/site-packages (from mistralai) (1.37.0)
+Requirement already satisfied: opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0 in ./venv/lib/python3.10/site-packages (from mistralai) (1.37.0)
+Requirement already satisfied: opentelemetry-sdk<2.0.0,>=1.33.1 in ./venv/lib/python3.10/site-packages (from mistralai) (1.37.0)
+Collecting opentelemetry-semantic-conventions<0.60,>=0.59b0 (from mistralai)
+  Using cached opentelemetry_semantic_conventions-0.59b0-py3-none-any.whl.metadata (2.4 kB)
+Requirement already satisfied: pydantic>=2.10.3 in ./venv/lib/python3.10/site-packages (from mistralai) (2.12.5)
+Collecting python-dateutil>=2.8.2 (from mistralai)
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Requirement already satisfied: pyyaml<7.0.0,>=6.0.2 in ./venv/lib/python3.10/site-packages (from mistralai) (6.0.3)
+Requirement already satisfied: typing-inspection>=0.4.0 in ./venv/lib/python3.10/site-packages (from mistralai) (0.4.2)
+Requirement already satisfied: importlib-metadata<8.8.0,>=6.0 in ./venv/lib/python3.10/site-packages (from opentelemetry-api<2.0.0,>=1.33.1->mistralai) (8.7.1)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./venv/lib/python3.10/site-packages (from opentelemetry-api<2.0.0,>=1.33.1->mistralai) (4.15.0)
+Requirement already satisfied: zipp>=3.20 in ./venv/lib/python3.10/site-packages (from importlib-metadata<8.8.0,>=6.0->opentelemetry-api<2.0.0,>=1.33.1->mistralai) (3.23.0)
+Requirement already satisfied: googleapis-common-protos~=1.52 in ./venv/lib/python3.10/site-packages (from opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai) (1.72.0)
+Requirement already satisfied: opentelemetry-exporter-otlp-proto-common==1.37.0 in ./venv/lib/python3.10/site-packages (from opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai) (1.37.0)
+Requirement already satisfied: opentelemetry-proto==1.37.0 in ./venv/lib/python3.10/site-packages (from opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai) (1.37.0)
+Requirement already satisfied: requests~=2.7 in ./venv/lib/python3.10/site-packages (from opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai) (2.32.5)
+Requirement already satisfied: protobuf<7.0,>=5.0 in ./venv/lib/python3.10/site-packages (from opentelemetry-proto==1.37.0->opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai) (6.33.2)
+INFO: pip is looking at multiple versions of opentelemetry-sdk to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0 (from mistralai)
+  Downloading opentelemetry_exporter_otlp_proto_http-1.39.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-sdk<2.0.0,>=1.33.1 (from mistralai)
+  Downloading opentelemetry_sdk-1.39.1-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-api<2.0.0,>=1.33.1 (from mistralai)
+  Downloading opentelemetry_api-1.39.1-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-sdk<2.0.0,>=1.33.1 (from mistralai)
+  Downloading opentelemetry_sdk-1.39.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-api<2.0.0,>=1.33.1 (from mistralai)
+  Downloading opentelemetry_api-1.39.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-sdk<2.0.0,>=1.33.1 (from mistralai)
+  Downloading opentelemetry_sdk-1.38.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-api<2.0.0,>=1.33.1 (from mistralai)
+  Downloading opentelemetry_api-1.38.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.39.1 (from opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai)
+  Downloading opentelemetry_exporter_otlp_proto_common-1.39.1-py3-none-any.whl.metadata (1.8 kB)
+Collecting opentelemetry-proto==1.39.1 (from opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai)
+  Downloading opentelemetry_proto-1.39.1-py3-none-any.whl.metadata (2.3 kB)
+Collecting opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0 (from mistralai)
+  Downloading opentelemetry_exporter_otlp_proto_http-1.39.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.39.0 (from opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai)
+  Downloading opentelemetry_exporter_otlp_proto_common-1.39.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting opentelemetry-proto==1.39.0 (from opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai)
+  Downloading opentelemetry_proto-1.39.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0 (from mistralai)
+  Downloading opentelemetry_exporter_otlp_proto_http-1.38.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.38.0 (from opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai)
+  Downloading opentelemetry_exporter_otlp_proto_common-1.38.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting opentelemetry-proto==1.38.0 (from opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai)
+  Downloading opentelemetry_proto-1.38.0-py3-none-any.whl.metadata (2.3 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./venv/lib/python3.10/site-packages (from requests~=2.7->opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.10/site-packages (from requests~=2.7->opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.10/site-packages (from requests~=2.7->opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai) (2.6.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.10/site-packages (from requests~=2.7->opentelemetry-exporter-otlp-proto-http<2.0.0,>=1.37.0->mistralai) (2025.11.12)
+Requirement already satisfied: anyio in ./venv/lib/python3.10/site-packages (from httpx>=0.28.1->mistralai) (4.12.1)
+Requirement already satisfied: httpcore==1.* in ./venv/lib/python3.10/site-packages (from httpx>=0.28.1->mistralai) (1.0.9)
+Requirement already satisfied: h11>=0.16 in ./venv/lib/python3.10/site-packages (from httpcore==1.*->httpx>=0.28.1->mistralai) (0.16.0)
+Requirement already satisfied: annotated-types>=0.6.0 in ./venv/lib/python3.10/site-packages (from pydantic>=2.10.3->mistralai) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.5 in ./venv/lib/python3.10/site-packages (from pydantic>=2.10.3->mistralai) (2.41.5)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->mistralai)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Requirement already satisfied: exceptiongroup>=1.0.2 in ./venv/lib/python3.10/site-packages (from anyio->httpx>=0.28.1->mistralai) (1.2.2)
+Downloading mistralai-1.10.0-py3-none-any.whl (460 kB)
+Downloading invoke-2.2.1-py3-none-any.whl (160 kB)
+Downloading opentelemetry_sdk-1.38.0-py3-none-any.whl (132 kB)
+Downloading opentelemetry_semantic_conventions-0.59b0-py3-none-any.whl (207 kB)
+Downloading opentelemetry_api-1.38.0-py3-none-any.whl (65 kB)
+Downloading opentelemetry_exporter_otlp_proto_http-1.38.0-py3-none-any.whl (19 kB)
+Downloading opentelemetry_exporter_otlp_proto_common-1.38.0-py3-none-any.whl (18 kB)
+Downloading opentelemetry_proto-1.38.0-py3-none-any.whl (72 kB)
+Downloading eval_type_backport-0.3.1-py3-none-any.whl (6.1 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, opentelemetry-proto, invoke, eval-type-backport, python-dateutil, opentelemetry-exporter-otlp-proto-common, opentelemetry-api, opentelemetry-semantic-conventions, opentelemetry-sdk, opentelemetry-exporter-otlp-proto-http, mistralai
+  Attempting uninstall: opentelemetry-proto
+    Found existing installation: opentelemetry-proto 1.37.0
+    Uninstalling opentelemetry-proto-1.37.0:
+      Successfully uninstalled opentelemetry-proto-1.37.0
+  Attempting uninstall: opentelemetry-exporter-otlp-proto-common
+    Found existing installation: opentelemetry-exporter-otlp-proto-common 1.37.0
+    Uninstalling opentelemetry-exporter-otlp-proto-common-1.37.0:
+      Successfully uninstalled opentelemetry-exporter-otlp-proto-common-1.37.0
+  Attempting uninstall: opentelemetry-api
+    Found existing installation: opentelemetry-api 1.37.0
+    Uninstalling opentelemetry-api-1.37.0:
+      Successfully uninstalled opentelemetry-api-1.37.0
+  Attempting uninstall: opentelemetry-semantic-conventions
+    Found existing installation: opentelemetry-semantic-conventions 0.58b0
+    Uninstalling opentelemetry-semantic-conventions-0.58b0:
+      Successfully uninstalled opentelemetry-semantic-conventions-0.58b0
+  Attempting uninstall: opentelemetry-sdk
+    Found existing installation: opentelemetry-sdk 1.37.0
+    Uninstalling opentelemetry-sdk-1.37.0:
+      Successfully uninstalled opentelemetry-sdk-1.37.0
+  Attempting uninstall: opentelemetry-exporter-otlp-proto-http
+    Found existing installation: opentelemetry-exporter-otlp-proto-http 1.37.0
+    Uninstalling opentelemetry-exporter-otlp-proto-http-1.37.0:
+      Successfully uninstalled opentelemetry-exporter-otlp-proto-http-1.37.0
+
+Successfully installed eval-type-backport-0.3.1 invoke-2.2.1 mistralai-1.10.0 opentelemetry-api-1.38.0 opentelemetry-exporter-otlp-proto-common-1.38.0 opentelemetry-exporter-otlp-proto-http-1.38.0 opentelemetry-proto-1.38.0 opentelemetry-sdk-1.38.0 opentelemetry-semantic-conventions-0.59b0 python-dateutil-2.9.0.post0 six-1.17.0

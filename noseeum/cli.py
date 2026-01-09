@@ -43,6 +43,10 @@ def main():
 # Register the detect command
 main.add_command(detect_command)
 
+# Import and register the format command
+from noseeum.cli_format import format_cli
+main.add_command(format_cli)
+
 @click.group()
 def attack():
     """

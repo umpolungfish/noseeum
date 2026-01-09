@@ -32,12 +32,27 @@ class RedTeamValidator(BaseAgent):
         session_id = self.memory.start_session(task)
 
         try:
-            attack = context.get("attack") if context else None
-            target_file = context.get("target_file") if context else None
-            language = context.get("language", "python") if context else "python"
-            tools = context.get("test_tools", [
+            # Use intelligent context extraction
+            attack = self._extract_from_context(context, "attack", None)
+            # Also try to extract from "payload" key if "attack" not found
+            if not attack:
+                attack = self._extract_from_context(context, "payload", None)
+
+            target_file = self._extract_from_context(context, "target_file", None)
+            language = self._extract_from_context(context, "language", "python")
+            tools = self._extract_from_context(context, "test_tools", [
                 "semgrep", "bandit", "eslint", "pylint", "gosec", "codeql", "sonarqube"
-            ]) if context else ["semgrep", "bandit"]
+            ])
+
+            # Log received context for debugging
+            if context:
+                self.logger.info(f"Context keys: {list(context.keys())}")
+                if "payloads" in context:
+                    self.logger.info(f"Received {len(context['payloads'])} payloads from previous agent")
+                    # If we have payloads but no attack, use the first payload
+                    if not attack and context['payloads']:
+                        attack = context['payloads'][0].get('payload')
+                        self.logger.info(f"Using first payload from context")
 
             # Create temp file if needed
             import tempfile

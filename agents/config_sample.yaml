@@ -1,53 +1,651 @@
 ---
-# Sample Noseeum Agent Configuration
+# ==============================================================================
+# Noseeum Agent Framework Configuration
+# ==============================================================================
 # Copy this file to config.yaml and update with your settings
+#
+# IMPORTANT: Never commit config.yaml with actual API keys to version control!
+# Use environment variables (${VAR_NAME}) or set keys only in local config.yaml
+# ==============================================================================
 
-# API Configuration
+# ==============================================================================
+# LLM PROVIDER CONFIGURATION
+# ==============================================================================
+# Multi-provider support allows using different LLMs for different agents
+# Supported providers: anthropic, deepseek, mistral, moe (mixture of experts)
+# ==============================================================================
+
+llm_provider:
+  # ------------------------------------------------------------------------------
+  # DEFAULT PROVIDER
+  # ------------------------------------------------------------------------------
+  # Which provider to use globally (can be overridden per-agent)
+  # Options:
+  #   - anthropic: Claude (best for reasoning, analysis, safety)
+  #   - deepseek: DeepSeek (best for code, programming tasks)
+  #   - mistral: Mistral AI (best for creative writing, general tasks)
+  #   - moe: Mixture of Experts (combines all providers intelligently)
+  # ------------------------------------------------------------------------------
+  provider: anthropic
+
+  # ------------------------------------------------------------------------------
+  # ANTHROPIC (Claude) Configuration
+  # ------------------------------------------------------------------------------
+  anthropic:
+    # API Key: Get from https://console.anthropic.com/
+    # Recommended: Use environment variable to avoid committing secrets
+    api_key: ${ANTHROPIC_API_KEY}  # or set directly: "sk-ant-..."
+
+    # Model Selection:
+    #   - claude-sonnet-4-5-20250929: Fast, balanced (recommended)
+    #   - claude-opus-4-5-20251101: Most capable, slower, more expensive
+    #   - claude-3-5-sonnet-20241022: Previous generation
+    model: claude-sonnet-4-5-20250929
+
+    # Max tokens to generate (1-8000 for Sonnet, 1-4096 for older models)
+    max_tokens: 8000
+
+    # Temperature: Randomness in responses (0.0-1.0)
+    #   - 0.0: Deterministic, focused
+    #   - 0.7: Balanced (default)
+    #   - 1.0: Creative, varied
+    temperature: 0.7
+
+    # Optional: System prompt override (rarely needed)
+    # system: "You are a security researcher..."
+
+    # Optional: Top-p sampling (0.0-1.0, alternative to temperature)
+    # top_p: 0.9
+
+    # Optional: Top-k sampling (1-500, for controlling randomness)
+    # top_k: 40
+
+    # Optional: Stop sequences (list of strings that stop generation)
+    # stop_sequences: ["\n\nHuman:", "###"]
+
+  # ------------------------------------------------------------------------------
+  # DEEPSEEK Configuration
+  # ------------------------------------------------------------------------------
+  deepseek:
+    # API Key: Get from https://platform.deepseek.com/
+    api_key: ${DEEPSEEK_API_KEY}  # or set directly: "sk-..."
+
+    # Model Selection:
+    #   - deepseek-chat: General purpose (recommended)
+    #   - deepseek-coder: Optimized for code generation
+    model: deepseek-chat
+
+    # Max tokens to generate (1-8000)
+    max_tokens: 8000
+
+    # Temperature (0.0-1.0)
+    temperature: 0.7
+
+    # Optional: Custom API endpoint (for self-hosted or regional endpoints)
+    # base_url: "https://api.deepseek.com"
+
+    # Optional: Top-p sampling (0.0-1.0)
+    # top_p: 0.9
+
+    # Optional: Frequency penalty (-2.0 to 2.0, reduces repetition)
+    # frequency_penalty: 0.0
+
+    # Optional: Presence penalty (-2.0 to 2.0, encourages new topics)
+    # presence_penalty: 0.0
+
+    # Optional: Stop sequences
+    # stop: ["###", "\n\n"]
+
+  # ------------------------------------------------------------------------------
+  # MISTRAL Configuration
+  # ------------------------------------------------------------------------------
+  mistral:
+    # API Key: Get from https://console.mistral.ai/
+    api_key: ${MISTRAL_API_KEY}  # or set directly: "..."
+
+    # Model Selection:
+    #   - mistral-large-latest: Most capable (recommended)
+    #   - mistral-medium-latest: Balanced performance/cost
+    #   - mistral-small-latest: Fast and cost-effective
+    #   - mistral-tiny: Smallest, fastest
+    model: mistral-large-latest
+
+    # Max tokens to generate (1-8000)
+    max_tokens: 8000
+
+    # Temperature (0.0-1.0)
+    temperature: 0.7
+
+    # Optional: Top-p sampling (0.0-1.0)
+    # top_p: 0.9
+
+    # Optional: Random seed for reproducibility
+    # random_seed: 42
+
+    # Optional: Safe prompt mode (applies safety filtering)
+    # safe_prompt: false
+
+  # ------------------------------------------------------------------------------
+  # MIXTURE OF EXPERTS (MoE) Configuration
+  # ------------------------------------------------------------------------------
+  # Combines multiple providers into an intelligent ensemble
+  # See agents/llm_providers/MOE_README.md for detailed documentation
+  # ------------------------------------------------------------------------------
+  moe:
+    # MoE Strategy Options:
+    # ------------------------------------------------------------------------------
+    # - task_based (default): Route to best provider based on task keywords
+    #     * Fastest (queries only 1 provider)
+    #     * Cost-effective (1x cost)
+    #     * Smart routing based on specialist_map
+    #
+    # - voting: Send to all providers, use consensus/majority
+    #     * Highest quality (all providers vote)
+    #     * Slowest (queries all providers)
+    #     * Most expensive (3x cost)
+    #     * Best for critical decisions
+    #
+    # - cascade: Try providers in order until success (fallback chain)
+    #     * High reliability (automatic fallback)
+    #     * Medium speed (stops at first success)
+    #     * Variable cost (1x-3x depending on failures)
+    #     * Best for production reliability
+    #
+    # - best_of_n: Query all providers, pick highest quality response
+    #     * Very high quality (selects best of all)
+    #     * Parallel execution (faster than voting)
+    #     * Expensive (3x cost)
+    #     * Best when quality > speed
+    #
+    # - specialist: Route different operations to specialized providers
+    #     * Advanced orchestration
+    #     * Cost-effective (1x cost)
+    #     * Future: distributed tool execution
+    # ------------------------------------------------------------------------------
+    moe_strategy: task_based
+
+    # Providers to include in MoE ensemble
+    # List providers you want to use (must have valid API keys)
+    moe_providers:
+      - anthropic
+      - deepseek
+      - mistral
+
+    # Fallback order (for cascade strategy)
+    # Providers are tried in this order until one succeeds
+    # Tip: Put cheaper/faster providers first for cost optimization
+    fallback_order:
+      - anthropic  # Most reliable
+      - deepseek   # Fast for code
+      - mistral    # General fallback
+
+    # Specialist mapping: task keywords -> preferred provider
+    # Used by task_based and specialist strategies
+    # Add your own keywords based on your domain
+    specialist_map:
+      # Code-related keywords → DeepSeek
+      code: deepseek
+      python: deepseek
+      javascript: deepseek
+      typescript: deepseek
+      java: deepseek
+      programming: deepseek
+      function: deepseek
+      debug: deepseek
+      compile: deepseek
+      syntax: deepseek
+
+      # Creative/Writing keywords → Mistral
+      creative: mistral
+      story: mistral
+      write: mistral
+      compose: mistral
+      narrative: mistral
+      blog: mistral
+      article: mistral
+      marketing: mistral
+
+      # Analytical/Research keywords → Claude (Anthropic)
+      analysis: anthropic
+      analyze: anthropic
+      explain: anthropic
+      research: anthropic
+      security: anthropic
+      vulnerability: anthropic
+      audit: anthropic
+      review: anthropic
+      reasoning: anthropic
+
+    # Voting threshold for consensus (0.0-1.0)
+    # Only used in voting strategy
+    # Higher = more agreement required for consensus
+    voting_threshold: 0.5
+
+    # Number of parallel workers for concurrent API calls
+    # Only used in voting, best_of_n strategies
+    # Higher = faster parallel execution, but more CPU usage
+    # parallel_workers: 3
+
+# ==============================================================================
+# DEPRECATED - Legacy API Configuration
+# ==============================================================================
+# This section is maintained for backward compatibility only
+# New configurations should use the llm_provider section above
+# ==============================================================================
 api:
-  anthropic_api_key: "your-anthropic-api-key-here"  # Replace with your actual API key
+  anthropic_api_key: "your-anthropic-api-key-here"
   model: claude-sonnet-4-5-20250929
   max_tokens: 8000
   temperature: 0.7
 
-# Agent Settings - Enable/disable specific agents as needed
+# ==============================================================================
+# AGENT SETTINGS
+# ==============================================================================
+# Configure individual agents
+# Each agent can override the global provider/model settings
+# ==============================================================================
 agents:
+  # ------------------------------------------------------------------------------
+  # Unicode Archaeologist
+  # ------------------------------------------------------------------------------
+  # Discovers Unicode vulnerabilities and attack vectors
   unicode_archaeologist:
     enabled: true
-    research_depth: deep
-    update_frequency: daily
 
+    # Agent-specific parameters
+    research_depth: deep  # Options: quick, standard, deep, exhaustive
+    update_frequency: daily  # Options: hourly, daily, weekly, manual
+
+    # Optional: Override provider for this specific agent
+    # Uncomment to use a different provider than the global default
+    # llm_provider: anthropic
+    # model: claude-opus-4-5-20251101
+
+    # Optional: Override MoE strategy for this agent
+    # moe_strategy: voting  # Use voting for critical security research
+
+    # Optional: Custom log level for this agent
+    # log_level: DEBUG
+
+  # ------------------------------------------------------------------------------
+  # Language Grammar Hunter
+  # ------------------------------------------------------------------------------
+  # Analyzes language-specific grammar quirks for vulnerabilities
   language_grammar_hunter:
     enabled: true
+
+    # Target programming languages to analyze
     target_languages:
       - python
       - javascript
       - java
+      - go
+      - rust
 
+    # Optional: Use DeepSeek for code analysis
+    # llm_provider: deepseek
+    # model: deepseek-coder
+
+    # Optional: Use Mistral for creative language exploration
+    # llm_provider: mistral
+
+  # ------------------------------------------------------------------------------
+  # Payload Artisan
+  # ------------------------------------------------------------------------------
+  # Generates context-aware attack payloads
   payload_artisan:
     enabled: true
+
+    # Creativity level for payload generation
+    # Options: low, medium, high, maximum
     creativity: high
+
+    # Enable context-aware payload adaptation
     context_awareness: true
 
+    # Optional: Use DeepSeek for code-heavy payloads
+    # llm_provider: deepseek
+
+    # Optional: Use MoE for diverse payload generation
+    # llm_provider: moe
+    # moe_strategy: best_of_n  # Get best of multiple models
+
+  # ------------------------------------------------------------------------------
+  # Stealth Optimizer
+  # ------------------------------------------------------------------------------
+  # Optimizes payloads for evasion
   stealth_optimizer:
     enabled: true
+
+    # Evasion focus level
+    # Options: minimal, balanced, maximum, extreme
     evasion_focus: maximum
 
-# Swarm Configuration
-swarm:
-  max_concurrent_agents: 3
-  task_distribution: intelligent
-  coordination: enabled
+    # Optional: Use voting for critical evasion decisions
+    # llm_provider: moe
+    # moe_strategy: voting
 
-# Output Configuration
+  # ------------------------------------------------------------------------------
+  # Red Team Validator
+  # ------------------------------------------------------------------------------
+  # Tests attacks against security tools
+  red_team_validator:
+    enabled: true
+
+    # Optional: Test against specific security tools
+    # target_tools:
+    #   - semgrep
+    #   - bandit
+    #   - eslint
+
+  # ------------------------------------------------------------------------------
+  # YARA Rule Smith
+  # ------------------------------------------------------------------------------
+  # Generates YARA detection rules
+  yara_rule_smith:
+    enabled: true
+
+    # Optional: Rule generation parameters
+    # rule_strictness: balanced  # Options: loose, balanced, strict
+
+  # ------------------------------------------------------------------------------
+  # Detector Adversary
+  # ------------------------------------------------------------------------------
+  # Improves scanner detection capabilities
+  detector_adversary:
+    enabled: true
+
+  # ------------------------------------------------------------------------------
+  # Vulnerability Cartographer
+  # ------------------------------------------------------------------------------
+  # Maps attack surfaces and vulnerabilities
+  vulnerability_cartographer:
+    enabled: true
+
+    # Optional: Mapping depth
+    # depth: comprehensive  # Options: quick, standard, comprehensive
+
+  # ------------------------------------------------------------------------------
+  # Report Synthesizer
+  # ------------------------------------------------------------------------------
+  # Generates security reports
+  report_synthesizer:
+    enabled: true
+
+    # Report format options
+    # formats:
+    #   - markdown
+    #   - html
+    #   - pdf
+
+  # ------------------------------------------------------------------------------
+  # Test Oracle
+  # ------------------------------------------------------------------------------
+  # Manages test coverage
+  test_oracle:
+    enabled: true
+
+  # ------------------------------------------------------------------------------
+  # Module Architect
+  # ------------------------------------------------------------------------------
+  # Develops new framework modules
+  module_architect:
+    enabled: true
+
+  # ------------------------------------------------------------------------------
+  # Homoglyph Curator
+  # ------------------------------------------------------------------------------
+  # Manages homoglyph character registry
+  homoglyph_curator:
+    enabled: true
+
+  # ------------------------------------------------------------------------------
+  # Normalization Alchemist
+  # ------------------------------------------------------------------------------
+  # Exploits Unicode normalization behaviors
+  normalization_alchemist:
+    enabled: true
+
+  # ------------------------------------------------------------------------------
+  # Bidirectional Puppeteer
+  # ------------------------------------------------------------------------------
+  # Manipulates RTL/LTR character controls
+  bidirectional_puppeteer:
+    enabled: true
+
+  # ------------------------------------------------------------------------------
+  # Runtime Analyzer
+  # ------------------------------------------------------------------------------
+  # Analyzes runtime behavior
+  runtime_analyzer:
+    enabled: true
+
+  # ------------------------------------------------------------------------------
+  # Polyglot Specialist
+  # ------------------------------------------------------------------------------
+  # Creates cross-language polyglot attacks
+  polyglot_specialist:
+    enabled: true
+
+# ==============================================================================
+# SWARM CONFIGURATION
+# ==============================================================================
+# Settings for multi-agent coordination and parallel execution
+# ==============================================================================
+swarm:
+  # Maximum number of agents to run concurrently
+  # Higher = faster but more resource usage
+  # Recommended: 3-5 for most systems
+  max_concurrent_agents: 3
+
+  # Task distribution strategy
+  # Options:
+  #   - intelligent: AI-driven task assignment (recommended)
+  #   - round_robin: Distribute evenly across agents
+  #   - priority: Assign based on agent priority
+  #   - load_balanced: Consider agent current load
+  task_distribution: intelligent
+
+  # Enable agent-to-agent coordination
+  # When enabled, agents can communicate and share findings
+  coordination: enabled  # Options: enabled, disabled
+
+  # Optional: Coordination timeout (seconds)
+  # coordination_timeout: 300
+
+  # Optional: Enable result aggregation
+  # aggregate_results: true
+
+  # Optional: Swarm communication protocol
+  # protocol: async  # Options: async, sync, hybrid
+
+# ==============================================================================
+# OUTPUT CONFIGURATION
+# ==============================================================================
+# Configure logging, results, and artifacts
+# ==============================================================================
 output:
+  # Log level for agent output
+  # Options:
+  #   - DEBUG: Verbose logging (all details)
+  #   - INFO: Standard logging (recommended)
+  #   - WARNING: Warnings and errors only
+  #   - ERROR: Errors only
+  #   - CRITICAL: Critical errors only
   log_level: INFO
+
+  # Main log file path (for orchestrator)
   log_file: agents/logs/agent.log
+
+  # Results directory (for completed task results)
   results_dir: agents/results
+
+  # Artifacts directory (for generated files, reports, etc.)
   artifacts_dir: agents/artifacts
 
-# Integration
+  # Optional: Enable log rotation
+  # rotate_logs: true
+  # max_log_size: 10485760  # 10MB
+  # backup_count: 5
+
+  # Optional: Log format
+  # Options: json, text, colored
+  # log_format: text
+
+  # Optional: Include timestamps in logs
+  # include_timestamps: true
+
+  # Optional: Include agent ID in logs
+  # include_agent_id: true
+
+  # Optional: Output file format for results
+  # Options: json, yaml, text
+  # result_format: json
+
+  # Optional: Pretty print JSON results
+  # pretty_print: true
+
+  # Optional: Save memory snapshots
+  # save_memory: true
+  # memory_dir: agents/memory
+
+# ==============================================================================
+# INTEGRATION SETTINGS
+# ==============================================================================
+# Integration with external systems and frameworks
+# ==============================================================================
 integration:
+  # Noseeum framework root directory
+  # Used for importing noseeum modules and accessing framework code
   noseeum_root: /home/mrnob0dy666/noseeum
-  auto_update_framework: false
-  git_integration: true
-  commit_changes: false  # Manual approval required
+
+  # Auto-update framework
+  # Automatically pull latest changes from git repository
+  auto_update_framework: false  # Options: true, false
+
+  # Git integration
+  # Enable git operations (commits, branches, etc.)
+  git_integration: true  # Options: true, false
+
+  # Commit changes
+  # Automatically commit agent-generated changes
+  # WARNING: Only enable if you trust the agents completely
+  commit_changes: false  # Options: true, false
+
+  # Optional: Git branch for agent changes
+  # git_branch: agent-changes
+
+  # Optional: Commit message template
+  # commit_template: "Agent update: {agent_name} - {task_summary}"
+
+  # Optional: External tool integrations
+  # tools:
+  #   semgrep:
+  #     enabled: true
+  #     path: /usr/local/bin/semgrep
+  #   bandit:
+  #     enabled: true
+  #     path: /usr/local/bin/bandit
+
+  # Optional: API webhooks
+  # webhooks:
+  #   on_task_complete:
+  #     url: https://example.com/webhook
+  #     method: POST
+  #   on_error:
+  #     url: https://example.com/error-webhook
+
+  # Optional: Database connection (for result storage)
+  # database:
+  #   type: sqlite  # Options: sqlite, postgresql, mysql
+  #   path: agents/noseeum.db
+
+  # Optional: Message queue (for async tasks)
+  # queue:
+  #   type: redis  # Options: redis, rabbitmq, sqs
+  #   url: redis://localhost:6379
+
+# ==============================================================================
+# SECURITY SETTINGS
+# ==============================================================================
+# Security constraints and safety measures
+# ==============================================================================
+security:
+  # Enable safety checks before executing generated code
+  # enable_safety_checks: true
+
+  # Maximum file size for agent operations (in MB)
+  # max_file_size: 100
+
+  # Allowed file extensions for agent operations
+  # allowed_extensions:
+  #   - .py
+  #   - .js
+  #   - .java
+  #   - .txt
+  #   - .md
+
+  # Restricted directories (agents cannot access)
+  # restricted_paths:
+  #   - /etc
+  #   - /usr/bin
+  #   - ~/.ssh
+
+  # Enable sandboxing for code execution
+  # enable_sandbox: true
+  # sandbox_timeout: 30  # seconds
+
+# ==============================================================================
+# PERFORMANCE TUNING
+# ==============================================================================
+# Advanced performance optimization settings
+# ==============================================================================
+performance:
+  # Enable caching for API responses
+  # enable_cache: true
+  # cache_ttl: 3600  # Time-to-live in seconds
+
+  # Rate limiting (requests per minute)
+  # rate_limit: 60
+
+  # Request timeout (seconds)
+  # request_timeout: 120
+
+  # Retry configuration
+  # max_retries: 3
+  # retry_delay: 1  # seconds
+  # exponential_backoff: true
+
+  # Connection pooling
+  # pool_size: 10
+  # pool_timeout: 30
+
+  # Memory limits (MB)
+  # max_memory_per_agent: 1024
+
+# ==============================================================================
+# MONITORING & TELEMETRY
+# ==============================================================================
+# Observability and metrics collection
+# ==============================================================================
+monitoring:
+  # Enable metrics collection
+  # enable_metrics: true
+
+  # Metrics export format
+  # Options: prometheus, statsd, cloudwatch
+  # metrics_format: prometheus
+  # metrics_port: 9090
+
+  # Enable tracing
+  # enable_tracing: false
+  # tracing_backend: jaeger
+  # tracing_endpoint: http://localhost:14268/api/traces
+
+  # Health check endpoint
+  # enable_health_check: true
+  # health_check_port: 8080
+
+# ==============================================================================
+# END OF CONFIGURATION
+# ==============================================================================

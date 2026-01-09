@@ -82,12 +82,19 @@ Noseeum provides a single, clean command-line interface powered by Python's `cli
     - **`Unassigned Planes / Variation Selectors`**: Generate syntactically valid identifiers using characters from unassigned Unicode planes (U+20000–U+2FFFD)
     - **`Payload-injection via Identifier Characters`**: Encode malicious data within language constructs like object properties, class names, or function names  
 
-- **Advanced Language Modules**:  
+- **Advanced Language Modules**:
 
     - **`Go`**: Exploits Go's configurable lexer and permissive Unicode handling
     - **`Kotlin`**: Uses permissive frontend with restrictive backend to create compilation-failing code
     - **`JavaScript`**: Performs AST-level manipulations and low-entropy payload generation
-    - **`Swift`**: Leverages ambiguous identifier handling and unassigned planes support  
+    - **`Swift`**: Leverages ambiguous identifier handling and unassigned planes support
+
+- **Code Formatting & Preprocessing**: Convert source code to noseeum-compatible JSON format
+    - Auto-detect 17 programming languages (Python, JavaScript, TypeScript, Java, Go, Rust, C, C++, C#, Ruby, PHP, Kotlin, Swift, Bash, SQL, HTML, CSS)
+    - Batch processing for multiple files
+    - Template system for custom workflows
+    - Direct integration with attack modules
+    - Metadata extraction and enrichment
 
 - **Globally Installable`**: Can be installed as a system-wide command-line tool using pip
 
@@ -103,7 +110,7 @@ Includes a scanner to identify the presence of these same Unicode smuggling vuln
 
 <div align="center">
 
-![AI Agents](https://img.shields.io/badge/AI_Agents-15_Autonomous-%23FF6B6B.svg?style=for-the-badge&logo=openai&logoColor=white)
+![AI Agents](https://img.shields.io/badge/AI_Agents-16_Autonomous-%23FF6B6B.svg?style=for-the-badge&logo=openai&logoColor=white)
 &nbsp;
 ![Claude](https://img.shields.io/badge/Claude-Powered-%238B5CF6.svg?style=for-the-badge&logo=anthropic&logoColor=white)
 &nbsp;
@@ -111,7 +118,7 @@ Includes a scanner to identify the presence of these same Unicode smuggling vuln
 
 </div>
 
-**New in 2026**: `noseeum` now includes a complete autonomous agent system powered by Claude AI, featuring **15 specialized agents** that can operate independently or as coordinated swarms for comprehensive Unicode security research, attack development, and defense.
+**New in 2026**: `noseeum` now includes a complete autonomous agent system powered by Claude AI, featuring **16 specialized agents** that can operate independently or as coordinated swarms for comprehensive Unicode security research, attack development, and defense.
 
 ### Agent Categories
 
@@ -142,6 +149,9 @@ Includes a scanner to identify the presence of these same Unicode smuggling vuln
 - **Normalization Alchemist**: Exploits Unicode normalization (NFC, NFD, NFKC, NFKD) edge cases and collisions
 - **Bidirectional Puppeteer**: Masters Trojan Source attacks using RTL/LTR control characters
 
+#### 🧪 Testing & Runtime Analysis
+- **Runtime Analyzer**: Analyzes code at runtime for vulnerabilities, monitors execution patterns, detects security issues during execution
+
 ### Agent System Features
 
 - **Autonomous Operation**: Each agent operates independently with minimal supervision
@@ -150,6 +160,11 @@ Includes a scanner to identify the presence of these same Unicode smuggling vuln
 - **Inter-Agent Communication**: Agents collaborate and share findings
 - **Tool Integration**: Native integration with noseeum framework modules
 - **Artifact Generation**: All agents produce structured outputs and actionable results
+- **Multi-Provider LLM Support**: Choose from 4 providers or combine them intelligently
+  - **Anthropic Claude** (default) - Latest Claude models
+  - **DeepSeek** - Cost-effective, code-focused
+  - **Mistral AI** - Creative, multilingual tasks
+  - **Mixture of Experts (MoE)** - Ensemble with 5 intelligent routing strategies (task_based, voting, cascade, best_of_n, specialist)
 - **Enhanced Logging**: Comprehensive logging with configurable verbosity levels (DEBUG/INFO/WARNING/ERROR)
 - **Detailed Output**: Rich console output with timestamps, status updates, and execution metrics
 - **File-based Logging**: All agent activities logged to individual files in `agents/logs/` directory
@@ -233,6 +248,8 @@ For comprehensive agent documentation, see:
 - **[agents/README.md](./agents/README.md)** - Architecture overview
 - **[agents/USAGE.md](./agents/USAGE.md)** - Detailed usage guide
 - **[AGENTS_IMPLEMENTATION.md](./AGENTS_IMPLEMENTATION.md)** - Implementation details
+- **[MULTI_PROVIDER_SUMMARY.md](./MULTI_PROVIDER_SUMMARY.md)** - Multi-provider LLM support guide
+- **[FORMATTER_README.md](./FORMATTER_README.md)** - Code formatter documentation
 
 ### Agent System Architecture
 
@@ -300,6 +317,13 @@ noseeum attack --help
 noseeum detect --file /path/to/your/file.js
 ```
 
+**Format source code for noseeum:**
+```bash
+noseeum format file /path/to/code.py
+noseeum format dir /path/to/project
+noseeum format batch file1.js file2.py file3.go
+```
+
 For a complete breakdown of every command, option, and argument, refer to the [**USAGE.md**](./docs/USAGE.md) document
  
 ## DEVELOPMENT
@@ -319,6 +343,8 @@ The framework is organized as follows:
   - `detector/`: Scanning and detection functionality
   - `utils/`: Helper utilities and error handling
   - `data/`: Embedded data files (homoglyph_registry.json, nfkc_map.json)
+  - `formatter.py`: Code formatting module (converts source to JSON)
+  - `cli_format.py`: Formatter CLI interface
 - `agents/`: **NEW** Autonomous agent system:
   - `base/`: Base agent framework (agent, tools, memory, communication)
   - `research/`: Research agents (Unicode Archaeologist, Language Grammar Hunter)
@@ -327,6 +353,8 @@ The framework is organized as follows:
   - `analysis/`: Analysis agents (Vulnerability Cartographer, Report Synthesizer)
   - `infrastructure/`: Infrastructure agents (Test Oracle, Module Architect)
   - `specialized/`: Specialized research agents (Homoglyph Curator, Normalization Alchemist, Bidi Puppeteer)
+  - `testing/`: Testing agents (Runtime Analyzer)
+  - `llm_providers/`: Multi-provider LLM support (Anthropic, DeepSeek, Mistral, MoE)
   - `orchestrator.py`: Swarm coordination system
   - `cli.py`: Agent CLI interface
   - `tests/`: Agent integration tests

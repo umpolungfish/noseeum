@@ -1616,7 +1616,457 @@
         "tools_tested": 7,
         "tools_bypassed": 5
       }
+    },
+    {
+      "session_id": "session_28",
+      "task": "Develop and validate new attack payloads",
+      "start_time": "2026-01-08T00:49:28.211959",
+      "events": [],
+      "end_time": "2026-01-08T00:49:28.221919",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "bandit": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "codeql": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "sonarqube": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 7,
+            "bypassed": 7
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 7,
+        "tools_bypassed": 7
+      }
+    },
+    {
+      "session_id": "session_29",
+      "task": "Automate framework improvements",
+      "start_time": "2026-01-08T01:29:58.296066",
+      "events": [],
+      "end_time": "2026-01-08T01:29:58.300336",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "bandit": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "codeql": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "sonarqube": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 7,
+            "bypassed": 7
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 7,
+        "tools_bypassed": 7
+      }
+    },
+    {
+      "session_id": "session_30",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:24.912500",
+      "events": [],
+      "end_time": "2026-01-08T01:53:24.922522",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "bandit": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "codeql": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "sonarqube": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 7,
+            "bypassed": 7
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 7,
+        "tools_bypassed": 7
+      }
+    },
+    {
+      "session_id": "session_31",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:48.405776",
+      "events": [],
+      "end_time": "2026-01-08T01:54:05.249509",
+      "result": {
+        "original_payload": "payload_plain.json",
+        "optimized_payload": {
+          "payload": "payload_plain.json",
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "tool": "semgrep",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\"version\":\"1.146.0\",\"results\":[],\"errors\":[],\"paths\":{\"scanned\":[\"/tmp/tmp1zt5q6yh.py\"]},\"time\":{\"rules\":[],\"rules_parse_time\":1.3098530769348145,\"profiling_times\":{\"config_time\":2.744220018386841,\"core_time\":1.7805869579315186,\"ignores_time\":0.0015175342559814453,\"total_time\":4.551727533340454},\"parsing_time\":{\"total_time\":0.0,\"per_file_time\":{\"mean\":0.0,\"std_dev\":0.0},\"very_slow_stats\":{\"time_ratio\":0.0,\"count_ratio\":0.0},\"very_slow_files\":[]},\"scanning_time\":{\"total_time\":0.032343149185180664,\"per_file_time\":{\"mean\":0.010781049728393555,\"std_dev\":0.0001711972709396529},\"very_slow_stats\":{\"time_ratio\":0.0,\"count_ratio\":0.0},\"very_slow_files\":[]},\"matching_time\":{\"total_time\":0.0,\"per_file_and_rule_time\":{\"mean\":0.0,\"std_dev\":0.0},\"very_slow_stats\":{\"time_ratio\":0.0,\"count_ratio\":0.0},\"very_slow_rules_on_files\":[]},\"tainting_time\":{\"total_time\":0.0,\"per_def_and_rule_time\":{\"mean\":0.0,\"std_dev\":0.0},\"very_slow_stats\":{\"time_ratio\":0.0,\"count_ratio\":0.0},\"very_slow_rules_on_defs\":[]},\""
+            },
+            "eslint": {
+              "tool": "eslint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 0,
+              "findings": [
+                {
+                  "ruleId": null,
+                  "fatal": false,
+                  "severity": 1,
+                  "message": "File ignored because outside of base path.",
+                  "nodeType": null
+                }
+              ],
+              "raw_output": "[{\"filePath\":\"/tmp/tmp1zt5q6yh.py\",\"messages\":[{\"ruleId\":null,\"fatal\":false,\"severity\":1,\"message\":\"File ignored because outside of base path.\",\"nodeType\":null}],\"suppressedMessages\":[],\"errorCount\":0,\"warningCount\":1,\"fatalErrorCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]}]\n"
+            },
+            "pylint": {
+              "tool": "pylint",
+              "detected": true,
+              "bypassed": false,
+              "returncode": 22,
+              "findings": [
+                {
+                  "type": "convention",
+                  "module": "tmp1zt5q6yh",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "/tmp/tmp1zt5q6yh.py",
+                  "symbol": "missing-final-newline",
+                  "message": "Final newline missing",
+                  "message-id": "C0304"
+                },
+                {
+                  "type": "convention",
+                  "module": "tmp1zt5q6yh",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": null,
+                  "endColumn": null,
+                  "path": "/tmp/tmp1zt5q6yh.py",
+                  "symbol": "missing-module-docstring",
+                  "message": "Missing module docstring",
+                  "message-id": "C0114"
+                },
+                {
+                  "type": "warning",
+                  "module": "tmp1zt5q6yh",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": 1,
+                  "endColumn": 18,
+                  "path": "/tmp/tmp1zt5q6yh.py",
+                  "symbol": "pointless-statement",
+                  "message": "Statement seems to have no effect",
+                  "message-id": "W0104"
+                },
+                {
+                  "type": "error",
+                  "module": "tmp1zt5q6yh",
+                  "obj": "",
+                  "line": 1,
+                  "column": 0,
+                  "endLine": 1,
+                  "endColumn": 13,
+                  "path": "/tmp/tmp1zt5q6yh.py",
+                  "symbol": "undefined-variable",
+                  "message": "Undefined variable 'payload_plain'",
+                  "message-id": "E0602"
+                }
+              ],
+              "raw_output": "[\n    {\n        \"type\": \"convention\",\n        \"module\": \"tmp1zt5q6yh\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"/tmp/tmp1zt5q6yh.py\",\n        \"symbol\": \"missing-final-newline\",\n        \"message\": \"Final newline missing\",\n        \"message-id\": \"C0304\"\n    },\n    {\n        \"type\": \"convention\",\n        \"module\": \"tmp1zt5q6yh\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": null,\n        \"endColumn\": null,\n        \"path\": \"/tmp/tmp1zt5q6yh.py\",\n        \"symbol\": \"missing-module-docstring\",\n        \"message\": \"Missing module docstring\",\n        \"message-id\": \"C0114\"\n    },\n    {\n        \"type\": \"warning\",\n        \"module\": \"tmp1zt5q6yh\",\n        \"obj\": \"\",\n        \"line\": 1,\n        \"column\": 0,\n        \"endLine\": 1,\n        \"endColumn\": 18,\n        \"path\": \"/tmp/tmp1zt5q6yh.py\",\n        \"symbol\": \"pointless-statement\",\n        \"message\": \"Statement seems to have no effect\""
+            },
+            "bandit": {
+              "tool": "bandit",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 0,
+              "findings": [],
+              "raw_output": "{\n  \"errors\": [],\n  \"generated_at\": \"2026-01-08T09:53:57Z\",\n  \"metrics\": {\n    \"/tmp/tmp1zt5q6yh.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 1,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 1,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+            },
+            "gosec": {
+              "tool": "gosec",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "{\n\t\"Golang errors\": {\n\t\t\"/tmp/tmp1zt5q6yh.py\": [\n\t\t\t{\n\t\t\t\t\"line\": 0,\n\t\t\t\t\"column\": 0,\n\t\t\t\t\"error\": \"importing dir \\\"/tmp/tmp1zt5q6yh.py\\\": cannot find package \\\".\\\" in:\\n\\t/tmp/tmp1zt5q6yh.py\"\n\t\t\t}\n\t\t]\n\t},\n\t\"Issues\": [],\n\t\"Stats\": {\n\t\t\"files\": 0,\n\t\t\"lines\": 0,\n\t\t\"nosec\": 0,\n\t\t\"found\": 0\n\t},\n\t\"GosecVersion\": \"2.19.0\"\n}"
+            },
+            "codeql": {
+              "tool": "codeql",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 2,
+              "findings": [],
+              "raw_output": ""
+            },
+            "sonarqube": {
+              "tool": "sonarqube",
+              "detected": false,
+              "bypassed": true,
+              "returncode": 1,
+              "findings": [],
+              "raw_output": "[INFO]  Bootstrapper: Unable to read \"package.json\" file\n[INFO]  Bootstrapper: Platform: linux x64\n[INFO]  Bootstrapper: Server URL: https://sonarcloud.io\n[INFO]  Bootstrapper: Version: 4.3.2\n[INFO]  Bootstrapper: JRE provisioning is supported\n[INFO]  Bootstrapper: Using JRE from the cache\n[INFO]  ScannerEngine: Starting SonarScanner Engine...\n[INFO]  ScannerEngine: Java 17.0.11 Eclipse Adoptium (64-bit)\n[INFO]  ScannerEngine: Load global settings\n[INFO]  ScannerEngine: Load global settings (done) | time=507ms\n[INFO]  ScannerEngine: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu\n[INFO]  ScannerEngine: Loading required plugins\n[INFO]  ScannerEngine: Load plugins index\n[INFO]  ScannerEngine: Load plugins index (done) | time=196ms\n[INFO]  ScannerEngine: Load/download plugins\n[INFO]  ScannerEngine: Load/download plugins (done) | time=52ms\n[INFO]  ScannerEngine: Loaded core extensions: architecture, sca, a3s\n[INFO]  ScannerEngine: Process project properties\n[ERROR] ScannerEngine: You must define "
+            }
+          },
+          "summary": {
+            "total_tools": 7,
+            "detected": 2,
+            "bypassed": 5,
+            "evasion_rate": 0.7142857142857143
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 7,
+        "tools_bypassed": 5
+      }
+    },
+    {
+      "session_id": "session_32",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:02:20.791840",
+      "events": [],
+      "end_time": "2026-01-08T02:02:20.803938",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "bandit": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "codeql": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "sonarqube": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 7,
+            "bypassed": 7
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 7,
+        "tools_bypassed": 7
+      }
+    },
+    {
+      "session_id": "session_33",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:03:04.615532",
+      "events": [],
+      "end_time": "2026-01-08T02:03:04.624484",
+      "result": {
+        "original_payload": null,
+        "optimized_payload": {
+          "payload": null,
+          "technique": "original",
+          "evasion_score": 0.5
+        },
+        "detection_results": {
+          "results": {
+            "semgrep": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "eslint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "pylint": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "bandit": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "gosec": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "codeql": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            },
+            "sonarqube": {
+              "detected": false,
+              "bypassed": true,
+              "error": "No target file"
+            }
+          },
+          "summary": {
+            "total_tools": 7,
+            "bypassed": 7
+          }
+        },
+        "evasion_score": 0.5,
+        "tools_tested": 7,
+        "tools_bypassed": 7
+      }
     }
   ],
-  "updated_at": "2026-01-07T11:03:14.870631"
+  "updated_at": "2026-01-08T02:03:04.624488"
 }

@@ -728,7 +728,172 @@
         ],
         "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260107_110212.json"
       }
+    },
+    {
+      "session_id": "session_22",
+      "task": "Automate framework improvements",
+      "start_time": "2026-01-08T01:29:58.372313",
+      "events": [],
+      "end_time": "2026-01-08T01:29:58.377051",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 9,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260108_012958.json"
+      }
+    },
+    {
+      "session_id": "session_23",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:24.974244",
+      "events": [],
+      "end_time": "2026-01-08T01:53:24.977034",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 9,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260108_015324.json"
+      }
+    },
+    {
+      "session_id": "session_24",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:48.469983",
+      "events": [],
+      "end_time": "2026-01-08T01:53:48.471452",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 9,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260108_015348.json"
+      }
+    },
+    {
+      "session_id": "session_25",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:02:20.867612",
+      "events": [],
+      "end_time": "2026-01-08T02:02:20.881824",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 9,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260108_020220.json"
+      }
+    },
+    {
+      "session_id": "session_26",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:03:04.696842",
+      "events": [],
+      "end_time": "2026-01-08T02:03:04.702220",
+      "result": {
+        "variants_generated": 3,
+        "engines_tested": 9,
+        "advanced_attacks": 2,
+        "examples": [
+          {
+            "name": "Classic Trojan Source",
+            "payload": "access_level = \"user\" #\u202etoor# \u202c",
+            "description": "Hides 'root' in comment using RLO",
+            "severity": "critical"
+          },
+          {
+            "name": "String Literal",
+            "payload": "var isAdmin = \"\u202efalse\u202c\" == \"true\";",
+            "description": "Reverses boolean value visually",
+            "severity": "high"
+          },
+          {
+            "name": "Nested Bidi",
+            "payload": "if (true) {\u202a/* comment \u202e*/ evil(); //\u202c\u202c}",
+            "description": "Nested directional overrides",
+            "severity": "high"
+          }
+        ],
+        "artifact_path": "agents/artifacts/bidirectional_puppeteer_bidi_attacks_20260108_020304.json"
+      }
     }
   ],
-  "updated_at": "2026-01-07T11:02:12.314001"
+  "updated_at": "2026-01-08T02:03:04.702225"
 }

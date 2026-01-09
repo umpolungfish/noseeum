@@ -1130,7 +1130,618 @@
           }
         ]
       }
+    },
+    {
+      "session_id": "session_24",
+      "task": "Discover homoglyphs",
+      "start_time": "2026-01-07T23:54:29.720274",
+      "events": [],
+      "end_time": "2026-01-07T23:54:29.740180",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260107_235429.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_25",
+      "task": "Discover homoglyphs",
+      "start_time": "2026-01-07T23:55:50.775685",
+      "events": [],
+      "end_time": "2026-01-07T23:55:50.793726",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260107_235550.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_26",
+      "task": "Discover homoglyphs",
+      "start_time": "2026-01-08T00:00:01.738023",
+      "events": [],
+      "end_time": "2026-01-08T00:00:01.756269",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_000001.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_27",
+      "task": "Discover homoglyphs",
+      "start_time": "2026-01-08T00:30:35.645158",
+      "events": [],
+      "end_time": "2026-01-08T00:30:35.695821",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_003035.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_28",
+      "task": "Discover homoglyphs",
+      "start_time": "2026-01-08T00:33:16.358947",
+      "events": [],
+      "end_time": "2026-01-08T00:33:16.411196",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_003316.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_29",
+      "task": "Discover homoglyphs",
+      "start_time": "2026-01-08T00:36:39.193742",
+      "events": [],
+      "end_time": "2026-01-08T00:36:39.244646",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_003639.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_30",
+      "task": "Discover homoglyphs",
+      "start_time": "2026-01-08T00:38:15.837213",
+      "events": [],
+      "end_time": "2026-01-08T00:38:15.880521",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_003815.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_31",
+      "task": "Automate framework improvements",
+      "start_time": "2026-01-08T01:26:56.939365",
+      "events": [],
+      "end_time": "2026-01-08T01:26:56.959225",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_012656.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_32",
+      "task": "Automate framework improvements",
+      "start_time": "2026-01-08T01:29:58.349365",
+      "events": [],
+      "end_time": "2026-01-08T01:29:58.368288",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_012958.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_33",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:24.947459",
+      "events": [],
+      "end_time": "2026-01-08T01:53:24.969236",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_015324.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_34",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:48.444785",
+      "events": [],
+      "end_time": "2026-01-08T01:53:48.463522",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_015348.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_35",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:02:20.855176",
+      "events": [],
+      "end_time": "2026-01-08T02:02:20.881427",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_020220.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "session_id": "session_36",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:03:04.669893",
+      "events": [],
+      "end_time": "2026-01-08T02:03:04.690733",
+      "result": {
+        "discovered": 3,
+        "validated": 3,
+        "registry_path": "agents/artifacts/homoglyph_curator_updated_homoglyph_registry_20260108_020304.json",
+        "homoglyphs": [
+          {
+            "latin": {
+              "char": "a",
+              "codepoint": "U+0061"
+            },
+            "cyrillic": {
+              "char": "\u0430",
+              "codepoint": "U+0430"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "e",
+              "codepoint": "U+0065"
+            },
+            "cyrillic": {
+              "char": "\u0435",
+              "codepoint": "U+0435"
+            },
+            "similarity": 0.99
+          },
+          {
+            "latin": {
+              "char": "o",
+              "codepoint": "U+006F"
+            },
+            "cyrillic": {
+              "char": "\u043e",
+              "codepoint": "U+043E"
+            },
+            "similarity": 0.99
+          }
+        ]
+      }
     }
   ],
-  "updated_at": "2026-01-07T11:02:12.307834"
+  "updated_at": "2026-01-08T02:03:04.690740"
 }

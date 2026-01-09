@@ -324,7 +324,77 @@
           "agents/artifacts/yara_rule_smith_yara_rules_bidi_20260107_110212.txt"
         ]
       }
+    },
+    {
+      "session_id": "session_23",
+      "task": "Automate framework improvements",
+      "start_time": "2026-01-08T01:29:58.323517",
+      "events": [],
+      "end_time": "2026-01-08T01:29:58.334170",
+      "result": {
+        "rules": "rule unicode_bidi_attack {\n    meta:\n        description = \"Detects bidirectional Unicode control characters\"\n        author = \"YARA Rule Smith\"\n    strings:\n        $bidi1 = { E2 80 8E }  // LEFT-TO-RIGHT MARK\n        $bidi2 = { E2 80 8F }  // RIGHT-TO-LEFT MARK\n        $bidi3 = { E2 80 AA }  // LEFT-TO-RIGHT EMBEDDING\n    condition:\n        any of them\n}",
+        "attack_type": "bidi",
+        "artifacts": [
+          "agents/artifacts/yara_rule_smith_yara_rules_bidi_20260108_012958.txt"
+        ]
+      }
+    },
+    {
+      "session_id": "session_24",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:24.930975",
+      "events": [],
+      "end_time": "2026-01-08T01:53:24.932606",
+      "result": {
+        "rules": "rule unicode_bidi_attack {\n    meta:\n        description = \"Detects bidirectional Unicode control characters\"\n        author = \"YARA Rule Smith\"\n    strings:\n        $bidi1 = { E2 80 8E }  // LEFT-TO-RIGHT MARK\n        $bidi2 = { E2 80 8F }  // RIGHT-TO-LEFT MARK\n        $bidi3 = { E2 80 AA }  // LEFT-TO-RIGHT EMBEDDING\n    condition:\n        any of them\n}",
+        "attack_type": "bidi",
+        "artifacts": [
+          "agents/artifacts/yara_rule_smith_yara_rules_bidi_20260108_015324.txt"
+        ]
+      }
+    },
+    {
+      "session_id": "session_25",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T01:53:48.430566",
+      "events": [],
+      "end_time": "2026-01-08T01:53:48.431208",
+      "result": {
+        "rules": "rule unicode_bidi_attack {\n    meta:\n        description = \"Detects bidirectional Unicode control characters\"\n        author = \"YARA Rule Smith\"\n    strings:\n        $bidi1 = { E2 80 8E }  // LEFT-TO-RIGHT MARK\n        $bidi2 = { E2 80 8F }  // RIGHT-TO-LEFT MARK\n        $bidi3 = { E2 80 AA }  // LEFT-TO-RIGHT EMBEDDING\n    condition:\n        any of them\n}",
+        "attack_type": "bidi",
+        "artifacts": [
+          "agents/artifacts/yara_rule_smith_yara_rules_bidi_20260108_015348.txt"
+        ]
+      }
+    },
+    {
+      "session_id": "session_26",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:02:20.820664",
+      "events": [],
+      "end_time": "2026-01-08T02:02:20.826429",
+      "result": {
+        "rules": "# No template for clean",
+        "attack_type": "clean",
+        "artifacts": [
+          "agents/artifacts/yara_rule_smith_yara_rules_clean_20260108_020220.txt"
+        ]
+      }
+    },
+    {
+      "session_id": "session_27",
+      "task": "analyze and optimally obfuscate the payload javascript",
+      "start_time": "2026-01-08T02:03:04.637563",
+      "events": [],
+      "end_time": "2026-01-08T02:03:04.649579",
+      "result": {
+        "rules": "rule unicode_homoglyph_attack {\n    meta:\n        description = \"Detects Cyrillic homoglyphs\"\n    strings:\n        $cyrillic_a = { D0 B0 }  // Cyrillic 'a'\n        $cyrillic_e = { D0 B5 }  // Cyrillic 'e'\n    condition:\n        any of them\n}",
+        "attack_type": "homoglyph",
+        "artifacts": [
+          "agents/artifacts/yara_rule_smith_yara_rules_homoglyph_20260108_020304.txt"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-01-07T11:02:12.264325"
+  "updated_at": "2026-01-08T02:03:04.649587"
 }
