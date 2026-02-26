@@ -3,9 +3,13 @@
 import os
 import re
 import json
+import asyncio
 import subprocess
-from typing import Dict, List, Any, Optional
+import logging
+from typing import Dict, List, Any, Optional, Callable, Awaitable
 import requests
+
+logger = logging.getLogger(__name__)
 
 
 class AgentToolkit:
@@ -412,3 +416,228 @@ class AgentToolkit:
                 }
             }
         ]
+
+
+# ===========================================================================
+# Dynamic Tool Registry (AjintK pattern)
+# ===========================================================================
+
+class ToolRegistry:
+    """
+    Dynamic registry for tool definitions and async handlers.
+    Allows runtime registration via register() or the @tool_handler decorator.
+    Downstream code can inject domain-specific tools without forking AgentToolkit.
+    """
+
+    def __init__(self):
+        self._definitions: Dict[str, Dict[str, Any]] = {}
+        self._handlers: Dict[str, Callable[[Dict[str, Any]], Awaitable[Any]]] = {}
+
+    def register(
+        self,
+        name: str,
+        handler: Callable[[Dict[str, Any]], Awaitable[Any]],
+        description: str,
+        input_schema: Dict[str, Any],
+    ) -> None:
+        """Register a tool with its async handler and schema definition."""
+        self._definitions[name] = {
+            "name": name,
+            "description": description,
+            "input_schema": input_schema,
+        }
+        self._handlers[name] = handler
+        logger.debug(f"Registered tool: {name}")
+
+    def tool_handler(self, name: str, description: str, input_schema: Dict[str, Any]):
+        """Decorator to register an async function as a tool handler."""
+        def decorator(fn: Callable[[Dict[str, Any]], Awaitable[Any]]):
+            self.register(name, fn, description, input_schema)
+            return fn
+        return decorator
+
+    def get_definition(self, name: str) -> Optional[Dict[str, Any]]:
+        return self._definitions.get(name)
+
+    def get_handler(self, name: str) -> Optional[Callable]:
+        return self._handlers.get(name)
+
+    def list_tools(self) -> List[Dict[str, Any]]:
+        return list(self._definitions.values())
+
+    def has_tool(self, name: str) -> bool:
+        return name in self._handlers
+
+
+# Global shared registry — noseeum agents can register domain-specific tools here
+global_registry = ToolRegistry()
+
+
+class ToolDefinitions:
+    """
+    Common tool schema definitions in Claude API format.
+    These can be returned from agent.get_tools() for native tool-use calls.
+    """
+
+    @staticmethod
+    def file_read() -> Dict[str, Any]:
+        return {
+            "name": "file_read",
+            "description": "Read the contents of a file",
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "filepath": {"type": "string", "description": "Path to the file"}
+                },
+                "required": ["filepath"]
+            }
+        }
+
+    @staticmethod
+    def file_write() -> Dict[str, Any]:
+        return {
+            "name": "file_write",
+            "description": "Write content to a file",
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "filepath": {"type": "string", "description": "Path to the file"},
+                    "content": {"type": "string", "description": "Content to write"}
+                },
+                "required": ["filepath", "content"]
+            }
+        }
+
+    @staticmethod
+    def run_command() -> Dict[str, Any]:
+        return {
+            "name": "run_command",
+            "description": "Execute a shell command",
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "command": {"type": "string", "description": "Shell command to execute"},
+                    "cwd": {"type": "string", "description": "Working directory"}
+                },
+                "required": ["command"]
+            }
+        }
+
+    @staticmethod
+    def web_fetch() -> Dict[str, Any]:
+        return {
+            "name": "web_fetch",
+            "description": "Fetch content from a URL",
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "url": {"type": "string", "description": "URL to fetch"}
+                },
+                "required": ["url"]
+            }
+        }
+
+    @staticmethod
+    def json_load() -> Dict[str, Any]:
+        return {
+            "name": "json_load",
+            "description": "Load and parse a JSON file",
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "filepath": {"type": "string", "description": "Path to the JSON file"}
+                },
+                "required": ["filepath"]
+            }
+        }
+
+    @staticmethod
+    def json_save() -> Dict[str, Any]:
+        return {
+            "name": "json_save",
+            "description": "Serialize data to JSON and write to a file",
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "filepath": {"type": "string", "description": "Destination file path"},
+                    "data": {"description": "Data to serialize as JSON"}
+                },
+                "required": ["filepath", "data"]
+            }
+        }
+
+    @staticmethod
+    def unicode_analyze() -> Dict[str, Any]:
+        return {
+            "name": "unicode_analyze",
+            "description": "Analyze Unicode properties of text",
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "text": {"type": "string", "description": "Text to analyze"}
+                },
+                "required": ["text"]
+            }
+        }
+
+    @staticmethod
+    def grep_code() -> Dict[str, Any]:
+        return {
+            "name": "grep_code",
+            "description": "Search for a regex pattern in code files",
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "directory": {"type": "string", "description": "Directory to search"},
+                    "pattern": {"type": "string", "description": "Regex pattern"},
+                    "file_extension": {"type": "string", "description": "Optional file extension filter"}
+                },
+                "required": ["directory", "pattern"]
+            }
+        }
+
+    @staticmethod
+    def get_all_noseeum_tools() -> List[Dict[str, Any]]:
+        """Return all noseeum tool definitions."""
+        return [
+            ToolDefinitions.file_read(),
+            ToolDefinitions.file_write(),
+            ToolDefinitions.run_command(),
+            ToolDefinitions.web_fetch(),
+            ToolDefinitions.json_load(),
+            ToolDefinitions.json_save(),
+            ToolDefinitions.unicode_analyze(),
+            ToolDefinitions.grep_code(),
+        ]
+
+
+class ToolExecutor:
+    """
+    Asynchronously executes tool calls.
+    Checks the global ToolRegistry first, then falls back to AgentToolkit methods.
+    """
+
+    def __init__(self, registry: Optional[ToolRegistry] = None):
+        self.registry = registry or global_registry
+
+    async def execute_tool(self, tool_name: str, tool_input: Dict[str, Any]) -> Any:
+        """Execute a named tool asynchronously."""
+        # Check global registry first (runtime-registered custom tools)
+        if self.registry.has_tool(tool_name):
+            handler = self.registry.get_handler(tool_name)
+            try:
+                return await handler(tool_input)
+            except Exception as e:
+                logger.error(f"Error executing registered tool {tool_name}: {e}")
+                return f"Error executing {tool_name}: {str(e)}"
+
+        # Fall back to AgentToolkit static methods (wrapped in asyncio.to_thread)
+        tool_fn = getattr(AgentToolkit, tool_name, None)
+        if tool_fn:
+            try:
+                return await asyncio.to_thread(tool_fn, **tool_input)
+            except Exception as e:
+                logger.error(f"Error executing AgentToolkit.{tool_name}: {e}")
+                return f"Error executing {tool_name}: {str(e)}"
+
+        return f"Error: No handler registered for tool: {tool_name}"

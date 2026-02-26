@@ -1,6 +1,9 @@
 """Base agent class for all noseeum agents."""
 
 import os
+import re
+import json
+import asyncio
 import logging
 from abc import ABC, abstractmethod
 from enum import Enum
@@ -32,7 +35,8 @@ class BaseAgent(ABC):
     """Base class for all noseeum agents."""
 
     def __init__(self, agent_id: str, name: str, description: str,
-                 capabilities: List[AgentCapability], config: Dict[str, Any]):
+                 capabilities: List[AgentCapability], config: Dict[str, Any],
+                 persona: Optional[str] = None):
         """
         Initialize base agent.
 
@@ -42,12 +46,16 @@ class BaseAgent(ABC):
             description: Agent description
             capabilities: List of agent capabilities
             config: Agent configuration dictionary
+            persona: Optional named persona shaping the agent's identity (defaults to name)
         """
         self.agent_id = agent_id
         self.name = name
         self.description = description
         self.capabilities = capabilities
         self.config = config
+        # Persona shapes the system prompt identity (AjintK pattern).
+        # Allows the same agent class to play different roles.
+        self.persona = persona or name
         self.status = AgentStatus.IDLE
         self.logger = self._setup_logger()
 
@@ -59,6 +67,7 @@ class BaseAgent(ABC):
 
         self.memory: Dict[str, Any] = {}
         self.results: List[Dict[str, Any]] = []
+        self.artifacts: List[Dict[str, Any]] = []
         self.start_time: Optional[datetime] = None
         self.end_time: Optional[datetime] = None
 
@@ -153,6 +162,117 @@ class BaseAgent(ABC):
             from agents.llm_providers.factory import LLMProviderFactory
             return LLMProviderFactory.create_provider("anthropic")
 
+    # ------------------------------------------------------------------
+    # Response post-processing (AjintK pattern)
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def clean_response(text: str) -> str:
+        """
+        Strip LLM formatting artifacts from a response string.
+
+        Removes XML reasoning tags (<think>, <reasoning>, etc.), fenced code
+        blocks, and "FINAL ANSWER:" prefix. Useful for reasoning models like
+        DeepSeek-R1 or Qwen that emit thinking tags.
+        """
+        text = re.sub(r"<(think|thinking|reasoning)>.*?</\1>", "", text,
+                      flags=re.DOTALL | re.IGNORECASE)
+        text = re.sub(r"```[a-zA-Z]*\n?", "", text)
+        text = text.replace("```", "")
+        if "FINAL ANSWER:" in text:
+            text = text.split("FINAL ANSWER:", 1)[1]
+        return text.strip()
+
+    @staticmethod
+    def extract_json_blocks(text: str) -> List[Dict[str, Any]]:
+        """
+        Extract all JSON objects from text that may contain ```json blocks
+        or bare JSON objects. Returns a list of parsed dicts.
+        """
+        results = []
+        fenced = re.findall(r"```json\s*(.*?)```", text, re.DOTALL)
+        for raw in fenced:
+            try:
+                results.append(json.loads(raw.strip()))
+            except json.JSONDecodeError:
+                pass
+        if not results:
+            bare = re.findall(r"\{[^{}]*\}", text, re.DOTALL)
+            for raw in bare:
+                try:
+                    results.append(json.loads(raw.strip()))
+                except json.JSONDecodeError:
+                    pass
+        return results
+
+    # ------------------------------------------------------------------
+    # Autonomous tool loop (AjintK pattern)
+    # ------------------------------------------------------------------
+
+    def execute_with_tools(self, task: str, max_iterations: int = 5,
+                           context: Optional[Dict[str, Any]] = None) -> str:
+        """
+        Thinking/Acting loop: prompts the LLM with the task and available tools,
+        parses JSON blocks for tool calls, executes them via AgentToolkit, and
+        feeds results back. Repeats until a FINAL ANSWER is produced.
+
+        Uses JSON-in-text tool protocol (compatible with all providers).
+        """
+        from agents.base.tools import AgentToolkit
+
+        tools = self.get_tools()
+        system_context = f"You are {self.persona}. {self.description}"
+        if tools:
+            tools_desc = json.dumps(tools, indent=2)
+            system_context += (
+                f"\n\nAvailable Tools:\n{tools_desc}"
+                "\n\nTo use a tool, output a JSON block:\n"
+                "```json\n{\"tool\": \"tool_name\", \"input\": {\"param\": \"value\"}}\n```"
+                "\nWhen done, prefix your answer with 'FINAL ANSWER:'."
+            )
+
+        messages = [{"role": "user", "content": f"{system_context}\n\nTask: {task}"}]
+
+        for _ in range(max_iterations):
+            response = self.call_llm(messages, max_tokens=4000)
+
+            # Extract text from LLMResponse content blocks
+            text = ""
+            for block in (response.content or []):
+                if isinstance(block, dict) and block.get("type") == "text":
+                    text += block.get("text", "")
+                elif hasattr(block, "text"):
+                    text += block.text
+
+            json_blocks = self.extract_json_blocks(text)
+            tool_call = next((b for b in json_blocks if "tool" in b), None)
+
+            if tool_call:
+                tool_name = tool_call.get("tool")
+                tool_input = tool_call.get("input", {})
+                self.logger.info(f"Executing tool: {tool_name}")
+
+                tool_fn = getattr(AgentToolkit, tool_name, None)
+                if tool_fn:
+                    try:
+                        result = str(tool_fn(**tool_input))
+                    except Exception as e:
+                        result = f"Error executing {tool_name}: {e}"
+                else:
+                    result = f"Error: Unknown tool '{tool_name}'"
+
+                messages.append({"role": "assistant", "content": text})
+                messages.append({"role": "user",
+                                 "content": f"Tool Result ({tool_name}): {result}"})
+                continue
+
+            if "FINAL ANSWER:" in text:
+                return self.clean_response(text)
+
+            return self.clean_response(text)
+
+        return "Error: Max iterations reached without final answer."
+
     @abstractmethod
     def run(self, task: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """
@@ -239,6 +359,12 @@ class BaseAgent(ABC):
                 f.write(str(content))
 
         self.logger.info(f"Artifact saved: {filepath}")
+        self.artifacts.append({
+            "type": artifact_type,
+            "name": artifact_name,
+            "path": filepath,
+            "timestamp": datetime.now().isoformat(),
+        })
         return filepath
 
     def store_in_memory(self, key: str, value: Any):

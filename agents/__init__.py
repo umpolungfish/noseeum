@@ -1,6 +1,6 @@
 """Noseeum Agent Menagerie - Autonomous security research agents."""
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 # Lazy imports to avoid circular dependencies
 def get_orchestrator(config_path: str = "agents/config.yaml"):
@@ -32,4 +32,13 @@ def list_available_agents() -> dict:
 __all__ = [
     'get_orchestrator',
     'list_available_agents',
+    'PipelineContext',
 ]
+
+
+# Re-export PipelineContext for convenience
+def __getattr__(name):
+    if name == 'PipelineContext':
+        from .orchestrator import PipelineContext
+        return PipelineContext
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

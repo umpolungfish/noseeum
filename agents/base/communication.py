@@ -2,9 +2,44 @@
 
 import json
 import os
+import asyncio
+from dataclasses import dataclass, asdict
 from typing import Dict, Any, List, Optional
 from datetime import datetime
+from enum import Enum
 from queue import Queue, Empty
+
+
+class MessageType(Enum):
+    """Standardized message types for inter-agent communication."""
+    REQUEST = "request"
+    RESPONSE = "response"
+    NOTIFICATION = "notification"
+    COLLABORATION = "collaboration_request"
+
+
+@dataclass
+class Message:
+    """Typed message container for inter-agent communication (AjintK pattern)."""
+    message_id: str
+    from_agent: str
+    to_agent: str
+    message_type: MessageType
+    content: str
+    priority: int = 5
+    timestamp: Optional[str] = None
+    metadata: Optional[Dict[str, Any]] = None
+
+    def __post_init__(self):
+        if self.timestamp is None:
+            self.timestamp = datetime.now().isoformat()
+        if self.metadata is None:
+            self.metadata = {}
+
+    def to_dict(self) -> Dict[str, Any]:
+        d = asdict(self)
+        d["message_type"] = self.message_type.value
+        return d
 
 
 class AgentCommunication:
@@ -17,6 +52,7 @@ class AgentCommunication:
         self.inbox_file = f"{self.comm_dir}/{agent_id}_inbox.json"
         self.outbox_file = f"{self.comm_dir}/{agent_id}_outbox.json"
         self.message_queue = Queue()
+        self._lock = asyncio.Lock()
         self._ensure_comm_dir()
 
     def _ensure_comm_dir(self):
@@ -173,7 +209,7 @@ class AgentCommunication:
                 break
 
     def _write_to_outbox(self, message: Dict[str, Any]):
-        """Write message to outbox."""
+        """Write message to outbox (atomic write)."""
         outbox = {"messages": []}
         if os.path.exists(self.outbox_file):
             try:
@@ -184,11 +220,13 @@ class AgentCommunication:
 
         outbox["messages"].append(message)
 
-        with open(self.outbox_file, 'w') as f:
+        temp_file = f"{self.outbox_file}.tmp"
+        with open(temp_file, 'w') as f:
             json.dump(outbox, f, indent=2)
+        os.replace(temp_file, self.outbox_file)
 
     def _append_to_file(self, filepath: str, message: Dict[str, Any]):
-        """Append message to a file."""
+        """Append message to a file (atomic write)."""
         data = {"messages": []}
         if os.path.exists(filepath):
             try:
@@ -199,8 +237,132 @@ class AgentCommunication:
 
         data["messages"].append(message)
 
-        with open(filepath, 'w') as f:
+        temp_file = f"{filepath}.tmp"
+        with open(temp_file, 'w') as f:
             json.dump(data, f, indent=2)
+        os.replace(temp_file, filepath)
+
+    # ------------------------------------------------------------------
+    # Async message passing (AjintK pattern)
+    # ------------------------------------------------------------------
+
+    async def send_message_async(
+        self,
+        to_agent: str,
+        message_type: MessageType,
+        content: str,
+        priority: int = 5,
+        metadata: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Async variant of send_message() using the typed Message dataclass.
+        Uses asyncio.Lock + asyncio.to_thread for non-blocking file I/O.
+        """
+        message_id = f"{self.agent_id}_{to_agent}_{datetime.now().timestamp()}"
+        msg = Message(
+            message_id=message_id,
+            from_agent=self.agent_id,
+            to_agent=to_agent,
+            message_type=message_type,
+            content=content,
+            priority=priority,
+            metadata=metadata,
+        )
+        msg_dict = msg.to_dict()
+
+        async with self._lock:
+            await asyncio.to_thread(self._write_to_outbox, msg_dict)
+            if to_agent != "broadcast":
+                inbox_path = f"{self.comm_dir}/{to_agent}_inbox.json"
+                await asyncio.to_thread(self._append_to_file, inbox_path, msg_dict)
+
+        return message_id
+
+    async def receive_messages_async(
+        self, unread_only: bool = True
+    ) -> List[Dict[str, Any]]:
+        """Async variant of receive_messages() with priority sorting."""
+        if not os.path.exists(self.inbox_file):
+            return []
+
+        def _load():
+            try:
+                with open(self.inbox_file, 'r') as f:
+                    inbox = json.load(f)
+                return inbox.get("messages", [])
+            except Exception:
+                return []
+
+        messages = await asyncio.to_thread(_load)
+
+        if unread_only:
+            messages = [m for m in messages if m.get("status") != "read"]
+
+        messages.sort(key=lambda m: (-m.get("priority", 5), m.get("timestamp", "")))
+        return messages
+
+    async def mark_as_read_async(self, message_id: str) -> bool:
+        """Async variant of mark_message_read()."""
+        if not os.path.exists(self.inbox_file):
+            return False
+
+        async with self._lock:
+            def _update():
+                try:
+                    with open(self.inbox_file, 'r') as f:
+                        inbox = json.load(f)
+                    for msg in inbox.get("messages", []):
+                        if msg.get("message_id") == message_id:
+                            msg["status"] = "read"
+                            msg["read_at"] = datetime.now().isoformat()
+                            temp = f"{self.inbox_file}.tmp"
+                            with open(temp, 'w') as f:
+                                json.dump(inbox, f, indent=2)
+                            os.replace(temp, self.inbox_file)
+                            return True
+                except Exception:
+                    pass
+                return False
+
+            return await asyncio.to_thread(_update)
+
+    async def send_collaboration_request_async(
+        self,
+        target_agent: str,
+        task: str,
+        context: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """Send a structured collaboration request asynchronously."""
+        import json as _json
+        metadata = {"task": task, "context": context or {}}
+        content = _json.dumps({"task": task, "requesting_agent": self.agent_id})
+        return await self.send_message_async(
+            to_agent=target_agent,
+            message_type=MessageType.COLLABORATION,
+            content=content,
+            priority=8,
+            metadata=metadata,
+        )
+
+    async def send_response_async(
+        self,
+        to_agent: str,
+        original_message_id: str,
+        response_content: str,
+        response_data: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """Send a response to a prior message asynchronously."""
+        metadata = {
+            "in_response_to": original_message_id,
+            "response_data": response_data or {},
+        }
+        return await self.send_message_async(
+            to_agent=to_agent,
+            message_type=MessageType.RESPONSE,
+            content=response_content,
+            priority=6,
+            metadata=metadata,
+        )
 
     def clear_inbox(self):
         """Clear all messages from inbox."""

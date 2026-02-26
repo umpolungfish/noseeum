@@ -3,7 +3,9 @@
 import os
 import sys
 import yaml
+import asyncio
 import logging
+from dataclasses import dataclass, field
 from typing import Dict, List, Any, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -11,6 +13,47 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
 from base.agent import BaseAgent, AgentStatus
+
+
+@dataclass
+class PipelineContext:
+    """
+    Accumulated state that flows through a pipeline.
+
+    Every stage can read outputs from ALL prior stages (not just the previous
+    one), enabling downstream agents to build on the full history of work.
+    Also collects all artifacts produced along the way.
+    """
+    task: str
+    initial_context: Dict[str, Any] = field(default_factory=dict)
+    stage_results: List[Dict[str, Any]] = field(default_factory=list)
+    artifacts: List[Any] = field(default_factory=list)
+    metadata: Dict[str, Any] = field(default_factory=dict)
+
+    def add_stage_result(self, agent_id: str, stage_num: int,
+                         result: Dict[str, Any]) -> None:
+        self.stage_results.append({
+            "stage": stage_num,
+            "agent_id": agent_id,
+            "result": result,
+        })
+        if isinstance(result.get("artifacts"), list):
+            self.artifacts.extend(result["artifacts"])
+
+    def to_context_dict(self) -> Dict[str, Any]:
+        """
+        Returns the full accumulated context dict passed to each agent's run().
+        Preserves all initial_context keys and adds pipeline_stages / all_artifacts.
+        """
+        ctx: Dict[str, Any] = dict(self.initial_context)
+        ctx["pipeline_stages"] = self.stage_results
+        ctx["all_artifacts"] = self.artifacts
+        ctx["pipeline_metadata"] = self.metadata
+        if self.stage_results:
+            last = self.stage_results[-1]
+            ctx["previous_stage"] = last["result"]
+            ctx["previous_agent"] = last["agent_id"]
+        return ctx
 from research.unicode_archaeologist import UnicodeArchaeologist
 from research.language_grammar_hunter import LanguageGrammarHunter
 from attack_dev.payload_artisan import PayloadArtisan
@@ -37,6 +80,7 @@ class AgentOrchestrator:
         self.config = self._load_config(config_path)
         self.logger = self._setup_logger()
         self.agents: Dict[str, BaseAgent] = {}
+        self._presets: Dict[str, List[str]] = {}
         self.agent_classes = self._get_agent_classes()
         self._initialize_agents()
 
@@ -222,6 +266,170 @@ class AgentOrchestrator:
             "successful": successful,
             "failed": failed,
             "results": results
+        }
+
+    # ------------------------------------------------------------------
+    # Pipeline preset management (AjintK pattern)
+    # ------------------------------------------------------------------
+
+    def register_preset(self, name: str, agent_ids: List[str]) -> None:
+        """
+        Register a named pipeline preset — an ordered list of agent IDs.
+
+        Example:
+            orchestrator.register_preset("full_analysis",
+                ["unicode_archaeologist", "payload_artisan", "report_synthesizer"])
+            orchestrator.run_preset("full_analysis", task="Analyze CVE-2023-1234")
+        """
+        self._presets[name] = agent_ids
+        self.logger.info(f"Registered preset '{name}': {' -> '.join(agent_ids)}")
+
+    def list_presets(self) -> Dict[str, List[str]]:
+        """Return all registered pipeline presets."""
+        return dict(self._presets)
+
+    def run_preset(self, preset_name: str, task: str,
+                   initial_context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """Run a named pipeline preset. Convenience wrapper around run_pipeline()."""
+        if preset_name not in self._presets:
+            raise ValueError(
+                f"Unknown preset '{preset_name}'. "
+                f"Available: {list(self._presets.keys())}"
+            )
+        self.logger.info(f"Running preset '{preset_name}'")
+        return self.run_pipeline(task, self._presets[preset_name], initial_context)
+
+    # ------------------------------------------------------------------
+    # Sequential pipeline with full context accumulation (AjintK pattern)
+    # ------------------------------------------------------------------
+
+    def run_pipeline(self, task: str, agent_ids: List[str],
+                     initial_context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """
+        Execute agents sequentially.
+
+        Each stage receives the full PipelineContext — outputs from every prior
+        stage, not just the immediately preceding one — giving downstream agents
+        the complete history of what has been found so far.
+        """
+        self.logger.info(f"Running pipeline with {len(agent_ids)} stages")
+
+        pipeline_ctx = PipelineContext(
+            task=task,
+            initial_context=initial_context or {},
+        )
+
+        for i, agent_id in enumerate(agent_ids):
+            stage_num = i + 1
+            self.logger.info(
+                f"Pipeline stage {stage_num}/{len(agent_ids)}: {agent_id}"
+            )
+            context_dict = pipeline_ctx.to_context_dict()
+            result = self.run_agent(agent_id, task, context_dict)
+            pipeline_ctx.add_stage_result(agent_id, stage_num, result)
+
+            if result.get("status") not in ("success", "completed"):
+                self.logger.warning(
+                    f"Pipeline failed at stage {stage_num} ({agent_id})"
+                )
+                return {
+                    "status": "failed",
+                    "failed_at_stage": stage_num,
+                    "failed_agent": agent_id,
+                    "pipeline_results": pipeline_ctx.stage_results,
+                    "pipeline_context": pipeline_ctx,
+                }
+
+        self.logger.info("Pipeline completed successfully")
+        return {
+            "status": "success",
+            "stages_completed": len(agent_ids),
+            "pipeline_results": pipeline_ctx.stage_results,
+            "final_context": pipeline_ctx.to_context_dict(),
+            "pipeline_context": pipeline_ctx,
+        }
+
+    # ------------------------------------------------------------------
+    # Async execution methods (AjintK pattern)
+    # ------------------------------------------------------------------
+
+    async def run_agent_async(self, agent_id: str, task: str,
+                              context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """Execute a single agent asynchronously (wraps sync run() with asyncio.to_thread)."""
+        return await asyncio.to_thread(self.run_agent, agent_id, task, context)
+
+    async def run_swarm_async(self, task: str,
+                              agent_ids: Optional[List[str]] = None,
+                              context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """
+        Execute agents in parallel using asyncio.gather() + semaphore.
+        More efficient than ThreadPoolExecutor for I/O-bound LLM calls.
+        """
+        if agent_ids is None:
+            agent_ids = list(self.agents.keys())
+        agent_ids = [aid for aid in agent_ids if aid in self.agents]
+
+        if not agent_ids:
+            return {"status": "error", "error": "No valid agents specified"}
+
+        max_concurrent = self.config.get("swarm", {}).get("max_concurrent_agents", 5)
+        semaphore = asyncio.Semaphore(max_concurrent)
+
+        async def _run(aid: str) -> Dict[str, Any]:
+            async with semaphore:
+                return await self.run_agent_async(aid, task, context)
+
+        results_list = await asyncio.gather(
+            *[_run(aid) for aid in agent_ids], return_exceptions=True
+        )
+
+        results = {}
+        successful = 0
+        failed = 0
+        for agent_id, result in zip(agent_ids, results_list):
+            if isinstance(result, Exception):
+                results[agent_id] = {"status": "error", "error": str(result)}
+                failed += 1
+            else:
+                results[agent_id] = result
+                if result.get("status") in ("success", "completed"):
+                    successful += 1
+                else:
+                    failed += 1
+
+        return {
+            "status": "completed",
+            "task": task,
+            "agents_run": len(agent_ids),
+            "successful": successful,
+            "failed": failed,
+            "results": results,
+        }
+
+    async def run_pipeline_async(self, task: str, agent_ids: List[str],
+                                 initial_context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """Async wrapper around run_pipeline() for use in async contexts."""
+        return await asyncio.to_thread(self.run_pipeline, task, agent_ids, initial_context)
+
+    async def run_preset_async(self, preset_name: str, task: str,
+                               initial_context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """Async wrapper around run_preset() for use in async contexts."""
+        return await asyncio.to_thread(self.run_preset, preset_name, task, initial_context)
+
+    # ------------------------------------------------------------------
+    # Introspection
+    # ------------------------------------------------------------------
+
+    def get_all_agents(self) -> Dict[str, Dict[str, Any]]:
+        """Get info about all registered agents (AjintK-style introspection)."""
+        return {
+            agent_id: {
+                "name": agent.name,
+                "description": agent.description,
+                "capabilities": [c.value for c in agent.capabilities],
+                "status": agent.status.value,
+            }
+            for agent_id, agent in self.agents.items()
         }
 
     def get_agent_status(self, agent_id: str) -> Optional[Dict[str, Any]]:

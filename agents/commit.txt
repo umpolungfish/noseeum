@@ -1,0 +1,89 @@
+feat(agents): port AjintK framework improvements to agents/ base layer
+
+Applies the full set of architectural improvements developed in the AjintK
+framework back into the noseeum agents/ codebase. All changes are additive —
+existing synchronous agents are fully backward-compatible.
+
+## base/agent.py
+- Add optional `persona` param to BaseAgent.__init__(); defaults to `name`.
+  Allows the same agent class to play different roles by shaping system prompts.
+- Add `self.artifacts: List[Dict]` list; `save_artifact()` now both writes to
+  disk and appends a record to the list (accessible at `agent.artifacts`).
+- Add `clean_response(text)` static method: strips XML reasoning tags
+  (<think>, <thinking>, <reasoning>), code fences, and FINAL ANSWER: prefix.
+  Critical for DeepSeek-R1, Qwen, and other reasoning models.
+- Add `extract_json_blocks(text)` static method: parses JSON from ```json
+  fenced blocks with bare-object fallback. Powers the tool-call loop.
+- Add `execute_with_tools(task, max_iterations, context)`: autonomous
+  thinking/acting loop using JSON-in-text tool protocol. Prompts LLM, parses
+  tool calls, executes via AgentToolkit, feeds results back, repeats until
+  FINAL ANSWER or max iterations.
+
+## base/tools.py
+- Add ToolRegistry class with register(), tool_handler() decorator, has_tool(),
+  get_handler(), list_tools().
+- Add global_registry singleton: shared process-wide registry. Downstream code
+  injects custom tools here without modifying AgentToolkit.
+- Add ToolDefinitions class: static schema catalogue for 8 noseeum tools
+  (file_read, file_write, run_command, web_fetch, json_load, json_save,
+  unicode_analyze, grep_code) in Claude API format.
+- Add ToolExecutor class: async executor that checks global_registry first,
+  falls back to AgentToolkit via asyncio.to_thread().
+
+## base/memory.py
+- Add asyncio.Lock (self._lock) for async-safe access.
+- Update sync save() to use atomic writes (temp file + os.replace()).
+- Add save_async(), store_async(), retrieve_async(), start_session_async(),
+  log_event_async(), end_session_async() — all non-blocking with lock protection.
+
+## base/communication.py
+- Add MessageType enum (REQUEST, RESPONSE, NOTIFICATION, COLLABORATION).
+- Add Message dataclass with to_dict() serialization.
+- Add asyncio.Lock (self._lock) for async-safe I/O.
+- Update _write_to_outbox() and _append_to_file() to use atomic writes.
+- Add send_message_async(), receive_messages_async(), mark_as_read_async().
+- Add send_collaboration_request_async(), send_response_async() convenience
+  wrappers with structured metadata.
+
+## base/config_loader.py  [new file]
+- load_config(path): load and validate YAML config.
+- agent_config_from(cfg, overrides): extract agent-level config dict.
+- orchestrator_config_from(cfg): extract orchestrator config dict.
+- register_presets_from_config(orchestrator, cfg): wire up the `presets:` YAML
+  block onto an AgentOrchestrator instance.
+
+## base/__init__.py
+- Export all new public symbols: ToolRegistry, ToolDefinitions, ToolExecutor,
+  global_registry, Message, MessageType, load_config, agent_config_from,
+  orchestrator_config_from, register_presets_from_config.
+
+## orchestrator.py
+- Add PipelineContext dataclass: accumulates task, initial_context,
+  stage_results, and artifacts as the pipeline progresses. to_context_dict()
+  exposes pipeline_stages (all prior results), all_artifacts, previous_stage,
+  and previous_agent to each downstream agent.
+- Add self._presets dict to AgentOrchestrator.__init__().
+- Add register_preset(name, agent_ids), list_presets(),
+  run_preset(name, task, context).
+- Add run_pipeline(task, agent_ids, initial_context): sequential execution
+  where each stage receives full PipelineContext — every downstream agent sees
+  the complete history of what prior agents produced, not only the previous stage.
+- Add async methods: run_agent_async(), run_swarm_async() (asyncio.gather +
+  asyncio.Semaphore — more efficient than ThreadPoolExecutor for I/O-bound LLM
+  calls), run_pipeline_async(), run_preset_async().
+- Add get_all_agents(): returns name/description/capabilities/status for all
+  registered agents (AjintK-style introspection dict).
+
+## agents/__init__.py
+- Bump __version__ to 1.1.0.
+- Lazy-export PipelineContext via __getattr__.
+
+## README.md / USAGE.md
+- Update agent count: 15 → 16 (Runtime Analyzer was missing from README).
+- Document pipeline, preset, PipelineContext, async methods, ToolRegistry,
+  dynamic tool registration, async memory/communication, clean_response /
+  extract_json_blocks, and config_loader.
+- Add architecture diagram, orchestration mode comparison table, and
+  config.yaml reference.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>

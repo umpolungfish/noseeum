@@ -2,6 +2,7 @@
 
 import json
 import os
+import asyncio
 from typing import Dict, Any, Optional, List
 from datetime import datetime
 
@@ -16,6 +17,7 @@ class AgentMemory:
         self.memory_file = f"{self.memory_dir}/memory.json"
         self._ensure_memory_dir()
         self.data = self._load_memory()
+        self._lock = asyncio.Lock()
 
     def _ensure_memory_dir(self):
         """Ensure memory directory exists."""
@@ -37,10 +39,80 @@ class AgentMemory:
         }
 
     def save(self):
-        """Save memory to disk."""
+        """Save memory to disk (sync, atomic write)."""
         self.data["updated_at"] = datetime.now().isoformat()
-        with open(self.memory_file, 'w') as f:
+        temp_file = f"{self.memory_file}.tmp"
+        with open(temp_file, 'w') as f:
             json.dump(self.data, f, indent=2)
+        os.replace(temp_file, self.memory_file)
+
+    async def save_async(self) -> None:
+        """Save memory to disk asynchronously with atomic write and lock."""
+        async with self._lock:
+            self.data["updated_at"] = datetime.now().isoformat()
+            temp_file = f"{self.memory_file}.tmp"
+            def _write():
+                with open(temp_file, 'w') as f:
+                    json.dump(self.data, f, indent=2)
+                os.replace(temp_file, self.memory_file)
+            await asyncio.to_thread(_write)
+
+    # ------------------------------------------------------------------
+    # Async CRUD (AjintK pattern)
+    # ------------------------------------------------------------------
+
+    async def store_async(self, key: str, value: Any, category: str = "general") -> None:
+        """Async variant of store()."""
+        if category not in self.data["entries"]:
+            self.data["entries"][category] = {}
+        self.data["entries"][category][key] = {
+            "value": value,
+            "timestamp": datetime.now().isoformat()
+        }
+        await self.save_async()
+
+    async def retrieve_async(self, key: str, category: str = "general") -> Optional[Any]:
+        """Async variant of retrieve()."""
+        try:
+            return self.data["entries"][category][key]["value"]
+        except KeyError:
+            return None
+
+    async def start_session_async(self, task: str) -> str:
+        """Async variant of start_session()."""
+        session_id = f"session_{len(self.data['sessions'])}"
+        self.data["sessions"].append({
+            "session_id": session_id,
+            "task": task,
+            "start_time": datetime.now().isoformat(),
+            "events": []
+        })
+        await self.save_async()
+        return session_id
+
+    async def log_event_async(self, session_id: str, event: str,
+                              data: Optional[Dict[str, Any]] = None) -> None:
+        """Async variant of log_event()."""
+        for session in self.data["sessions"]:
+            if session["session_id"] == session_id:
+                session["events"].append({
+                    "timestamp": datetime.now().isoformat(),
+                    "event": event,
+                    "data": data
+                })
+                await self.save_async()
+                return
+
+    async def end_session_async(self, session_id: str,
+                                result: Optional[Dict[str, Any]] = None) -> None:
+        """Async variant of end_session()."""
+        for session in self.data["sessions"]:
+            if session["session_id"] == session_id:
+                session["end_time"] = datetime.now().isoformat()
+                if result is not None:
+                    session["result"] = result
+                await self.save_async()
+                return
 
     def store(self, key: str, value: Any, category: str = "general"):
         """Store data in memory."""
